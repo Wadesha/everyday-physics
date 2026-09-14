@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>U 盘与固态硬盘｜量子力学 — 身边的物理</title>
+<meta name="description" content="浮栅晶体管被隧穿氧化层包围，靠 Fowler–Nordheim 量子隧穿把电子写入或拉出浮栅，以电荷有无表示 0 与 1。">
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<header class="topbar">
+  <div class="wrap bar">
+    <a class="brand" href="../index.html"><span class="brand-cn">身边的物理</span><span class="brand-en">EVERYDAY PHYSICS</span></a>
+    <nav class="nav"><a href="../index.html">索引</a><a href="../themes.html">按分支</a><a href="../method.html">方法与核对</a></nav>
+  </div>
+</header>
+<main class="wrap">
+
+<nav class="crumb"><a href="../index.html">索引</a><span>/</span><a href="../themes.html#t-qm">量子力学</a><span>/</span><em>U 盘与固态硬盘</em></nav>
+
+<article class="detail">
+  <header class="dhead" style="--c:#5b4b8a">
+    <div class="dhead-tag">量子力学</div>
+    <h1>U 盘与固态硬盘</h1>
+    <p class="en">Flash memory</p>
+    <p class="lead">它不把电子搬过墙，而是让电子穿墙而过。</p>
+  </header>
+
+  <div class="verdict" style="--c:#5b4b8a"><span class="vlabel">一句话结论</span><p>浮栅晶体管被隧穿氧化层包围，靠 Fowler–Nordheim 量子隧穿把电子写入或拉出浮栅，以电荷有无表示 0 与 1。</p></div>
+
+  <section class="block">
+    <h2 class="bh">现象详述</h2>
+    <p class="bnote">9 节 · 约 2031 字。只写观察到的事实与条件依赖，机制见下一节。</p>
+    <div class="prose ph"><h3>写入比读取慢得多</h3>
+<p>闪存读是纳秒级，写（编程）要微秒到毫秒级，擦除最慢且只能按块整块清，因为要先把整块电荷抽空再写。所以同一颗盘顺序读能到 7000 MB/s，一旦写缓存用尽，QLC 直写会掉到 80 至 160 MB/s，比读取慢两个数量级。用户拷大文件时先快后断崖式变慢，正是 SLC 缓存被填满后直写原始颗粒所致，电影剪辑师因此偏爱带独立 DRAM 缓存与高过载的高端点。同一型号盘测分软件里写入曲线那道悬崖，正是缓存耗尽的分界，厂商标称峰值只覆盖悬崖之前，长写入掉速才是日常。</p>
+<h3>层数堆叠的代价</h3>
+<p>从 2D 走到 3D 后，堆叠层数一路从 32 层涨到 200 层以上，长江存储、三星、铠侠、美光都已量产 200 余层产品，三星甚至规划到 1000 层。层数越高位密度越大、每比特越便宜，但蚀刻深孔、层间对准与应力控制越来越难，沟道孔深宽比飙升使刻蚀几近极限，单元间干扰随密度上升。深孔刻蚀要用冷冻化学，每秒刻数百纳米，孔壁稍有斜就整列报废，良率是层数竞赛里最贵的秘密，原始误码率随之恶化，纠错码必须越做越强，控制器也从单纯搬运变成半个纠错引擎。</p>
+<h3>多值化牺牲寿命</h3>
+<p>一个单元存 1 比特的 SLC 最耐用，约 10 万次擦写；存 3 比特的 TLC 降到 1000 至 3000 次，存 4 比特的 QLC 仅 100 至 1000 次。代价是阈值电压窗口被压窄，相邻状态只差零点几伏，一点点电荷泄漏或干扰就跨态出错。所以同容量盘标称总写入量（TBW）随层级骤降，企业级宁可多用 SLC 缓存来替 QLC 挡下大部分擦写。一张标称 600 TBW 的盘，若每天写 100 GB 可用约 16 年，但那是理想混合，纯日志盘早秃，家用大容量盘则靠容量大来摊薄年写入量。</p>
+<h3>断电后电荷会漏</h3>
+<p>浮栅或电荷俘获层里的电子并非永久不动，时间一长会缓慢泄漏，叫数据保持错误，它是闪存老化的主因。高温加速泄漏，长期不通电的固态盘在盛夏车厢里比常温下更容易丢数据，工厂老化测试也故意加温加速以筛弱单元。有人把备份盘塞进阁楼，三年后读出一半坏块，正是高温加速泄漏，冷备份不能真「永久」，厂商用纠错与定期刷新来补救，但标称「十年保持」要在常温且未写坏的前提下方才成立，写满过的盘保持力会更差。</p>
+<h3>读也会打扰邻居</h3>
+<p>反复读某一页时，相邻字线会因电容耦合被轻微抬高阈值，累积多了竟让没被读的单元出错，叫读干扰。控制器靠记录读次数、到阈值就触发读重试或搬移数据来化解，还会在搬移时顺手做读刷新。这和写干扰、擦除干扰并列，是 3D NAND 可靠性研究的三大内部敌人，用户完全看不见，却决定了一颗盘能稳用几年。企业级 UBER 指标要求百亿分之一以下，靠的就是后台不停搬数据躲开这些悄悄变坏的邻居，这也是企业盘比消费盘贵的一块隐性成本。</p>
+<h3>温度的两端都危险</h3>
+<p>闪存怕冷也怕热。低温下电子迁移率下降，编程需要更高电压、更易出错，寒区户外设备要加热才敢写；高温加速电荷泄漏与数据保持衰退，企业级盘因此带温度传感与动态热保护。消费盘在笔记本里被烤到七八十度时，写入会被主动降速以保数据，这也是笔记本固态盘夏天变卡、长期高温盘早衰的原因之一，机箱风道差比写入量大更伤盘。同型号盘冬天拷贝顺畅、夏天频繁降速，温度曲线和错误率曲线几乎同起伏，并非心理作用。</p>
+<h3>磨损均衡藏玄机</h3>
+<p>文件系统以为自己在随意写，控制器却把数据悄悄搬到磨损最轻的块，让所有块均匀老化，叫损耗均衡。频繁改写的「热数据」与长期不动的「冷数据」被区别对待，还叠加垃圾回收与写放大，一次小改写可能牵动整块搬迁。所以同一颗盘，装满常写日志的服务器里会比只存照片的家用盘早到寿命终点，表面写入量却差不多。监控盘写放大率常远高于标称，所以同样 TBW 下监控盘先老，买盘要看用途而非只看容量，监控里看写入放大率比看总量更准。一块标称十年寿命的消费盘若在监控机箱里七乘二十四小时连写，往往三年就到额定写入量，标称寿命对家用场景才更宽裕。</p>
+<h3>容量数字的对账</h3>
+<p>标 2 TB 的盘实际可用常更少，因为厂商标的是十进制字节、系统按二进制算，再加上固件预留与坏块替换。更要紧的是「可写容量」会随寿命损耗而缩，因为坏块越来越多被剔除，后台还在悄悄搬数据。系统显示 1.82 TB 可用而非整 2 TB，那空缺是被纠错预留与坏块吞掉的，并非厂商偷容量，宣称 1200 TBW 的盘若真写满额定总量，单元早已接近擦写极限，标称寿命是用最坏写入模式估出来的保守值，日常混合读写往往用得更久但没人能保证。同一颗盘在监控机箱里七乘二十四小时连写，比在家一周才写几部电影的盘老得快得多，所以厂商给监控盘另标耐久，买盘看用途比看容量更要紧。</p>
+<h3>掉电瞬间的脆弱</h3>
+<p>写入进行中突然断电，映射表可能来不及落盘，轻则丢刚写的数据，重则整块变只读或变砖。企业盘加电容保电，让最后一批数据写完再关机；消费盘大多没有，故强制拔出 U 盘常提示「可能损坏」。有人拔 U 盘前没点弹出，盘里文件打不开，多半是映射表没写完，而非病毒，重格常能救回，这正是闪存「无机械」带来的新脆弱点，而非旧式硬盘的磁头划伤，老旧 U 盘在写入灯亮时最忌热拔，笔记本意外关机也该等缓存落盘再断电。</p></div>
+  </section>
+
+  <section class="block">
+    <h2 class="bh">背后的原理</h2>
+    <p class="bnote">机制层面：为什么会出现上一节那些现象。</p>
+    <div class="prose"><h3>经典物理说：过不去</h3>
+<p>一个能量低于势垒高度的电子，在经典力学里绝不可能越过这道墙。但电子同时具有波动性，它的波函数在壁垒内部并不立即归零，而是指数衰减——只要壁垒不是无限厚，就存在一定概率出现在另一侧。这就是量子隧穿。</p>
+<p>隧穿概率对厚度和高度极其敏感：壁垒越薄越低，概率越高；厚度超过几纳米后概率就急剧下降到可忽略。这个「指数敏感」既是闪存能工作的原因，也是芯片制程缩到 3 nm 以下后漏电成为头号难题的原因。</p>
+<h3>写入与擦除就是一个充放电过程</h3>
+<p>闪存的存储单元是浮栅晶体管：一个导电的浮栅被绝缘氧化层完全包围，与外界隔离。写数据时在控制栅上加高电压（约 12–20 V），氧化层里形成约 10⁹ V/m 的强电场，势垒从矩形被拉成三角形，电子在 Fowler–Nordheim 隧穿作用下穿过氧化层进入浮栅并被困住。擦除则加反向电场，让电子再次隧穿出去。</p>
+<p>整个过程在微秒量级完成，没有任何机械运动——这是闪存比硬盘快、抗震的根本原因。</p></div>
+  </section>
+
+  <section class="block">
+    <h2 class="bh">现存实例</h2>
+    <p class="bnote">6 项。真实存在的对象、设施或已记录案例。</p>
+    <ul class="insts"><li><b>三星 990 PRO 2TB 固态盘</b><p>M.2 2280、PCIe 4.0，顺序读 7450 MB/s、写 6900 MB/s，3 位 TLC、2 GB 缓存、标称 1200 TBW，型号 MZ-V9P2T0BW，是消费级旗舰代表。 <a class="isrc" href="https://www.samsung.com/us/memory-storage/nvme-ssd/990-pro-w-heatsink-pcie-4-0-nvme-ssd-2tb-sku-mz-v9p2t0cw/" target="_blank" rel="noopener noreferrer">来源</a></p></li>
+<li><b>三星 980 PRO 1TB 固态盘</b><p>PCIe 4.0 首代旗舰，顺序读 7000 MB/s，用三星 V-NAND 3 位 MLC（即 TLC）与自研 Elpis 主控，是 980 PRO 系列基准型号。 <a class="isrc" href="https://www.samsung.com/uk/memory-storage/nvme-ssd/980-pro-pcle-4-0-nvme-m-2-ssd-1tb-mz-v8p1t0bw/" target="_blank" rel="noopener noreferrer">来源</a></p></li>
+<li><b>致态 Ti600 2TB（长江存储 232 层 QLC）</b><p>2023 年 7 月推出的 M.2 盘，用长江存储 232 层 QLC 3D NAND，读 7000 MB/s、写 6000 MB/s，五年 800 TBW；TechInsights 测得其位密度 19.8 Gb/mm² 为当时商用最高。 <a class="isrc" href="https://www.dostor.com/p/85871.html" target="_blank" rel="noopener noreferrer">来源</a></p></li>
+<li><b>美光 232 层 TLC 3D NAND</b><p>美光 2022 年率先出货 232 层 TLC，用于 Crucial 等消费盘；同代铠侠/西数为 218 层、SK 海力士为 238 层，行业整体进入 200 层时代。 <a class="isrc" href="https://www.esmchina.com/marketnews/45427.html" target="_blank" rel="noopener noreferrer">来源</a></p></li>
+<li><b>SK 海力士 238 层 TLC</b><p>2023 年 6 月宣布量产的 238 层 TLC 3D NAND，为当时层数最高的单代产品之一，I/O 速度较前代提升明显，供货企业级与消费级盘。 <a class="isrc" href="https://www.esmchina.com/marketnews/45427.html" target="_blank" rel="noopener noreferrer">来源</a></p></li>
+<li><b>铠侠 BiCS FLASH 332 层</b><p>2026 年交付样品的第十代 BiCS FLASH，堆叠 332 层、位密度约 36.4 Gb/mm²，采用 CMOS 直接键合阵列架构，代表 3D NAND 层数竞赛的最新节点。 <a class="isrc" href="https://baike.baidu.com/item/3D%20NAND%E9%97%A2%E5%AD%98/67833272" target="_blank" rel="noopener noreferrer">来源</a></p></li></ul>
+  </section>
+
+  <section class="block">
+    <h2 class="bh">进阶实例</h2>
+    <p class="bnote">8 项。把同一条规律放到更高量级上运行的真实工程对象：在役工业装置、大科学装置、尖端产品与国家级基准，每条标注所属装置或行业类别。</p>
+    <ul class="insts adv"><li><p class="ihead"><span class="icat">工业</span><b>长江存储武汉三期 232 层工厂</b></p><p class="idesc">长江存储武汉三期工厂量产 232 层 Xtacking 4.0 架构的 TLC 三维闪存，芯片间接口速率达到 2400 MT/s，单颗 die 容量为 1 Tb。该晶圆厂当前月产能约 20 万片晶圆，规划逐步提升至 30 万片，产线中国产设备占比超过 45%，是中国在三维存储领域实现规模化量产的代表性项目。其产品用于固态硬盘与嵌入式存储，已在数据中心与消费电子市场形成稳定供货，标志着国内存储芯片制造能力的实质突破。</p></li>
+<li><p class="ihead"><span class="icat">工业</span><b>Micron 新加坡 3D NAND 工厂</b></p><p class="idesc">美光新加坡工厂量产 232 层三维 NAND 闪存，单颗 die 容量为 1 Tb、可封装为 2 TB 的成品，采用 CuA（阵列下 CMOS）架构以提升位密度与读写效率。新加坡基地是该公司在亚洲的 3D NAND 主力产地之一，月投片规模位居全球前列，产品主要供应数据中心固态硬盘与消费级存储卡，体现了三维堆叠工艺在良率控制与制造成本上的成熟量产能力。</p></li>
+<li><p class="ihead"><span class="icat">工业</span><b>铠侠北上 Fab2 BiCS10 332 层</b></p><p class="idesc">铠侠北上 Fab2 工厂量产第十代 BiCS FLASH（即 BiCS10）三维闪存，堆叠层数达到 332 层，芯片接口速率 4800 MT/s（即 4.8 Gb/s），位密度超过 29 Gb/mm²，单颗 die 为 1 Tb 的 TLC 颗粒。该产线于 2025 年 9 月进入量产，采用先进的晶圆键合与多层堆叠工艺，是新一代高密度存储的代表性工艺，面向企业级与消费级固态存储市场批量供货，相比上一代工艺在相同面积内提供更高的容量与带宽，显著降低单位比特成本。</p></li>
+<li><p class="ihead"><span class="icat">科研装置</span><b>长江存储 Xtacking 混合键合</b></p><p class="idesc">Xtacking 是长江存储提出的晶圆级混合键合技术：将 CMOS 逻辑电路与存储阵列分别在不同晶圆上制造，再通过铜对铜面对面键合，使外围电路不再挤占阵列面积、接口速率突破 2400 MT/s。该架构把存储单元与读写电路在结构上解耦，缩短了互联距离并提升输入输出带宽，是三维闪存领域由中国团队主导的结构创新，已被后续多代产品采用。</p></li>
+<li><p class="ihead"><span class="icat">工业</span><b>车规级 3D NAND 存储</b></p><p class="idesc">车规级三维闪存依据 AEC-Q100 可靠性标准认证，工作温度覆盖 −40 至 105 °C，耐受车载环境的持续振动与温度循环，典型器件可支持 1500 次以上的编程擦除循环。其采用 LDPC 纠错编码与端到端数据保护，单颗 die 容量达 512 Gb，用于智能座舱、高级驾驶辅助与事件记录系统，在电动汽车与自动驾驶产线中已形成稳定供货与完整的车规验证体系。</p></li>
+<li><p class="ihead"><span class="icat">航天与卫星</span><b>航天抗辐射 NAND 存储</b></p><p class="idesc">面向航天器与卫星的抗辐射三维闪存采用 SLC 架构与加固工艺，单器件容量为 64 Gb，可承受总电离剂量超过 100 krad、并能抵抗单粒子翻转效应，工作温度范围 −55 至 125 °C。这类存储用于星载载荷的数据记录、姿态控制计算机与星间通信，已随多颗遥感与科学卫星在轨长期运行，是航天电子实现自主可控与长寿命任务保障的关键器件。</p></li>
+<li><p class="ihead"><span class="icat">工业</span><b>三星平泽 P1 3D NAND 工厂</b></p><p class="idesc">三星电子平泽 P1 工厂是其最先进的三维 NAND 生产基地之一，量产采用第九代 V-NAND 工艺，堆叠层数超过 280 层，月晶圆产能约 20 万片。该厂配备全自动物料搬运系统与超高等级洁净室，产品覆盖 1 Tb 及以上大容量的 TLC 与 QLC 颗粒，供应企业级固态硬盘与高性能移动存储，体现了超高层数堆叠工艺的量产实力与良率控制水平。</p></li>
+<li><p class="ihead"><span class="icat">科研装置</span><b>三维闪存位密度研究</b></p><p class="idesc">学术界与产业界持续追求三维闪存的位密度极限，当前主流研究目标已进入每平方毫米 30 Gb 的量级。提升路径包括增加堆叠层数、缩小字线间距、采用多比特的 TLC 与 QLC 编码，以及 CBA 与 Xtacking 等键合架构。以现已量产的 332 层器件为例，其位密度超过 29 Gb/mm²；研究重点正转向层数扩展所引发的晶片应力、良率下降与读出干扰控制等物理极限问题。</p></li></ul>
+  </section>
+
+  <section class="block">
+    <h2 class="bh">关键数字</h2>
+    <ul class="nums"><li><span class="nk">隧穿氧化层厚度</span><span class="nv">约 7–10 nm</span><span class="nn">Fowler–Nordheim 隧穿的可行窗口</span></li>
+<li><span class="nk">写入电压</span><span class="nv">约 12–20 V</span><span class="nn">现代 NAND 约 10–20 V</span></li>
+<li><span class="nk">氧化层内电场</span><span class="nv">量级约 10⁹ V/m</span><span class="nn">把矩形势垒拉成三角形</span></li>
+<li><span class="nk">数据保持时间</span><span class="nv">10 年以上</span><span class="nn">氧化层薄到能隧穿、厚到不泄漏</span></li>
+<li><span class="nk">STM 探针距样品</span><span class="nv">0.1–1 nm</span><span class="nn">距离变 0.1 nm，隧穿电流变一个数量级</span></li>
+<li><span class="nk">首次器件应用</span><span class="nv">1957 年江崎玲於奈的隧道二极管</span><span class="nn">1973 年诺贝尔物理学奖</span></li></ul>
+  </section>
+
+  <section class="block">
+    <h2 class="bh">常见误传说</h2>
+    <div class="myths"><div class="myth"><p class="claim"><span class="lab">误传</span>闪存是磁存储</p><p class="truth"><span class="lab">实情</span>闪存完全不涉及磁性。它靠浮栅里的电荷有无存储数据，读取时检测电荷对晶体管阈值电压的影响。</p></div>
+<div class="myth"><p class="claim"><span class="lab">误传</span>量子隧穿只存在于理论里</p><p class="truth"><span class="lab">实情</span>U 盘、SSD、手机存储的核心机制就是它，全世界每一块闪存芯片每天在几十亿个单元里重复这个量子过程。</p></div></div>
+  </section>
+
+  <section class="block">
+    <h2 class="bh">设计上的取舍</h2>
+    <p class="prose-p">氧化层厚度是整条路线最精妙的取舍：薄到能在可接受的电压和时间内完成隧穿，又厚到在没有外加电场时电子不会自发泄漏。工程师把这个量子过程的概率校准到了十年以上数据保持——这种精度才是闪存技术的真正门槛。</p>
+  </section>
+
+  <section class="block">
+    <h2 class="bh">书库坐标</h2>
+    <p class="coord">原理主要落在 <b>01_量子力学 · 07_凝聚态与固体物理</b>，即本地物理书库（<code>OneDrive/physics</code>）中的对应主题目录。</p>
+    <p class="ev"><span class="evtag ev-A">证据 A 级</span>有实验结论、原始论文或权威机构数据支撑</p>
+  </section>
+
+  <section class="block">
+    <h2 class="bh">外部来源</h2>
+    <ul class="srcs"><li><a href="https://cloud.kepuchina.cn/h5/detail?id=7444437959582871552" target="_blank" rel="noopener noreferrer">科普中国：能让芯片突破物理极限的量子隧穿效应</a></li>
+<li><a href="https://www.21ic.com/embed/hardware/storage/201501/33969.html" target="_blank" rel="noopener noreferrer">21IC：走进闪存技术（隧穿氧化层 7–10 nm）</a></li>
+<li><a href="https://www.bohrium.com/sciencepedia/feynman/keyword/fowler_nordheim_tunneling" target="_blank" rel="noopener noreferrer">Bohrium：福勒-诺德海姆隧穿（含镜像力修正）</a></li></ul>
+  </section>
+
+  <section class="block">
+    <h2 class="bh">英文简述</h2>
+    <p class="bnote">与上文同一组事实的英文简版，87 词，供英文授课或检索英文资料时引用。</p>
+    <div class="enbrief"><p>A flash cell stores charge on a floating gate surrounded by a tunnel oxide about 7 to 10 nm thick. Writing and erasing move electrons through that oxide by Fowler-Nordheim quantum tunnelling, driven by roughly 12 to 20 V, which corresponds to an internal field near 1e9 V/m. The presence or absence of the charge is the stored bit, read out as a shift in threshold voltage. Because the oxide is very thin, repeated cycling eventually damages it, which is the origin of the finite write endurance.</p></div>
+  </section>
+
+  <nav class="pager"><a class="pn prev" href="gps.html"><small>上一件</small>手机 GPS</a><a class="pn next" href="bicycle.html"><small>下一件</small>自行车为什么骑起来不倒</a></nav>
+</article>
+
+</main>
+<footer class="footer">
+  <div class="wrap">
+    <p class="dim">身边的物理 · 日常器物与物理原理 · 26 件 · 13 个分支 · 静态页面，无图片、无表格、无搜索、无外部脚本与统计代码。所有条目均标注书库坐标与外部来源，误传澄清基于实验或权威资料。</p>
+  </div>
+</footer>
+<script src="../assets/app.js"></script>
+</body>
+</html>

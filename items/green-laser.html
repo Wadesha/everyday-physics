@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>绿光激光笔｜量子光学与激光光谱 — 身边的物理</title>
+<meta name="description" content="808 nm 红外激光泵浦 Nd:YVO₄ 晶体，输出 1064 nm 红外光，再经 KTP 晶体倍频，波长减半得到 532 nm 绿光。">
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<header class="topbar">
+  <div class="wrap bar">
+    <a class="brand" href="../index.html"><span class="brand-cn">身边的物理</span><span class="brand-en">EVERYDAY PHYSICS</span></a>
+    <nav class="nav"><a href="../index.html">索引</a><a href="../themes.html">按分支</a><a href="../method.html">方法与核对</a></nav>
+  </div>
+</header>
+<main class="wrap">
+
+<nav class="crumb"><a href="../index.html">索引</a><span>/</span><a href="../themes.html#t-qopt">量子光学与激光光谱</a><span>/</span><em>绿光激光笔</em></nav>
+
+<article class="detail">
+  <header class="dhead" style="--c:#0f7b7b">
+    <div class="dhead-tag">量子光学与激光光谱</div>
+    <h1>绿光激光笔</h1>
+    <p class="en">Green laser pointer</p>
+    <p class="lead">它里面根本没有绿色激光器——绿光是「算」出来的。</p>
+  </header>
+
+  <div class="verdict" style="--c:#0f7b7b"><span class="vlabel">一句话结论</span><p>808 nm 红外激光泵浦 Nd:YVO₄ 晶体，输出 1064 nm 红外光，再经 KTP 晶体倍频，波长减半得到 532 nm 绿光。</p></div>
+
+  <section class="block">
+    <h2 class="bh">现象详述</h2>
+    <p class="bnote">10 节 · 约 2021 字。只写观察到的事实与条件依赖，机制见下一节。</p>
+    <div class="prose ph"><h3>夜间光束为何可见</h3>
+<p>532 nm 绿光接近人眼视见函数峰值，且夜间空气分子瑞利散射把光束自身照亮，所以暗处能看见一道绿线指向天。红光（650 nm）视见低、散射弱，同样功率下看不出光柱，这是绿笔更受欢迎的物理根由。手机屏幕这类环境光一强，光束就被淹掉；入夜背景一暗，同一支笔的绿线立刻显形，昼夜反差正来自背景亮度。这也是为什么绿笔在城里夜空仍清楚，红光笔却像消失。绿笔指远处楼宇，墙面上光斑比红笔大且亮，同功率对比鲜明。绿光在雪地、雾面反射也最醒目，搜救与教学都借这点。</p>
+<h3>廉价笔漏红外</h3>
+<p>DPSS 绿光笔里 808 nm 与 1064 nm 红外光与 532 nm 绿光同束射出；廉价笔常省掉红外滤光片，泄漏的红外不可见、无眨眼反射保护，反而比绿光更伤眼。用手机前摄像正对笔口能拍到红点，可粗判是否漏红外。买笔应确认有红外截止滤片。所以看不见的光最危险在绿笔上字面成立：你能看到的绿光尚在安全线，漏出的红外却在悄悄灼视网膜。红外滤片是块带通玻璃，廉价笔省它可降本数元，代价是伤眼风险。</p>
+<h3>斑点与抖动</h3>
+<p>绿光是相干光，照在墙上是 granular 的激光散斑，而非均匀光斑；手微抖时整片斑点乱颤。墙面越粗糙花纹越细密，肉眼看到的沙粒感正是干涉而非污渍。这是相干性的直接表现，红光 LED 指示笔不会有此现象，也是绿笔指星时画面抖动的原因。散斑源于光程差造成的干涉花纹，想减散斑只能让光去相干，而那样绿笔就不再是绿激光了。散斑在投影画面上是颗粒噪点，绿光投影机需特意做去相干处理。</p>
+<h3>模式跳变与温度</h3>
+<p>腔内倍频对温度极敏感，笔身发热会让晶格失配、输出功率与波长跳变，甚至突然变暗再亮。KTP 相位匹配温度窗口仅几度，手握五分钟体温即把匹配推出最佳点。所以连续指星几十秒后亮度不稳是常态，不是电池问题，而是 nonlinear 晶体在漂。好笔加温控与 TEC 制冷，正是为把这块晶体钉在匹配温度上。冬夜手握笔几分钟即见亮度跌落，是晶体温度漂移的实时演示。</p>
+<h3>同功率绿光更刺眼</h3>
+<p>人眼视见函数在 550 nm 附近达峰值，532 nm 几乎正中；同样 5 mW，绿光看起来比 650 nm 红光亮数倍。法规按明视觉亮度定危害等级，绿光在同 mW 下被判得更严，正因为眼睛对它的响应曲线陡得多。这让人低估其实标功率，以为只是个小亮点，恰恰是危险所在。所以一支标 5 mW 的绿笔观感上像 20 mW 的红笔，主观亮度极具欺骗性。同 mW 绿光视亮倍率约为红光的 5–10 倍，主观极易误判其实标功率。</p>
+<h3>指星比红色好用</h3>
+<p>因 532 nm 近视见峰值且空气散射可见，业余与专业天文常用 5 mW 绿激光指向星座，比红光笔远清晰。望远镜旁有人拿绿笔乱扫，值班员第一反应是收笔而非欣赏。但功率一旦上毫瓦级，误指飞机即成严重航空事件，多国已设罚则。天文指星讲究先指天再开锁、用完即关，因为一道绿线在几公里外仍清晰可辨，对飞行员就是刺目的眩光。指星笔带锁键，正是为防止误触后光柱扫过航线酿成事故。机场围界常装激光探测，正因绿线在夜空太好辨认。</p>
+<h3>对飞机的危害</h3>
+<p>绿光笔波长短、散射强、更亮，FAA 统计激光袭机事件中绿色占绝对多数（2013 年达 92.8%）。100 mW 绿笔在 1 km 外仍达眩光阈值，误射者常不知光柱已爬进进近航道。光束入驾驶舱可致眩光、闪光盲，飞行员需数分钟恢复，已有航班被迫中止进近。所以机场周边卖的高功率绿笔常被限售，不是因为绿光特殊，而是因为它太容易被看见也太容易伤眼。绿光在雾中比红光传得更醒目，也因散射强，故雾天更危险。</p>
+<h3>直接绿激光二极管</h3>
+<p>2012 年 Nichia 与 OSRAM 推出可直接发绿光（515/520 nm）的激光二极管，无需倍频晶体，效率显著提升，是绿光从算出来走向直接发的转折点。今天 AR 眼镜与微型投影的绿光也靠这类直接二极管，倍频结构已退居特殊高功率场合。早期绿笔的全套晶体与温控使其又贵又娇气，直接二极管省掉 KTP 与泵浦级，才让绿光笔有可能像红光笔一样便宜耐用。直接二极管波长 515–520 nm，比倍频 532 nm 略偏黄，肉眼可辨。</p>
+<h3>功率标称常虚高</h3>
+<p>NIST 实测 112 支市售激光笔，90% 绿光笔、44% 红光笔输出超过法规上限；标称 5 mW 者实测常达数十毫瓦。商家把光学功率、可见光功率、带红外总功率混着标，同一支笔三种口径可差十倍，消费者无从分辨。买家看到的 mW 数字多不可信，需经功率计校准。所以合规激光笔会标 FDA accession 号，正是为把真实功率锁进可查的档。功率计须测总功率含红外，否则绿笔读数会低报数倍。</p>
+<h3>电池与散热</h3>
+<p>倍频需要 100–300 mW 的 808 nm 泵浦，发热不小；廉价笔靠小壳体自然散热，连续工作后晶体升温、输出掉链。好笔在壳里埋散热块、限占空比，正为让那块 KTP 始终待在它的温度窗口里。泵浦二极管本身也怕热，长期满负荷会早衰，一支笔用半年后亮度腰斩，多半是热而非衰变。所以按一下就亮、按住发暗是热管理不足的典型观感。连续按 10 秒即烫手，是泵浦热堆在壳里的直接体感。泵浦级失效后绿光骤灭而红外仍在，是最隐蔽的隐患。</p></div>
+  </section>
+
+  <section class="block">
+    <h2 class="bh">背后的原理</h2>
+    <p class="bnote">机制层面：为什么会出现上一节那些现象。</p>
+    <div class="prose"><h3>三步走：泵浦、受激辐射、倍频</h3>
+<p>第一步：808 nm 的半导体激光二极管把 Nd³⁺ 离子从基态抽运到激发态。第二步：Nd³⁺ 落到较低能态，以受激辐射放出 1064 nm 红外光——这是激光产生的标准机制。第三步才是关键：1064 nm 光进入 KTP（磷酸钛氧钾）非线性晶体，两个光子被「合并」成一个能量翻倍、波长减半的光子，得到 532 nm。</p>
+<p>这就是倍频（二次谐波产生）。它不是普通的反射折射，而是非线性光学效应——只有在光强足够高、晶体的非线性系数足够大时才明显。所以倍频晶体必须放在谐振腔内部，让腔内的高功率密度帮上忙。</p>
+<h3>为什么绿光笔比红光明亮得多</h3>
+<p>人眼视见函数在 550 nm 附近达到峰值，532 nm 几乎正中靶心。同样光功率下，绿光看起来比红光（650 nm 附近视见函数只有约 0.1）亮得多。对天文指星、演示讲解来说，这意味着更低的功率就够用，而更低的功率意味着相对更安全。</p></div>
+  </section>
+
+  <section class="block">
+    <h2 class="bh">现存实例</h2>
+    <p class="bnote">5 项。真实存在的对象、设施或已记录案例。</p>
+    <ul class="insts"><li><b>Nichia/OSRAM 直接绿激光</b><p>2012 年 Nichia 与 OSRAM 推出商品化直接发绿光激光二极管（515/520 nm），无需 KTP 倍频，效率更高，标志绿光从倍频结构走向直接发光。 <a class="isrc" href="https://www.wikiwand.com/en/articles/Laser_pen" target="_blank" rel="noopener noreferrer">来源</a></p></li>
+<li><b>FAA 激光袭机统计</b><p>美国联邦航空管理局统计，2024 年报告激光照射飞机事件 12,840 起，其中绿色占绝大多数（2013 年占 92.8%）；已成航空安全重点隐患，违者最高可罚数万美元。 <a class="isrc" href="https://www.faa.gov/newsroom/lasers-0?newsId=23535" target="_blank" rel="noopener noreferrer">来源</a></p></li>
+<li><b>NIST 112 支激光笔实测</b><p>NIST 对随机购买的 112 支激光笔测功率，发现 90% 绿光笔、44% 红光笔超出法规上限，揭示廉价绿光笔普遍超标、标称不可信。 <a class="isrc" href="https://www.nist.gov/node/395606" target="_blank" rel="noopener noreferrer">来源</a></p></li>
+<li><b>JetBlue 被绿激光致盲</b><p>2013 年一架 JetBlue 班机在佛州棕榈滩机场进近时被绿激光射中驾驶舱，飞行员短暂致盲仍安全降落；同年美国报告激光袭机 3434 起。 <a class="isrc" href="https://www.nbcnews.com/news/us-news/jetblue-pilots-make-safe-landing-after-laser-blinding-flna2d11721926" target="_blank" rel="noopener noreferrer">来源</a></p></li>
+<li><b>天文指星用绿激光</b><p>因 532 nm 近人眼视见峰值、夜间空气瑞利散射使光束可见，业余与专业天文常用 5 mW 绿激光指向星座，比红光指示笔在暗空下清晰得多。 <a class="isrc" href="https://www.wikiwand.com/en/articles/Laser_pen" target="_blank" rel="noopener noreferrer">来源</a></p></li></ul>
+  </section>
+
+  <section class="block">
+    <h2 class="bh">进阶实例</h2>
+    <p class="bnote">8 项。把同一条规律放到更高量级上运行的真实工程对象：在役工业装置、大科学装置、尖端产品与国家级基准，每条标注所属装置或行业类别。</p>
+    <ul class="insts adv"><li><p class="ihead"><span class="icat">消费产品</span><b>Barco SP4K-25C 影院激光放映机</b></p><p class="idesc">Barco SP4K-25C 采用 RGB 三色激光光源，光通量 24,000 流明，原生 4K 分辨率 4096×2160，色域覆盖 Rec.2020 的 98.5%，用于大型影厅数字放映。绿色由窄谱激光经波长锁定后泵浦磷光轮产生，红绿蓝三束合光投射，色彩饱和度与对比度显著高于传统氙灯放映机，已在全球主流院线批量部署。</p></li>
+<li><p class="ihead"><span class="icat">科研装置</span><b>MMT 瑞利激光导星系统</b></p><p class="idesc">美国霍普金斯山 MMT 天文台（口径 6.5 m）部署双 532 nm 瑞利激光导星，每束 15 W、脉冲重复频率 5 kHz，激光在海拔 20–29 km 的大气层散射形成人造导引星，为自适应光学提供实时波前误差参考。两束配合变形镜校正湍流，使近红外成像逼近衍射极限。</p></li>
+<li><p class="ihead"><span class="icat">医疗</span><b>Boston Scientific GreenLight XPS 532 nm 激光</b></p><p class="idesc">GreenLight XPS 前列腺选择性光汽化系统以 532 nm 绿光为治疗波长，最大输出 180 W（型号 0010-0210），激光被氧合血红蛋白强吸收、穿透深度约 0.8 mm，汽化增生组织并形成 1–2 mm 凝固层止血，适用于良性前列腺增生手术，在全球泌尿外科中心常规使用。</p></li>
+<li><p class="ihead"><span class="icat">工业</span><b>Coherent AVIA 532-23 工业激光器</b></p><p class="idesc">Coherent AVIA 532-23 是工业级二极管泵浦固体激光器，输出 532 nm 绿光、连续功率 23 W，脉冲重复频率最高 300 kHz，用于精密打标、切割与微加工。腔内倍频将 1064 nm 红外转为 532 nm，光束质量高、脉冲稳定，装配于消费电子与半导体产线的自动化工作站。</p></li>
+<li><p class="ihead"><span class="icat">计量基准</span><b>NIST C 系列激光功率量热标准</b></p><p class="idesc">美国 NIST（博尔德）C 系列激光功率量热标准在 532 nm 波长标定 1 µW 至 2 W 的连续光功率，不确定度约 0.8%–1%，作为国家激光功率溯源基准。吸收体将入射光转为热、由测温电阻测得功率，供校准实验室与激光器厂商向上溯源。</p></li>
+<li><p class="ihead"><span class="icat">工业</span><b>大族激光 PG5 / HL-NS-532 绿光激光器</b></p><p class="idesc">深圳大族激光 PG5 绿光打标机输出 532 nm、单脉冲能量 4 J（平均 5 W），HL-NS-532 纳秒绿光激光器输出 10–40 W、重复频率 2–200 kHz，均经 Nd:YAG 倍频产生 532 nm，用于玻璃、硅片与贵金属的精密打标及脆性材料切割，在珠三角电子与珠宝产线批量应用。</p></li>
+<li><p class="ihead"><span class="icat">航天与卫星</span><b>APOLLO 月球激光测距</b></p><p class="idesc">NASA 阿波罗计划月面角反射器由地面站以 532 nm 倍频 Nd:YAG 激光测距：阿帕奇点天文台 3.5 m 望远镜发射单脉冲能量 115 mJ、重复频率 20 Hz 的绿光，接收经 38 万公里往返的回波，以纳秒计时反演地月距离（精度约厘米级），是仍在运行的空间大地测量手段。</p></li>
+<li><p class="ihead"><span class="icat">消费产品</span><b>Kvant Spectrum 20 激光表演投影机</b></p><p class="idesc">斯洛伐克 Kvant Spectrum 20 激光表演投影机总光功率 20 W，其中绿光通道为 8 W 的 532 nm 光学泵浦半导体激光（OPSL），扫描速度 40 kpps，防护等级 IP65，用于演唱会、地标建筑与户外激光秀。532 nm 绿光在大气中视见度高、散射明显，是光束与图案表演的主色。</p></li></ul>
+  </section>
+
+  <section class="block">
+    <h2 class="bh">关键数字</h2>
+    <ul class="nums"><li><span class="nk">泵浦波长</span><span class="nv">808 nm（红外半导体激光）</span><span class="nn">典型功率 100–300 mW</span></li>
+<li><span class="nk">增益介质</span><span class="nv">Nd:YVO₄（掺钕钒酸钇）</span><span class="nn">输出 1064 nm</span></li>
+<li><span class="nk">倍频晶体</span><span class="nv">KTP（KTiOPO₄）</span><span class="nn">腔内倍频，波长减半</span></li>
+<li><span class="nk">最终输出</span><span class="nv">532 nm 绿光</span><span class="nn">恰在人眼视见函数峰值附近</span></li>
+<li><span class="nk">人眼视见函数</span><span class="nv">550 nm ≈ 1.0；650 nm ≈ 0.1</span><span class="nn">同功率下绿光「看起来」亮得多</span></li></ul>
+  </section>
+
+  <section class="block">
+    <h2 class="bh">常见误传说</h2>
+    <div class="myths"><div class="myth"><p class="claim"><span class="lab">误传</span>绿光笔里就是一个绿色激光二极管</p><p class="truth"><span class="lab">实情</span>2000 年前后出现的绿光笔全部是 DPSS 倍频结构，不是直接发光。直到 2012 年 Nichia、OSRAM 才做出直接发射绿光的激光二极管（515/520 nm）。</p></div>
+<div class="myth"><p class="claim"><span class="lab">误传</span>绿光笔便宜是因为结构简单</p><p class="truth"><span class="lab">实情</span>恰恰相反：它比红光笔多了两块晶体、对准要求、温控反馈，成本高得多——这也是它一直贵的原因。</p></div>
+<div class="myth"><p class="claim"><span class="lab">误传</span>看不见的红外光无所谓</p><p class="truth"><span class="lab">实情</span>廉价绿光笔常省掉红外滤光片，泄漏的 808/1064 nm 红外光不可见因而没有眨眼反射保护，反而更危险。</p></div></div>
+  </section>
+
+  <section class="block">
+    <h2 class="bh">设计上的取舍</h2>
+    <p class="prose-p">腔内的镜面镀膜要同时满足多个苛刻条件：高反 1064 nm、高透 808 nm、高透 532 nm。每一层镀膜都是一次光谱工程，也是绿光笔为何难以做便宜的直接原因。</p>
+  </section>
+
+  <section class="block">
+    <h2 class="bh">书库坐标</h2>
+    <p class="coord">原理主要落在 <b>18_量子光学与激光光谱 · 06_光学</b>，即本地物理书库（<code>OneDrive/physics</code>）中的对应主题目录。</p>
+    <p class="ev"><span class="evtag ev-A">证据 A 级</span>有实验结论、原始论文或权威机构数据支撑</p>
+  </section>
+
+  <section class="block">
+    <h2 class="bh">外部来源</h2>
+    <ul class="srcs"><li><a href="http://ws680.nist.gov/publication/get_pdf.cfm?pub_id=906138" target="_blank" rel="noopener noreferrer">NIST：A Green Laser Pointer Hazard（含能级图与结构示意）</a></li>
+<li><a href="https://web2.ph.utexas.edu/~coker2/index.files/xrayslasers.htm" target="_blank" rel="noopener noreferrer">UT Austin Phy 302L：Green laser pointers（DPSS 流程）</a></li></ul>
+  </section>
+
+  <section class="block">
+    <h2 class="bh">英文简述</h2>
+    <p class="bnote">与上文同一组事实的英文简版，69 词，供英文授课或检索英文资料时引用。</p>
+    <div class="enbrief"><p>An 808 nm infrared diode laser pumps a Nd:YVO4 crystal, which lases at 1064 nm. A KTP crystal then doubles the frequency so the wavelength halves to 532 nm and the eye sees green. The green beam is therefore produced by nonlinear frequency conversion inside the pointer rather than by a green-emitting semiconductor, which is why the infrared pump must be filtered out before the beam leaves the housing.</p></div>
+  </section>
+
+  <nav class="pager"><a class="pn prev" href="blue-sky.html"><small>上一件</small>天空蓝与晚霞红</a><a class="pn next" href="loudspeaker.html"><small>下一件</small>扬声器</a></nav>
+</article>
+
+</main>
+<footer class="footer">
+  <div class="wrap">
+    <p class="dim">身边的物理 · 日常器物与物理原理 · 26 件 · 13 个分支 · 静态页面，无图片、无表格、无搜索、无外部脚本与统计代码。所有条目均标注书库坐标与外部来源，误传澄清基于实验或权威资料。</p>
+  </div>
+</footer>
+<script src="../assets/app.js"></script>
+</body>
+</html>

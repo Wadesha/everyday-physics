@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>飞机机翼升力｜流体力学 — 身边的物理</title>
+<meta name="description" content="满足库塔条件后机翼周围形成环量 Γ，上表面气流加速、压力降低，单位长度升力由库塔-茹可夫斯基定理 L = ρVΓ 给出。">
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<header class="topbar">
+  <div class="wrap bar">
+    <a class="brand" href="../index.html"><span class="brand-cn">身边的物理</span><span class="brand-en">EVERYDAY PHYSICS</span></a>
+    <nav class="nav"><a href="../index.html">索引</a><a href="../themes.html">按分支</a><a href="../method.html">方法与核对</a></nav>
+  </div>
+</header>
+<main class="wrap">
+
+<nav class="crumb"><a href="../index.html">索引</a><span>/</span><a href="../themes.html#t-fluid">流体力学</a><span>/</span><em>飞机机翼升力</em></nav>
+
+<article class="detail">
+  <header class="dhead" style="--c:#2b5f9e">
+    <div class="dhead-tag">流体力学</div>
+    <h1>飞机机翼升力</h1>
+    <p class="en">Wing lift</p>
+    <p class="lead">「上下气流同时到达后缘」这条流行解释，违背牛顿第二定律。</p>
+  </header>
+
+  <div class="verdict" style="--c:#2b5f9e"><span class="vlabel">一句话结论</span><p>满足库塔条件后机翼周围形成环量 Γ，上表面气流加速、压力降低，单位长度升力由库塔-茹可夫斯基定理 L = ρVΓ 给出。</p></div>
+
+  <section class="block">
+    <h2 class="bh">现象详述</h2>
+    <p class="bnote">9 节 · 约 2007 字。只写观察到的事实与条件依赖，机制见下一节。</p>
+    <div class="prose ph"><h3>上表面压力被抽低</h3>
+<p>在风洞里给翼面布满测压孔，会读到上表面尤其是前缘附近压力明显低于来流，下表面接近或略高于来流，这个压差积分就是升力。它和「上下同时到后缘」无关：实测上表面流速比等时论预言得还快，压力分布才是升力真正可测的物理量，伯努利只是算压差的工具。把翼面孔位连成彩带，红低压蓝高压一目了然，工程师靠这排曲线反过来校型，而不是靠背公式，风洞里这排压力曲线，反过来决定翼型弯度与厚度，改型先看它而非先算升力。</p>
+<h3>后缘吐出的起动涡</h3>
+<p>机翼从静止被加速的瞬间，后缘脱落一个与主环量反向的起动涡被甩向下游，按开尔文环量守恒，机翼周围立刻长出等大而反向的环量。普朗特当年的流动显示实验把这一幕拍得清清楚楚，也是库塔条件「流必须平滑离开尖后缘」最直观的证据，实验室水槽里用染料也能复现。航展上战机拉烟起飞，那两道烟在翼尖拧成麻花，就是起动涡之后一直挂着的翼尖涡，肉眼可见，涡一旦被冲走升力才稳定建立，刚起飞那一下升力是逐渐而非瞬间长到满值。风洞里用丝线贴在翼面，可看见后缘附近流线在离地加速的刹那由紊乱转为平滑贴附，这正是库塔条件在实验里被满足的瞬间，也是环量从无到有的临界点。</p>
+<h3>翼尖拖出的螺旋云</h3>
+<p>有限翼展的环量在翼尖折转向后，形成两股翼尖涡，客机起飞后常在翼尖拉出两道旋转尾迹云，夜间能看见卷成麻花的凝结尾。它把升力的下洗实实在在显形，也是机场要求起降间隔约 90 秒的原因——前机涡要散得差不多，后机才不会被掀翻。机场塔台排间隔表上那 90 秒，就是等前机涡散，误闯者被卷得歪翅膀，事故簿里有真实案例，小型机若闯入大机的涡甚至会瞬间滚转失控，所以「尾流间隔」不是客气而是安全硬指标。</p>
+<h3>低气压凝出的白雾</h3>
+<p>大攻角机动时上表面压力可降到水的饱和蒸气压以下，水汽瞬间凝结成一片短暂白雾，战机机动时翼根那对「小胡子」、跨音速时的蒸气锥都来自这里。它不是表演特效，而是当地静压跌破阈值的可视信号，反过来说明那里流速有多高、吸力有多强。战机机腹那对白胡子只在做大机动时出现，平飞看不见，是飞行员判断是否到极限的天然仪表，民航起飞擦翼尖偶尔也能看见这道雾，是气流分离前兆，民航员据此提前收油门。</p>
+<h3>失速前的抖动预警</h3>
+<p>攻角加到约 12 至 16 度，上表面边界层顶不住逆压梯度而分离，升力系数到顶后骤降、阻力猛涨，叫失速。厚翼型从后缘缓缓前爬，先有抖振给飞行员缓冲；薄尖翼在鼻区突然分离，几乎无预警。所以教练机故意用厚翼，不是为升力大，而是为失速温柔可救，学员有时间在抖振中改出而非瞬间掉高度。训练机故意用厚翼，学员手忙脚乱时还有抖振兜底，军机则靠失速告警与推杆器抢在分离前，特技机用对称翼正倒飞手感才一致。</p>
+<h3>对称翼也要迎角</h3>
+<p>完全对称、无弯度的 NACA 0012 这类翼型，零攻角时环量为零、不产生升力，必须仰起一个正攻角才上表面加速出吸力。带弯度的 NACA 2412 在零攻角就有升力，这也是它成为通用飞机主翼的原因。可见「形状」只决定曲线整体平移，升力大小仍由攻角与环量定，倒飞时弯度翼反而要负攻角才能维持。特技机用对称翼，正飞倒飞拉杆手感一致，弯度翼倒飞反而要推杆，正是零攻角有无升力的差别，这也是为什么特技机偏爱对称翼。</p>
+<h3>升力随攻角近线性</h3>
+<p>小攻角范围内升力系数约每度涨 0.11，换算薄翼理论是 2π 每弧度，直到失速前都相当准。一架波音 737 巡航升阻比约 17，滑翔机可达约 50，差距几乎全在展弦比与诱导阻力。日常乘机巡航时机翼攻角只有几度，却靠巨大面积与速度撑起几百吨，起飞离地那一下攻角才明显加大以换短时大升力，落地拉平也靠临时抬头增攻角。滑翔机细长翼看着单薄，却靠高展弦比把升阻比推到约 50，远胜客机，省下的就是滑翔的本钱。同一公式下，副翼一打、襟翼一放，升力系数立刻跳一截，所以起飞落地要靠增升装置临时把曲线抬高，巡航时又收回以降阻，机翼上那些会动的缝翼襟翼正是为在「近线性段」里挪动工作点而生。</p>
+<h3>贴近地面升力变怪</h3>
+<p>飞机离地不到一个翼弦高度时进入地面效应，下洗被地面挡住、翼尖涡减弱，诱导阻力骤降、升力显得更足，所以起飞末段会感觉「被托一下」、着陆拉平更易飘。赛艇与地效飞行器正是吃这口好处，贴水飞行省油惊人，但近地气流也更易受颠簸扰动，进近要更稳。地效飞行器贴水飞省油到能跨海，离水一高立刻变普通飞机，那层「托」说没就没，离地过高时这层红利会突然消失，新手着陆常因没预料到飘而重踩推杆。</p>
+<h3>超音速另起一套</h3>
+<p>速度过 Ma 0.3 后空气不再当作不可压，逼近并超过音速时上下表面各起一道激波，压力差由激波而非环量主导，库塔条件那套位流近似失效。协和式以 Ma 2 巡航，机翼又薄又大后掠，靠的是超声速压强分布而非亚音速环量，等时论在这里连比喻都谈不上。协和三角翼尖薄，超音速下激波贴着翼面走，亚音速那套圆头厚翼反而阻力爆炸，外形是为音速选的，机翼外形也从圆头厚翼变成尖薄三角翼，升力的物理在音障前后几乎是两套语言。跨音速那段最有名：飞机接近 Ma 1 时翼面先出现局部超音速区再被激波压回，阻力曲线冒出一个尖峰，这就是音障，驾驶员感到操纵变沉、配平漂移，正是激波在翼面上来回爬动的体感证据。</p></div>
+  </section>
+
+  <section class="block">
+    <h2 class="bh">背后的原理</h2>
+    <p class="bnote">机制层面：为什么会出现上一节那些现象。</p>
+    <div class="prose"><h3>「等时间论」错在哪</h3>
+<p>流传最广的解释是：上表面路程比下表面长，气流必须在相同时间内通过，所以上表面流速大、压力小，于是产生升力。这条推理在教科书里出现了几十年，但它没有解释流体「为什么必须同时到达」——事实上它并不需要。</p>
+<p>要让流体加速或减速，必须有合外力。仅凭「路程更长」不会自动造成速度差。所以这个论证从根本上违背了牛顿第二定律。</p>
+<h3>真正起作用的是环量</h3>
+<p>机翼起动时，粘性边界层会在尖锐后缘处脱落一个起动涡。按开尔文环量守恒，机翼周围必然产生一个强度相等、方向相反的环量 Γ。环量叠加到来流上，使上表面流速升高、下表面降低，从而形成压力差。</p>
+<p>在真实可产生升力的机翼上，气流总在后缘处汇合——否则后缘会出现速度无穷大的点。这个条件就是库塔条件，只有它被满足，环量才被确定，机翼才可能产生升力。升力大小由库塔-茹可夫斯基定理给出：L = ρVΓ。</p>
+<p>对有限展长的实际机翼，环量在翼尖处折转 90° 向后，形成翼尖尾涡。这是对「绕翼环量」最直接的可观测证据——你从飞机舷窗就能看见它。</p></div>
+  </section>
+
+  <section class="block">
+    <h2 class="bh">现存实例</h2>
+    <p class="bnote">6 项。真实存在的对象、设施或已记录案例。</p>
+    <ul class="insts"><li><b>NACA 2412 翼型</b><p>最大弯度 2% 位于 40% 弦、厚度 12% 的经典凸轮翼型，零攻角即生升力，是塞斯纳 172 等通用飞机主翼，升力曲线整体平移、低速失速温柔。 <a class="isrc" href="https://www.mysimulator.uk/articles/naca-airfoil" target="_blank" rel="noopener noreferrer">来源</a></p></li>
+<li><b>NACA 0012 对称翼型</b><p>无弯度、厚度 12% 的对称剖面，零攻角环量为零、不产生升力，须仰正攻角才上表面加速出吸力，常用于尾翼与风洞基准。 <a class="isrc" href="https://www.mysimulator.uk/articles/naca-airfoil" target="_blank" rel="noopener noreferrer">来源</a></p></li>
+<li><b>普朗特起动涡流动显示</b><p>普朗特当年用染色流把「机翼加速时后缘脱落起动涡、按开尔文环量守恒长出反向环量」拍成经典影像，是库塔条件「流平滑离尖后缘」最直观的证据。 <a class="isrc" href="https://galileo.phys.virginia.edu/classes/311/notes/aero/node4.html" target="_blank" rel="noopener noreferrer">来源</a></p></li>
+<li><b>莱特 1903 飞行者</b><p>人类首架动力飞机，用风洞定出凸轮翼与约几度攻角产生升力，证明弯度翼在低速也能飞；其翼剖面正是早期绕库塔条件思路实践的产物。</p></li>
+<li><b>塞斯纳 172 轻型机</b><p>量产最多的轻型飞机，主翼即 NACA 2412，巡航攻角仅几度、靠大翼面积与速度撑起约一吨重量，是亚音速环量升力的日常范例。</p></li>
+<li><b>协和式超声速客机</b><p>以 Ma 2 巡航，机翼薄且大后掠，升力靠上下表面激波压差而非亚音速环量，库塔条件那套位流近似失效，是「等时论」连比喻都谈不上的边界。</p></li></ul>
+  </section>
+
+  <section class="block">
+    <h2 class="bh">进阶实例</h2>
+    <p class="bnote">8 项。把同一条规律放到更高量级上运行的真实工程对象：在役工业装置、大科学装置、尖端产品与国家级基准，每条标注所属装置或行业类别。</p>
+    <ul class="insts adv"><li><p class="ihead"><span class="icat">工业</span><b>Airbus A350-900 宽体客机</b></p><p class="idesc">空客 A350-900 机翼展弦比为 9.49、机翼面积 442 m²、后掠角 31.9°，采用超临界翼型使激波阻力向后推迟。其升力来自机翼绕流所产生的环量：根据库塔条件，气流在钝后缘处平滑汇合，上下翼面的速度差形成环量 Γ，由 Kutta–Joukowski 定理给出升力 L=ρVΓ。该机巡航马赫数 0.85、实用升限 13,100 m，由国航、东航、南航等中国航司运营，是洲际航线的主力宽体机，其高效机翼设计使每座位百公里油耗显著低于上一代机型。</p></li>
+<li><p class="ihead"><span class="icat">工业</span><b>COMAC C919 干线客机</b></p><p class="idesc">中国商飞 C919 翼展 35.8 m、机长 38.9 m、最大起飞重量 77.3 t，采用超临界机翼与翼梢小翼，复合材料占比约 12%，配装 LEAP-1C 发动机。其升力由机翼环量产生：飞行中气流在钝后缘满足库塔条件而平滑离开，上下翼面的压差对应环量 Γ，按 Kutta–Joukowski 定理 L=ρVΓ 给出总升力，巡航马赫数 0.785。这是中国自主研制并已交付商业运营的干线客机，当前已投入多条国内干线航线载客运行。</p></li>
+<li><p class="ihead"><span class="icat">能源</span><b>Vestas V236-15.0 MW 风力机</b></p><p class="idesc">维斯塔斯 V236-15.0 MW 风力机叶片长 115.5 m、风轮直径 236 m、扫风面积 43,742 m²，额定功率 15,000 kW。其叶片翼型同样依环量产生升力：相对来流在后缘满足库塔条件而形成环量，由 L=ρVΓ 推得切向力驱动风轮旋转，年发电量约 80 GWh。样机立于丹麦 Østerild 试验风场，是海上大叶轮机组的高功率代表，机舱高度达 280 m，适用于深远海风电场的规模化发电，单台机组年发电量可满足数万户家庭的日常用电需求。</p></li>
+<li><p class="ihead"><span class="icat">工业</span><b>Red Bull RB19 地面效应赛车</b></p><p class="idesc">红牛 RB19 赛车采用文丘里底板与扩散器构成地面效应：底板下方气流加速、压强降低，结合后缘库塔条件所形成的环量，在车底产生强劲下压力，其地板下压力贡献约为车顶表面组件的 20 倍。配合 DRS 可调尾翼，整车在弯道获得极高抓地力。2023 赛季 22 站中胜 21 场，是中置发动机地面效应回归的竞技工程范例，整备质量约 798 kg。</p></li>
+<li><p class="ihead"><span class="icat">国防与安全</span><b>Ekranoplan KM 里海怪物</b></p><p class="idesc">苏联 Ekranoplan KM「里海怪物」翼展 37.6 m、最大起飞重量 544 t，由 10 台涡喷发动机驱动，巡航速度 430 km/h，在地效区 4 至 14 m 高度飞行。其巨大机翼在贴近水面时，下洗气流受地面阻挡使环量增加、诱导阻力骤降，按 L=ρVΓ 获得额外升力以支撑重型机体，是地效飞行器用于军事投送的独特装备，于 1966 年完成首飞，曾计划用于登陆突击与反潜巡逻，体现冷战后期地效飞行器的工程探索与作战构想。</p></li>
+<li><p class="ihead"><span class="icat">科研装置</span><b>NASA 国家跨声速风洞</b></p><p class="idesc">NASA 国家跨声速风洞（NTF）马赫数范围 0.1 至 1.2、雷诺数 4 至 145×10⁶/ft，试验段尺寸 8.2×8.2×25 ft、驱动功率 135,000 hp，可在 15 至 130 psi、−250 至 150 °F 范围内运行。它用于测量机翼环量与压力分布，通过尾迹涡量积分反演环量 Γ，校核 Kutta–Joukowski 升力预测，可模拟从亚声速到跨声速的真实环境，是跨声速气动研究与翼型验证的旗舰设施，为客机与军机机翼设计提供关键的气动力数据支撑。</p></li>
+<li><p class="ihead"><span class="icat">科研装置</span><b>超临界翼型研究</b></p><p class="idesc">超临界翼型通过上表面平缓的曲率推迟激波、降低波阻，但其升力本质上仍由后缘库塔条件所决定的环量给出，关系 L=ρVΓ 保持不变。研究以计算流体力学求解 N–S 方程，给出压力系数分布与环量，优化厚翼型下的巡航效率。该类翼型已用于 A350、C919 等客机，是当代运输机减阻的核心技术方向，相关专业论文与风洞数据数以千计。</p></li>
+<li><p class="ihead"><span class="icat">科研装置</span><b>翼梢小翼减阻研究</b></p><p class="idesc">翼梢小翼通过阻挡翼尖处上下表面气流的绕流、削弱翼尖涡，改变机翼环量的展向分布，使等效环量积分所对应的诱导阻力下降约 4% 至 6%。其设计以升力线理论与风洞尾迹测量的环量为依据，优化小翼的高度与后掠角。该装置已普遍加装在客机机翼梢部，是环量控制用于节能减阻的典型应用，单机每年节省的燃油以吨计。</p></li></ul>
+  </section>
+
+  <section class="block">
+    <h2 class="bh">关键数字</h2>
+    <ul class="nums"><li><span class="nk">适用范围</span><span class="nv">亚音速，Ma &lt; 0.3</span><span class="nn">此时空气可视为不可压</span></li>
+<li><span class="nk">库塔-茹可夫斯基定理</span><span class="nv">L = ρVΓ</span><span class="nn">单位展长的升力</span></li>
+<li><span class="nk">超声速时的机制</span><span class="nv">上下表面激波导致的压力差</span><span class="nn">伯努利定理不再成立，无环流运动</span></li>
+<li><span class="nk">尾涡</span><span class="nv">翼尖处环量折转 90° 向后</span><span class="nn">可见于各型飞机机翼外侧后方</span></li></ul>
+  </section>
+
+  <section class="block">
+    <h2 class="bh">常见误传说</h2>
+    <div class="myths"><div class="myth"><p class="claim"><span class="lab">误传</span>等时间论（上下气流同时到达后缘）</p><p class="truth"><span class="lab">实情</span>不严谨且违背牛顿定律：它没有解释速度差是怎么产生的，只把结论当作前提。</p></div>
+<div class="myth"><p class="claim"><span class="lab">误传</span>连续性/流管压缩论（上表面流管被压缩）</p><p class="truth"><span class="lab">实情</span>只适用于密闭空间（风洞、文氏管）。在露天环境里流管不会被压缩，谈不上升力。</p></div>
+<div class="myth"><p class="claim"><span class="lab">误传</span>下洗气流论（机翼把空气压下去产生反作用力）</p><p class="truth"><span class="lab">实情</span>这部分升力确实存在（「撞击升力」），但占比很小。上下表面的速度差与压力差都是可实测的。</p></div></div>
+  </section>
+
+  <section class="block">
+    <h2 class="bh">设计上的取舍</h2>
+    <p class="prose-p">「马格努斯效应」（旋转球体受到的横向力）用的正是同一个库塔-茹可夫斯基方程——旋转圆柱与有环量的机翼在数学上是一回事。一个公式同时解释了足球香蕉球和飞机升力。</p>
+  </section>
+
+  <section class="block">
+    <h2 class="bh">书库坐标</h2>
+    <p class="coord">原理主要落在 <b>09_流体力学</b>，即本地物理书库（<code>OneDrive/physics</code>）中的对应主题目录。</p>
+    <p class="ev"><span class="evtag ev-A">证据 A 级</span>有实验结论、原始论文或权威机构数据支撑</p>
+  </section>
+
+  <section class="block">
+    <h2 class="bh">外部来源</h2>
+    <ul class="srcs"><li><a href="https://www.kepuchina.cn/article/articleinfo?ar_id=331515&amp;business_type=100&amp;classify=0" target="_blank" rel="noopener noreferrer">科普中国：升力（含经典错误理论逐条辨析）</a></li>
+<li><a href="https://www.kepuchina.cn/article/articleinfo?ar_id=703082&amp;business_type=100&amp;classify=0" target="_blank" rel="noopener noreferrer">科普中国：升力 / 库塔条件与库塔-茹可夫斯基方程</a></li></ul>
+  </section>
+
+  <section class="block">
+    <h2 class="bh">英文简述</h2>
+    <p class="bnote">与上文同一组事实的英文简版，77 词，供英文授课或检索英文资料时引用。</p>
+    <div class="enbrief"><p>Once the Kutta condition is satisfied the flow leaves the trailing edge smoothly and a circulation is established around the aerofoil. The air accelerates over the upper surface, the pressure there drops, and the lift per unit span follows the Kutta-Joukowski theorem, L = rho V Gamma. The picture holds for subsonic flow below about Mach 0.3, where air behaves as incompressible; at supersonic speed the lift is instead set by the pressure difference across oblique shocks.</p></div>
+  </section>
+
+  <nav class="pager"><a class="pn prev" href="bicycle.html"><small>上一件</small>自行车为什么骑起来不倒</a><a class="pn next" href="typhoon-spin.html"><small>下一件</small>台风为什么逆时针转</a></nav>
+</article>
+
+</main>
+<footer class="footer">
+  <div class="wrap">
+    <p class="dim">身边的物理 · 日常器物与物理原理 · 26 件 · 13 个分支 · 静态页面，无图片、无表格、无搜索、无外部脚本与统计代码。所有条目均标注书库坐标与外部来源，误传澄清基于实验或权威资料。</p>
+  </div>
+</footer>
+<script src="../assets/app.js"></script>
+</body>
+</html>

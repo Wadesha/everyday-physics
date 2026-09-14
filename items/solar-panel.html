@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>太阳能充电板｜凝聚态与固体物理 — 身边的物理</title>
+<meta name="description" content="光子激发电子—空穴对，p-n 结内建电场把载流子分离到两端；但单结器件的理论极限（Shockley–Queisser 极限）约 33.7%，硅约 29%–32%。">
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<header class="topbar">
+  <div class="wrap bar">
+    <a class="brand" href="../index.html"><span class="brand-cn">身边的物理</span><span class="brand-en">EVERYDAY PHYSICS</span></a>
+    <nav class="nav"><a href="../index.html">索引</a><a href="../themes.html">按分支</a><a href="../method.html">方法与核对</a></nav>
+  </div>
+</header>
+<main class="wrap">
+
+<nav class="crumb"><a href="../index.html">索引</a><span>/</span><a href="../themes.html#t-condmat">凝聚态与固体物理</a><span>/</span><em>太阳能充电板</em></nav>
+
+<article class="detail">
+  <header class="dhead" style="--c:#6b5b1e">
+    <div class="dhead-tag">凝聚态与固体物理</div>
+    <h1>太阳能充电板</h1>
+    <p class="en">Solar panel</p>
+    <p class="lead">效率低不是技术不行，而是单结半导体有硬上限。</p>
+  </header>
+
+  <div class="verdict" style="--c:#6b5b1e"><span class="vlabel">一句话结论</span><p>光子激发电子—空穴对，p-n 结内建电场把载流子分离到两端；但单结器件的理论极限（Shockley–Queisser 极限）约 33.7%，硅约 29%–32%。</p></div>
+
+  <section class="block">
+    <h2 class="bh">现象详述</h2>
+    <p class="bnote">10 节 · 约 2143 字。只写观察到的事实与条件依赖，机制见下一节。</p>
+    <div class="prose ph"><h3>标称功率是实验室数字</h3>
+<p>组件额定功率在标准测试条件（STC）下给出：电池温度 25 ℃、辐照 1000 W/m²、大气质量 AM1.5。真实屋顶几乎永远到不了——夏天板温 60 ℃ 已打折，冬天虽温度有利却常阴天、辐照不足。所以「400 W 板」很少真的出 400 W，中午短时峰值或许接近，年均更是远低。理解这点可避免被「板子总功率」误导，真正该问的是「全年发多少度」，后者由当地日照、温度、遮挡与衰减共同决定，标称只是天花板。组件背面贴的铭牌写的就是 STC 数字，别当真实发电。</p>
+<h3>越热越没劲</h3>
+<p>晶体硅功率温度系数约 −0.3% 至 −0.45% 每 ℃。盛夏面板表面可达 45–70 ℃，比 25 ℃ 标准高 20–45 ℃，立刻损失 6%–15% 的功率，正午最晒时反而打折最多。这反直觉：太阳越毒、板越热、效率越低，像在和自己作对。沙漠电站容量大却要额外散热设计，rooftop 则靠板与屋面留缝隙通风来降温。所以「热的地方发电多」只对辐照成立，对温度不成立，两个效应方向相反、互相抵消一部分，炎热地区未必年发电最高。正午板面烫手时效率最低，是温度系数最直观的演示。</p>
+<h3>角度吃掉三成</h3>
+<p>入射光偏离法线 15° 约损失 3%–5%，45° 损失约 30%，60° 损失约一半，服从余弦定律。固定安装的板在冬晨夏暮太阳斜射时只能收到一半光，追日支架才补得回来。这也是为什么朝南、倾角接近当地纬度能拿最高年发电：让正午太阳尽量垂直打在板上。误把「板子平放省事」当最优，年发电可能少一两成，且冬夏差异被放大，平放板冬天几乎半废。平屋顶板冬天几乎半废，是倾角不对的代价。</p>
+<h3>一片遮荫拖垮一串</h3>
+<p>串联组件里电流由最弱那片决定（木桶效应），单块电池被树叶或鸟粪遮住，整串输出骤降；旁路二极管让电流绕开坏片，却仍保不住被遮组件本身的发电，且被遮处可能发热形成热斑、加速老化。现场常见：一根晾衣绳阴影盖住一角，整块板输出掉大半。所以安装首要是「无遮挡」而非「朝南」，一棵会长的树比倾角误差更伤发电量。微逆变器或优化器能把每片独立出来，削弱木桶效应，代价是贵。一片鸟粪能让整串掉一半，是木桶效应的现场版。</p>
+<h3>灰尘是慢性失血</h3>
+<p>戈壁电站久不清洗可损失约 8% 出力，每月积尘 5%–10% 不等，干旱少雨区更要频繁清洗。雨少的地区靠人工或机器人清洗，水面光伏则靠天然冲刷，soiling 是运维成本的大头。一个反直觉：偶尔一场雨能挽回大部分损失，长期无雨才累积；但粘性的花粉与尾气颗粒沾上后雨水也冲不掉，需机械清洗。所以「免维护」是误导，清洗频率直接写在年发电账本上，沙漠电站配清洗机器人是刚需。久旱后第一场雨，发电量会明显回弹，是积灰的反馈。</p>
+<h3>老化慢但确定</h3>
+<p>晶体硅年均衰减约 0.5%，首年光致衰减（LID）常达 1%–3%，之后趋稳，25 年后多保持在初始的 80% 左右；紫外使封装胶膜黄化、透过率下降是主因之一，热循环造成的微裂也累加。这意味着第 1 年掉得最多、之后平缓，与「越旧掉越快」的直觉相反。选衰减曲线平缓的型号（如抗 LID 工艺）比看首年标称更长远；质保通常承诺 25 年不低于 80%，是行业默认底线，买时看衰减曲线而非只看首年。老旧电站整体暗一档，是多年衰减的累计。</p>
+<h3>开路电压比功率更怕冷</h3>
+<p>开路电压温度系数约 −0.3% 至 −0.4% 每 ℃，低温时电压反而升高；设计师要按最冷天预留余量，否则冬天清晨电压会冲过控制器或逆变器的电压上限，触发限功率或保护。所以系统的电压窗口不是按夏天算，而是按当地极端低温算。一个现场坑：温暖地区设计的组串，到了寒冷高原清晨可能超压跳闸，不是板子坏了，是温度系数在反向起作用。功率随热降、电压随冷升，二者方向相反，设计要两头卡。寒区清晨逆变器偶发超压保护，是冷端电压抬升。</p>
+<h3>双面与边缘效应</h3>
+<p>双面组件还能收地面反射的 albedo 光，背面可贡献一成比例，白漆屋面或雪地增益更明显；而一朵云飘走、边缘辐照骤增的瞬间，逆变器会看到明显的功率阶跃，这是并网的真实波动。双面板把「地面颜色」变成发电量变量——浅色屋面比深色多发电。云边效应提醒电网调度：光伏出力不是平滑曲线，而是被云影切割的锯齿，储能与平滑控制正是为消化这种秒级波动而设，也是光伏并网的技术难点。雪地里双面板发电更高，是 albedo 增益的体现。</p>
+<h3>实际容量因子</h3>
+<p>固定支架电站年容量因子约 15%–25%，单轴跟踪在强日照区可达约 30%。也就是说「1 MW 装机」全年平均只发出 150–300 kW 的量级，远非满发，因为有夜、有云、有角度与温度折扣。容量因子比峰值功率更能反映真实收益：同样是 1 MW，沙漠与多雨地区的年发电量可差一倍。谈「装了多少 MW」容易夸大，谈「一年发多少 GWh」才接近电费实质，这也是补贴与电价核算的基准，媒体常只报峰值。看年报里的 GWh 而非 MW，才知真实收益。</p>
+<h3>逆变器看的是交流侧</h3>
+<p>组件标 MW 多为直流（MWp），并网计量按交流（MWac），线损、逆变效率再削一层，所以板子总功率与实际上网功率本就不同口径，不能简单相减。用户看账单该看 kWh 而非 W；系统效率（PR）把从板到表的全部损失打包，优良值约 0.8。一个常见误解是把组件标称之和当成年发电量，漏算了温度、角度、遮挡、逆变与线损，结果差出三成以上。直流侧与交流侧的落差，正是「标称」与「到手」的距离，也是宣传与实账的差距。电表走的是 kWh，与组件标称 W 本就两本账。</p></div>
+  </section>
+
+  <section class="block">
+    <h2 class="bh">背后的原理</h2>
+    <p class="bnote">机制层面：为什么会出现上一节那些现象。</p>
+    <div class="prose"><h3>两种损失构成了硬天花板</h3>
+<p>光子能量低于带隙，就完全不能被吸收——直接穿过去。光子能量高于带隙，可以激发载流子，但超出部分会以声子（晶格振动）的形式迅速变成热。这两种损失合起来，决定了单一材料不可能通吃整个太阳光谱。</p>
+<p>1961 年 Shockley 与 Queisser 在只考虑辐射复合损失的理想条件下算出：单结电池的最佳带隙约 1.34 eV，极限效率约 33.7%。硅的带隙是 1.1 eV，不是最优点，极限约 29.4%–32%。</p>
+<h3>绕过天花板：叠层</h3>
+<p>既然一种材料只能吃一段光谱，那就叠起来。上层用宽带隙材料吸收蓝绿光，让红外透过去由下层窄带隙材料接住。双结理论极限约 47%，层数趋于无穷时约 68%。钙钛矿—硅叠层正是这条路线最有希望的商品化方案。</p></div>
+  </section>
+
+  <section class="block">
+    <h2 class="bh">现存实例</h2>
+    <p class="bnote">7 项。真实存在的对象、设施或已记录案例。</p>
+    <ul class="insts"><li><b>Topaz 太阳能电站</b><p>位于美国加州 Carrizo Plain，2014 年投运，装机容量 550 MW（直流约 752 MW）、占地约 4700 英亩，采用 First Solar 的 CdTe 薄膜组件，曾是世界最大光伏电站。 <a class="isrc" href="https://openei.org/wiki/InSPIRE/Sites/Topaz%20Solar%20Farm" target="_blank" rel="noopener noreferrer">来源</a></p></li>
+<li><b>Bhadla 太阳能园区</b><p>印度拉贾斯坦邦的超大型光伏园区，2020 年前后并网、容量约 2245 MW，建在干旱盐碱地上，是全球规模前列的集中式光伏电站之一。 <a class="isrc" href="https://www.wikiwand.com/en/List_of_photovoltaic_power_stations" target="_blank" rel="noopener noreferrer">来源</a></p></li>
+<li><b>腾格里沙漠光伏电站</b><p>中国宁夏腾格里沙漠的光伏基地，2016 年规模约 1547 MW，是早期超大规模沙漠光伏的代表，显示干旱区快速铺装光伏的能力。 <a class="isrc" href="https://www.wikiwand.com/en/List_of_photovoltaic_power_stations" target="_blank" rel="noopener noreferrer">来源</a></p></li>
+<li><b>Solar Star 光伏电站</b><p>美国加州的两期项目，合计约 579 MW，2015 年投运，曾为北美最大光伏电站，采用单轴跟踪支架以提升容量因子。</p></li>
+<li><b>国际空间站太阳能阵列</b><p>空间站八片光伏翼合计约 120 kW，为轨道实验室持续供电；其电池为砷化镓多结，效率远高于地面硅板，是太空光伏的现役实例。</p></li>
+<li><b>阳光动力 2 号太阳能飞机</b><p>2015–2016 年完成有人驾驶太阳能环球飞行，机翼铺满晶硅电池驱动四台电动机，证明光伏可在昼夜连续任务中作为唯一能源。</p></li>
+<li><b>家庭屋顶光伏系统</b><p>典型 residential 屋顶约 5–10 kW、十几到几十块组件，配组串或微逆变器；其实际年发电受朝向、遮挡、积灰与温度系数共同决定，远低于标称之和。</p></li></ul>
+  </section>
+
+  <section class="block">
+    <h2 class="bh">进阶实例</h2>
+    <p class="bnote">8 项。把同一条规律放到更高量级上运行的真实工程对象：在役工业装置、大科学装置、尖端产品与国家级基准，每条标注所属装置或行业类别。</p>
+    <ul class="insts adv"><li><p class="ihead"><span class="icat">能源</span><b>中国 共和塔拉滩光伏园区</b></p><p class="idesc">中国青海共和塔拉滩光伏园区是全球最大光伏基地，累计并网容量约 15.6 GW（1560 万千瓦），占地约 609 平方公里，自 2011 年起多期建设，配 720 万余块组件，年发电量约 17898 GWh。靠大面积晶硅方阵将高原强日照转为电能，是晶硅光伏在能源尺度上的巨型工程。 <a class="isrc" href="https://interestingengineering.com/energy/biggest-solar-farms-reshaping-energy-future" target="_blank" rel="noopener noreferrer">来源</a></p></li>
+<li><p class="ihead"><span class="icat">能源</span><b>新疆米东光伏项目</b></p><p class="idesc">中国新疆米东光伏项目 2024 年 6 月并网，单站 3.5 GW 为当时全球最大单体光伏电站，占地沙漠地形，年发电约 60.9 亿 kWh，由国投电力等建设。另有 0.5 GW 电站与 9.35 GW 在建，规划总 25.75 GW，靠大规模单晶与双面组件将戈壁日照转化为电网电力。 <a class="isrc" href="https://interestingengineering.com/energy/biggest-solar-farms-reshaping-energy-future" target="_blank" rel="noopener noreferrer">来源</a></p></li>
+<li><p class="ihead"><span class="icat">基础设施</span><b>甘肃武威九墩滩光伏治沙园区</b></p><p class="idesc">甘肃武威凉州区九墩滩光伏治沙示范园区规划占地 50 万亩、装机 1500 万千瓦，截至 2024 年已入驻 11 家企业、建成 220 万千瓦，年发电约 260.25 亿 kWh。光伏板下种植梭梭等耐旱植物固沙，靠板上发电、板下治沙实现清洁能源与荒漠化治理协同。 <a class="isrc" href="https://gs.cnr.cn/gsxw/kx/20241212/t20241212_527006980.shtml" target="_blank" rel="noopener noreferrer">来源</a></p></li>
+<li><p class="ihead"><span class="icat">能源</span><b>宁夏盐池 100MW 农光互补</b></p><p class="idesc">宁夏盐池县 100 MW 农光互补项目在光伏板下种植苜蓿，年发电约 1.2 亿 kWh、产草约 3000 吨，靠支架抬高组件使光与作物共享土地，是光伏加牧草的典型。中国农光互补累计装机 2024 年逾 15 GW，占全球六成以上，实现发电与农业双收益。</p></li>
+<li><p class="ihead"><span class="icat">航天与卫星</span><b>中国天宫空间站 柔性太阳翼</b></p><p class="idesc">中国天宫空间站采用第三代柔性太阳电池翼，天和核心舱单翼展开面积约 67 平方米、双翼 134 平方米；问天实验舱单翼展开超 55 米、面积逾 100 平方米。电池为柔性三结砷化镓，厚度约 40 微米、单位面积重约 180 g/m²、光电效率约 32%，三舱组合日发电近 1000 度。 <a class="isrc" href="https://baike.baidu.com/item/%E4%B8%89%E5%9E%8B%E5%A4%AA%E9%98%B3%E7%BF%BC/62122480" target="_blank" rel="noopener noreferrer">来源</a></p></li>
+<li><p class="ihead"><span class="icat">科研装置</span><b>牛津光伏 钙钛矿叠层组件（商用首秀）</b></p><p class="idesc">英国 Oxford PV 的钙钛矿与硅叠层组件 2024 年 9 月首次商用发货至美国电站，组件效率 24.5%（实验室纪录 26.9%），72 片组件较标准硅组件多发约 20% 电量，由德国 Brandenburg 兆瓦级中试线生产。靠钙钛矿顶电池吸收高能光子、硅底电池吸收低能光子提升效率，是叠层电池从实验室走向电站的里程碑。 <a class="isrc" href="https://oxfordpv.com/press-releases/oxford-pv-solar-technology-patent" target="_blank" rel="noopener noreferrer">来源</a></p></li>
+<li><p class="ihead"><span class="icat">工业</span><b>杭州纤纳 三峡 50MW 钙钛矿示范</b></p><p class="idesc">杭州纤纳光电 2024 年 11 月向三峡新能源 50 MW 光伏示范项目交付四端钙钛矿与硅叠层组件，为国内首次钙钛矿叠层组件商业应用；500 kW 示范电站设计完成，计划 2024 年底并网。靠溶液法钙钛矿薄膜与硅电池叠加，提升单位面积发电量，是钙钛矿叠层迈向 GW 级量产的先行项目。 <a class="isrc" href="https://www.perovskite-info.com/?page=59" target="_blank" rel="noopener noreferrer">来源</a></p></li>
+<li><p class="ihead"><span class="icat">能源</span><b>沙特 NEOM 绿氢 光储制氢</b></p><p class="idesc">沙特 NEOM 绿氢项目由 ACWA Power、Air Products 与 NEOM 合资，配套逾 4 GW 风光发电、2.2 GW 电解槽，计划日产绿氢 600 吨（2026 年底），以绿氨出口。光伏阵列逾 560 万块组件，靠太阳能与风能满足电解制氢用电，是光伏电力转化为化学燃料的超大型工程。 <a class="isrc" href="https://english.alarabiya.net/News/saudi-arabia/2024/08/21/saudi-arabia-s-neom-green-hydrogen-plant-launches-mass-recruitment-drive" target="_blank" rel="noopener noreferrer">来源</a></p></li></ul>
+  </section>
+
+  <section class="block">
+    <h2 class="bh">关键数字</h2>
+    <ul class="nums"><li><span class="nk">硅的带隙</span><span class="nv">1.1 eV</span><span class="nn">不是 SQ 最优点，但工艺最成熟</span></li>
+<li><span class="nk">单结 SQ 极限（峰值）</span><span class="nv">≈ 33.7% @ 1.34 eV</span><span class="nn">在 AM1.5G 太阳光谱、含背反射镜条件下</span></li>
+<li><span class="nk">单结硅的极限</span><span class="nv">约 29.4%–32%</span><span class="nn">不同文献口径略有差异</span></li>
+<li><span class="nk">商用组件实际效率</span><span class="nv">20%–24%</span><span class="nn">与实验室电池之间还差 3–5 个百分点</span></li>
+<li><span class="nk">双结 / 无限层叠层极限</span><span class="nv">≈ 47% / ≈ 68%</span><span class="nn">多层结构可以突破单结上限</span></li></ul>
+  </section>
+
+  <section class="block">
+    <h2 class="bh">常见误传说</h2>
+    <div class="myths"><div class="myth"><p class="claim"><span class="lab">误传</span>太阳能效率低是「技术还没跟上」</p><p class="truth"><span class="lab">实情</span>单结器件存在原理性上限，不是工艺问题。要突破必须换架构（叠层、多结），而不是把同一结构做得更完美。</p></div>
+<div class="myth"><p class="claim"><span class="lab">误传</span>商用面板效率应该接近实验室数据</p><p class="truth"><span class="lab">实情</span>从实验室电池到商用组件通常要 3–7 年，且效率要掉 3–5 个百分点（互连损耗、封装、面积放大、遮挡等）。</p></div></div>
+  </section>
+
+  <section class="block">
+    <h2 class="bh">设计上的取舍</h2>
+    <p class="prose-p">现代组件把注意力从「提升电池本身」分散到工程细节：正面减反射绒面、背面钝化与双面发电、更细的栅线减少遮光。这些都能在材料极限内一点一点把实测效率往上推。</p>
+  </section>
+
+  <section class="block">
+    <h2 class="bh">书库坐标</h2>
+    <p class="coord">原理主要落在 <b>07_凝聚态与固体物理</b>，即本地物理书库（<code>OneDrive/physics</code>）中的对应主题目录。</p>
+    <p class="ev"><span class="evtag ev-A">证据 A 级</span>有实验结论、原始论文或权威机构数据支撑</p>
+  </section>
+
+  <section class="block">
+    <h2 class="bh">外部来源</h2>
+    <ul class="srcs"><li><a href="https://www.pnas.org/content/116/1/7" target="_blank" rel="noopener noreferrer">PNAS：The solar cell of the future（SQ 极限与叠层）</a></li>
+<li><a href="http://en.m.wikipedia.com/wiki/Shockley-Queisser_limit" target="_blank" rel="noopener noreferrer">Wikipedia：Shockley–Queisser limit</a></li>
+<li><a href="https://webthesis.biblio.polito.it/32976/1/tesi.pdf" target="_blank" rel="noopener noreferrer">Politecnico di Torino 学位论文：PV fundamentals 与 SQ 极限</a></li></ul>
+  </section>
+
+  <section class="block">
+    <h2 class="bh">英文简述</h2>
+    <p class="bnote">与上文同一组事实的英文简版，84 词，供英文授课或检索英文资料时引用。</p>
+    <div class="enbrief"><p>Photons with more energy than the band gap create electron-hole pairs, and the built-in field of the p-n junction separates them before they can recombine, driving current into an external circuit. Silicon has a gap of 1.1 eV, so much of the solar spectrum is either too low in energy to be absorbed or delivered as surplus heat. The single-junction Shockley-Queisser limit at the optimal gap of 1.34 eV is about 33.7 percent, and the practical ceiling for silicon is 29 to 32 percent.</p></div>
+  </section>
+
+  <nav class="pager"><a class="pn prev" href="white-led.html"><small>上一件</small>白光 LED</a><a class="pn next" href="polarized-sunglasses.html"><small>下一件</small>偏振太阳镜</a></nav>
+</article>
+
+</main>
+<footer class="footer">
+  <div class="wrap">
+    <p class="dim">身边的物理 · 日常器物与物理原理 · 26 件 · 13 个分支 · 静态页面，无图片、无表格、无搜索、无外部脚本与统计代码。所有条目均标注书库坐标与外部来源，误传澄清基于实验或权威资料。</p>
+  </div>
+</footer>
+<script src="../assets/app.js"></script>
+</body>
+</html>

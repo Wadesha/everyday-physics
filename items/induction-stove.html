@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>电磁炉｜电动力学与电磁学 — 身边的物理</title>
+<meta name="description" content="市电被逆变到 20–40 kHz，线圈产生交变磁场，在铁磁锅底激发涡流，靠锅体自身电阻按 Q = I²Rt 发热。">
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<header class="topbar">
+  <div class="wrap bar">
+    <a class="brand" href="../index.html"><span class="brand-cn">身边的物理</span><span class="brand-en">EVERYDAY PHYSICS</span></a>
+    <nav class="nav"><a href="../index.html">索引</a><a href="../themes.html">按分支</a><a href="../method.html">方法与核对</a></nav>
+  </div>
+</header>
+<main class="wrap">
+
+<nav class="crumb"><a href="../index.html">索引</a><span>/</span><a href="../themes.html#t-em">电动力学与电磁学</a><span>/</span><em>电磁炉</em></nav>
+
+<article class="detail">
+  <header class="dhead" style="--c:#1f6f8b">
+    <div class="dhead-tag">电动力学与电磁学</div>
+    <h1>电磁炉</h1>
+    <p class="en">Induction cooktop</p>
+    <p class="lead">面板自己一点都不烫，热量是在锅底内部「长」出来的。</p>
+  </header>
+
+  <div class="verdict" style="--c:#1f6f8b"><span class="vlabel">一句话结论</span><p>市电被逆变到 20–40 kHz，线圈产生交变磁场，在铁磁锅底激发涡流，靠锅体自身电阻按 Q = I²Rt 发热。</p></div>
+
+  <section class="block">
+    <h2 class="bh">现象详述</h2>
+    <p class="bnote">8 节 · 约 2051 字。只写观察到的事实与条件依赖，机制见下一节。</p>
+    <div class="prose ph"><h3>通电后是嗡还是滋</h3>
+<p>线圈工作频率 20–40 kHz，超出人耳上限，本应听不到；但锅底铁磁材料被反复磁化会产生磁致伸缩，整口锅以 40–200 Hz 低频振动发声，这是那种持续低频嗡声的来源。功率越大、磁场越强，伸缩幅度越大，声音越明显，关火后很快减弱，干燥空锅比装水时更响，因为水会吸收部分振动。不同的人对这股嗡声敏感度不同，有人觉得像远处空调外机，有人几乎听不出，但它始终来自锅体而非炉子本身在响。把耳朵贴近锅沿能听出嗡声来自锅体共振，而非炉面，这是磁致伸缩最直白的定位实验。不锈钢锅比铸铁更响，是因为其磁导率随温度下滑、伸缩更不规则，这点老厨子一开火就能听出来。</p>
+<h3>声音随功率跳变</h3>
+<p>把火力从低档调到高档，常能听到音调或音量明显变化，因为磁致伸缩的振幅近似随磁场平方增长，功率每升约 30%，噪声就可能翻倍。铸铁锅磁导率高、伸缩小，最安静；多层复合锅（夹铝夹铜）各层伸缩不一致、相互摩擦，反而最吵，这是选锅时容易被忽略的体验差异，也解释了为什么同炉不同锅响声不同。便宜的层叠钢锅常被抱怨「一开火就嗡嗡震」，换一口厚铸铁立刻安静许多，是磁致伸缩最直观的对照。同一口锅从 1 档到 8 档，声压级能差出近 10 dB，安静厨房里变化相当刺耳。把锅抬起一点离开面板，嗡声立刻变小，说明振动靠面板耦合传出，而非炉子自己在响。</p>
+<h3>散热风扇的呼呼声</h3>
+<p>炉内 IGBT 和线圈会发热，必须靠风扇强制风冷，运转时叠加一层 35–55 dB 的风声。高档持续加热时风扇全速，声音盖过磁致伸缩；小火待机时风扇停转，反而只剩锅体的低频嗡鸣。老旧机器的风扇轴承磨损后还会多出明显的啸叫或咔啦声，是故障前兆，不应忽视。新装机几乎无声，用上几年风声渐大，多是进灰或轴承老化，清灰换风扇即可恢复，不是炉子「变差」的必然。夏天室温高时风扇几乎不停，冬天则转转停停，是控制器在按线圈温度自适应调速的结果。长时间小火，风扇间歇启停的「呼—停—呼」节奏本身也是一种可辨识的声纹。</p>
+<h3>继电器与咔哒声</h3>
+<p>变频炉在切换功率档、启停时会听到清脆的「咔哒」，来自控制继电器或接触器吸合；定频炉每次到温停机、重新启动也有类似声响。这和微波炉的「叮」一样是电路动作声，不代表加热异常，属于正常机电噪声，但若咔哒后不启动则可能是继电器或电容坏了，需要检修。细心的人能听出「到温停机那一下」和「重新启动那一下」节奏不同，前者是温控触发、后者是温度回落后的自动恢复。有些机型在待机时也偶尔「嗒」一声，是内部继电器自检或进入低功耗，并非异常启动。定频机到温停机的「咔哒」后常伴一声电流断开的轻响，老用户据此判断它在偷停。</p>
+<h3>面板是凉的锅底是烫的</h3>
+<p>微晶玻璃面板本身不导磁、不发热，摸上去只是温温的；热量几乎全在锅底 0.3–0.6 毫米的趋肤层里产生。所以熄火后锅底红热、面板尚可徒手触摸，这是和燃气灶最直观的区别，也解释了为什么溢锅的汤水不会烧穿面板，只会结在玻璃表面，用湿布即可擦掉。但刚熄火别立刻用湿抹布猛擦热锅底正下方的面板，那里的玻璃会因骤冷产生应力纹，长期如此可能开裂。正因面板不热，电磁炉可以嵌入木质台面只留一层玻璃，这是它相比燃气灶在家装上的独有优势。玻璃面板上留水渍，工作后会被烤干留下水垢圈，是面板虽凉却受热辐射的间接证据。</p>
+<h3>只有铁磁锅认得</h3>
+<p>拿一块磁铁能吸住的锅（铸铁、430 不锈钢）才能用；铝锅、铜锅、玻璃锅放上去要么不热，要么炉子检测不到负载而在约 0.5 秒内断电保护。304 不锈钢有弱磁也可能勉强热，但效率明显偏低，不是所有标着「不锈钢」的锅都通用，要认准「电磁炉专用」或自己用磁铁试一下。挑锅时磁铁吸得住、锅底平、面积覆盖中心线圈，三者都满足才顺手，否则会出现「一边热一边凉」的尴尬。市面「复底锅」在铝芯外焊一层铁，就是为了既轻又认磁，是材料妥协的典型解法。磁铁能吸住但不代表效率高，430 与铸铁的差别在磁导率，吸热速度可差数倍。</p>
+<h3>空锅与缺水保护</h3>
+<p>炉子靠检测线圈谐振频率判断「有没有锅、是什么材质」。空载或非铁磁容器会让频率偏移，控制电路在约 0.5 秒内切断输出，所以干烧空锅不会一直加热，面板也不会因无锅而积热。这也是为什么小锅、畸形锅有时会被判定为「无锅」而拒绝工作，并非炉子坏了。把一口小奶锅搁在大炉中央偏一点，谐振检测就可能失败，显示屏闪错误码，这是保护逻辑在起作用而不是质量问题。把一张铝箔平铺盖住整个面板会被判无锅，揉成团放上去却可能局部加热，说明检测看的是等效负载而非形状。儿童放一枚硬币在面板中心会被判无锅不工作，但贴在边缘可能局部发热，需收好。</p>
+<h3>锅放偏了效率骤降</h3>
+<p>线圈是固定的螺旋，锅底必须大致覆盖中心区域才能耦合好。小锅放在大炉一角、或锅底严重变形悬空，磁场耦合变差，加热变慢甚至局部过热。这和「火苗大小可调」的燃气不同，电磁炉更挑锅具的摆放位置与底面积，锅太小往往热得慢且不均匀，配一口大底锅体验更好。有人把直径 16 厘米的锅放到 28 厘米炉面边缘，结果中心半天不热，正是耦合区错位所致，挪到正中立刻好转。双环线圈机型会按锅径自动切内圈或外圈，比单环更不怕放偏，是近年针对这毛病的硬件补丁。一对锅同时放双环炉，机器会分别识别大小自动分配功率，是放偏难题的软件解法。</p></div>
+  </section>
+
+  <section class="block">
+    <h2 class="bh">背后的原理</h2>
+    <p class="bnote">机制层面：为什么会出现上一节那些现象。</p>
+    <div class="prose"><h3>电、磁、涡流、热，四级跳</h3>
+<p>220 V / 50 Hz 市电先整流成约 310 V 直流，再由 IGBT 功率管斩波成 20–40 kHz 的高频交流。这个频率被刻意放在人耳听阈之上，避免线圈啸叫。</p>
+<p>高频电流流过螺旋铜线圈，产生垂直穿过面板的交变磁场。铁磁锅底在这个磁场里被反复磁化又退磁，内部的自由电子被驱动成一个个闭合环形电流——涡流。涡流遇上锅体自身的电阻，就成了焦耳热。</p>
+<h3>为什么只有铁锅能用</h3>
+<p>要形成有效的涡流，材料既要导磁（相对磁导率 μr 大），又要低电阻率。铸铁 μr 达 200–500，是最理想的；430 不锈钢 μr≈600 也合用。铝锅虽然导电极好，但 μr≈1，几乎没有磁耦合，功率上不去；玻璃、陶瓷更完全不响应。</p>
+<p>因为趋肤效应，90% 以上的涡流能量集中在锅底 0.3–0.6 毫米的表层，所以热量几乎全在锅底产生，面板温升通常不超过 30–60 ℃。</p></div>
+  </section>
+
+  <section class="block">
+    <h2 class="bh">现存实例</h2>
+    <p class="bnote">6 项。真实存在的对象、设施或已记录案例。</p>
+    <ul class="insts"><li><b>Westinghouse Cool Top 2（1973–1975）</b><p>西屋推出的早期家用电磁灶，定频 27 kHz、4 眼共 1600 W，微晶玻璃面板，是首批通过 UL 与 FCC 认证的电磁灶之一，售价约 1500 美元，证明家用电磁灶可安全上市，是技术落地的关键证据。 <a class="isrc" href="https://en.m.wiki.x.io/wiki/Induction_cooktop" target="_blank" rel="noopener noreferrer">来源</a></p></li>
+<li><b>Frigidaire 1950 年代展示灶</b><p>通用汽车旗下 Frigidaire 在 1950 年代做过电磁灶演示，曾让报纸隔着锅底而不燃，用以展示面板不发热这一特点，是概念普及的早期公开秀，比量产早了二十年。 <a class="isrc" href="https://cooktophunter.com" target="_blank" rel="noopener noreferrer">来源</a></p></li>
+<li><b>GM 1933 世博会演示</b><p>通用汽车在 1933 年芝加哥世博会以电磁感应加热做烹饪演示，是电磁炉概念的公开亮相之一，比真正量产早了约 40 年，属于概念先行的实例，当时尚无合适电子器件支撑。</p></li>
+<li><b>Sears Kenmore 1980 年代电磁灶</b><p>西尔斯自有品牌 Kenmore 在 1980 年代推出家用电磁灶型号 103.9647910，是电磁炉进入普通零售渠道的早期实例，价格开始走向大众，让电磁炉离开实验室货架。</p></li>
+<li><b>松下全金属对应电磁炉（2009/2017）</b><p>松下推出能加热铝、铜等非铁磁锅具的电磁炉，靠更高频率与特殊线圈绕法耦合低磁导率金属，打破了「只能铁锅」的长期限制，拓展了适用锅具，是技术突破的实例。</p></li>
+<li><b>IEC 家用电磁灶安全标准</b><p>国际电工委员会对家用电磁灶的泄漏磁场与结构安全有专门标准（如 IEC 60335-2-9），属于该品类的强制性安全规范，是少数以标准身份列入的实例，也是上市门槛。</p></li></ul>
+  </section>
+
+  <section class="block">
+    <h2 class="bh">进阶实例</h2>
+    <p class="bnote">7 项。把同一条规律放到更高量级上运行的真实工程对象：在役工业装置、大科学装置、尖端产品与国家级基准，每条标注所属装置或行业类别。</p>
+    <ul class="insts adv"><li><p class="ihead"><span class="icat">工业</span><b>中国潍坊 CONDUCT 钢壳感应熔炼炉</b></p><p class="idesc">中国山东潍坊康达（CONDUCT）电炉的钢壳中频感应熔炼炉，容量覆盖 0.5–60 t，额定功率 400 kW–45 MW，电源频率 50/60 Hz，炉内钢水温度可达 1650℃。感应线圈通入中频电流产生交变磁场，在炉料中感应出涡流直接发热熔化，年供应能力 ≥200 套，服役于铸造与回收冶炼厂。 <a class="isrc" href="https://www.conductfurnace.com/product-energy-saving-steel-shell-induction-melting-furnace.html" target="_blank" rel="noopener noreferrer">来源</a></p></li>
+<li><p class="ihead"><span class="icat">工业</span><b>中国洛阳鸿腾 10 t 中频感应熔炼炉</b></p><p class="idesc">中国河南洛阳鸿腾的 10 t 中频感应熔炼炉额定 7000 kW、频率 300 Hz，钢/铁熔化温度 1515℃，单炉 40–60 分钟，成套已出口东南亚、中东、非洲。电磁感应使金属自身发热，较燃料炉热效率更高、成分更可控，适用于铸钢与合金冶炼。 <a class="isrc" href="https://lyhtdq.en.made-in-china.com/product/ogrpYWVDsxhH/China-10-Ton-Ultra-High-Power-Medium-Frequency-Induction-Steel-Melting-Furnace-Fume-Extraction-System-for-Steel-Mill-Smelting-Plant.html" target="_blank" rel="noopener noreferrer">来源</a></p></li>
+<li><p class="ihead"><span class="icat">科研装置</span><b>俄罗斯列别杰夫所冷坩埚壳熔法</b></p><p class="idesc">俄罗斯莫斯科列别杰夫物理研究所于 1972 年以高频感应加热的冷坩埚「壳熔法」获专利：水冷分瓣铜坩埚中，高频磁场使物料感应发热、内壁凝成冷壳隔绝污染，温度可超 3000℃。该方法用于立方氧化锆晶体生长与核废料玻璃固化，是高温反应材料研究的经典手段。 <a class="isrc" href="https://www.azom.com/article.aspx?ArticleID=20319" target="_blank" rel="noopener noreferrer">来源</a></p></li>
+<li><p class="ihead"><span class="icat">科研装置</span><b>中国铁岭大型壳熔法设备</b></p><p class="idesc">中国辽宁铁岭高频设备厂研制的大型壳熔法设备功率 400–600 kW、频率 800 kHz–1 MHz，冷坩埚直径达 1 m，单炉装料 1 t 以上，成品率约 45%。高频感应使氧化锆粉末在自身冷壳内熔融而不沾污坩埚，用于人造宝石与特种晶体研究生产。 <a class="isrc" href="https://www.jewellery.org.cn/jewelleryorgwebsite/sub/public_link?label_id=381&amp;page_no=1&amp;element_id=3266&amp;element_type=0" target="_blank" rel="noopener noreferrer">来源</a></p></li>
+<li><p class="ihead"><span class="icat">工业</span><b>北美 Electroheat 钢壳感应熔炼炉</b></p><p class="idesc">北美 Electroheat Induction 的钢壳感应熔炼炉输出 50 kW–10 MW，容量 50 kg–20 t，采用 IGBT 中频电源与 PLC/SCADA 控制。交变磁场在金属内感生涡流发热，无需燃烧，热响应快、温度可控，用于钢、铁、铜、铝的铸造与回收熔炼。 <a class="isrc" href="https://electroheatinduction.com/induction-furnace-for-steel-melting" target="_blank" rel="noopener noreferrer">来源</a></p></li>
+<li><p class="ihead"><span class="icat">工业</span><b>中国江苏宇润 IGBT 中频感应熔炼炉</b></p><p class="idesc">中国江苏宇润（YuRun）的 IGBT 中频感应熔炼炉功率 100 kW–3000 kW、容量 50 kg–10 t，较可控硅炉节能 10–20%，已服务 800+ 客户、40+ 国家。电磁感应直接加热炉料，熔化电耗约 490–580 kWh/t，用于钢、铁、铜、铝及特种合金熔炼。 <a class="isrc" href="http://yrmfpower.com/" target="_blank" rel="noopener noreferrer">来源</a></p></li>
+<li><p class="ihead"><span class="icat">工业</span><b>加拿大 AMELT 钢架感应熔炼炉</b></p><p class="idesc">加拿大 Toronto 的 AMELT 钢架感应熔炼炉容量 1–40 t、功率 250 kW–12 MW，熔化速率 1–25 t/h。中频感应涡流使金属内部发热，取代冲天炉熔铸铁，粉尘与排放更低，适用于钢铁与有色金属铸造车间的大批量熔炼。 <a class="isrc" href="https://www.amelt.com/steelframe" target="_blank" rel="noopener noreferrer">来源</a></p></li></ul>
+  </section>
+
+  <section class="block">
+    <h2 class="bh">关键数字</h2>
+    <ul class="nums"><li><span class="nk">逆变频率</span><span class="nv">20–40 kHz</span><span class="nn">高于人耳听阈，避免可听噪声</span></li>
+<li><span class="nk">热效率</span><span class="nv">85%–93%</span><span class="nn">远高于燃气灶与电阻式电炉</span></li>
+<li><span class="nk">直流母线电压</span><span class="nv">≈ 310 V</span><span class="nn">由 220 V 市电整流得到</span></li>
+<li><span class="nk">涡流集中深度</span><span class="nv">锅底 0.3–0.6 mm</span><span class="nn">趋肤效应的直接结果</span></li>
+<li><span class="nk">空锅保护响应</span><span class="nv">≤ 0.5 s</span><span class="nn">通过 LC 谐振频率偏移识别空载或非铁磁锅具</span></li></ul>
+  </section>
+
+  <section class="block">
+    <h2 class="bh">常见误传说</h2>
+    <div class="myths"><div class="myth"><p class="claim"><span class="lab">误传</span>电磁炉「有辐射、会伤人」</p><p class="truth"><span class="lab">实情</span>它是 20–40 kHz 的低频交变磁场，且磁场被设计成集中耦合到锅底，离开面板几厘米就迅速衰减。与微波炉的 2.45 GHz 完全不是一回事。</p></div>
+<div class="myth"><p class="claim"><span class="lab">误传</span>所有不锈钢锅都能用电磁炉</p><p class="truth"><span class="lab">实情</span>304 不锈钢镍含量高、磁导率低，虽有弱磁性但加热效率可能不足 60%。要选 430/443 系列或明确标注「电磁炉专用」的锅。</p></div></div>
+  </section>
+
+  <section class="block">
+    <h2 class="bh">设计上的取舍</h2>
+    <p class="prose-p">用无磁、绝缘、耐高温的微晶玻璃做面板，既保证 95% 以上磁力线垂直穿透，又隔断电流与湿气；用 LC 谐振频率的偏移来判断「锅在不在、是什么材质」——一个电路顺带解决了安全检测。</p>
+  </section>
+
+  <section class="block">
+    <h2 class="bh">书库坐标</h2>
+    <p class="coord">原理主要落在 <b>05_电动力学与电磁学</b>，即本地物理书库（<code>OneDrive/physics</code>）中的对应主题目录。</p>
+    <p class="ev"><span class="evtag ev-B">证据 B 级</span>来源为成熟技术资料或权威科普，数值取行业常见范围</p>
+  </section>
+
+  <section class="block">
+    <h2 class="bh">外部来源</h2>
+    <ul class="srcs"><li><a href="https://pressbooks.nscc.ca/aviationelecronics/chapter/6-4-igbt-applications/" target="_blank" rel="noopener noreferrer">Atlantic Canada Pressbooks：IGBT Applications / Induction Heating</a></li>
+<li><a href="https://www.pconline.com.cn/ask/641342.html" target="_blank" rel="noopener noreferrer">太平洋科技：电磁炉加热原理与锅具适配</a></li></ul>
+  </section>
+
+  <section class="block">
+    <h2 class="bh">英文简述</h2>
+    <p class="bnote">与上文同一组事实的英文简版，73 词，供英文授课或检索英文资料时引用。</p>
+    <div class="enbrief"><p>An induction cooktop rectifies the mains and inverts it to 20 to 40 kHz. The coil sets up an alternating magnetic field, eddy currents are induced in the base of the pot, and the pot itself dissipates heat through ohmic loss, Q = I squared R t. Only the vessel is heated, so the glass surface stays relatively cool and the coupled efficiency reaches 85 to 93 percent, well above a resistive hotplate.</p></div>
+  </section>
+
+  <nav class="pager"><a class="pn prev" href="microwave.html"><small>上一件</small>微波炉</a><a class="pn next" href="pressure-cooker.html"><small>下一件</small>高压锅</a></nav>
+</article>
+
+</main>
+<footer class="footer">
+  <div class="wrap">
+    <p class="dim">身边的物理 · 日常器物与物理原理 · 26 件 · 13 个分支 · 静态页面，无图片、无表格、无搜索、无外部脚本与统计代码。所有条目均标注书库坐标与外部来源，误传澄清基于实验或权威资料。</p>
+  </div>
+</footer>
+<script src="../assets/app.js"></script>
+</body>
+</html>

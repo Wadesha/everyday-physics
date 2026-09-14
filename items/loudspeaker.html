@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>扬声器｜电动力学与电磁学 — 身边的物理</title>
+<meta name="description" content="音频电流通过置于恒定磁场中的音圈，受洛伦兹力 F = B·l·i 驱动，带动振膜往复振动推动空气形成声波。">
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<header class="topbar">
+  <div class="wrap bar">
+    <a class="brand" href="../index.html"><span class="brand-cn">身边的物理</span><span class="brand-en">EVERYDAY PHYSICS</span></a>
+    <nav class="nav"><a href="../index.html">索引</a><a href="../themes.html">按分支</a><a href="../method.html">方法与核对</a></nav>
+  </div>
+</header>
+<main class="wrap">
+
+<nav class="crumb"><a href="../index.html">索引</a><span>/</span><a href="../themes.html#t-em">电动力学与电磁学</a><span>/</span><em>扬声器</em></nav>
+
+<article class="detail">
+  <header class="dhead" style="--c:#1f6f8b">
+    <div class="dhead-tag">电动力学与电磁学</div>
+    <h1>扬声器</h1>
+    <p class="en">Loudspeaker</p>
+    <p class="lead">把电流的变化，翻译成空气的疏密。</p>
+  </header>
+
+  <div class="verdict" style="--c:#1f6f8b"><span class="vlabel">一句话结论</span><p>音频电流通过置于恒定磁场中的音圈，受洛伦兹力 F = B·l·i 驱动，带动振膜往复振动推动空气形成声波。</p></div>
+
+  <section class="block">
+    <h2 class="bh">现象详述</h2>
+    <p class="bnote">10 节 · 约 2027 字。只写观察到的事实与条件依赖，机制见下一节。</p>
+    <div class="prose ph"><h3>振膜会破裂</h3>
+<p>纸盆、丝膜或金属振膜都有机械极限，超过额定位移会被撕裂或永久变形，尤其高频单元的振膜薄如蝉翼。鼓纸打湿后刚度骤变，轻敲就裂，是常见物理失效而非玄学。所以开太大破音常是振膜而非电路先坏，破音之后往往不可逆。低音单元折环老化开裂也会漏气、低频发虚，振膜系统的机械寿命比很多人以为的短，是音箱越听越糊的硬件原因。单元纸盆受潮后刚度下降，低频失真先现，是南方潮湿环境的常见老化。</p>
+<h3>箱体在唱歌</h3>
+<p>音箱不只是装单元的盒子，木板本身会随声波振动辐射，发出染色。激光测振仪扫箱体表面，能看到某些频率上面板振幅竟接近振膜，染色就是这么来的。厚 MDF、内部加强筋与阻尼就是为了压住箱振；廉价薄箱的低频会混进木头味，测频响时箱体辐射肉眼可辨。把耳朵贴到箱体侧面能听到与正前方不同的箱声，好箱与差箱的差别一大半在板材与加固，而非单元本身。差箱在 150–300 Hz 出现箱振尖峰，正是人声厚度被染处。</p>
+<h3>阻抗随频率乱跳</h3>
+<p>标称 8 Ω 只是名义值，真实阻抗随频率剧烈变化：在谐振频率处 8 Ω 单元可冲到 30 Ω 以上，在其它频点又掉到 4 Ω 以下。分频器里的电容电感也随频率改写这道曲线，让标称值更只是个标签。功放按 8 Ω 设计却可能遇到 2 Ω 负载，瞬间电流需求翻倍。所以功放的 8 Ω/200 W 要读作在 8 Ω 时 200 W，遇 4 Ω 负载它能给更多、也可能因过热保护，阻抗曲线才是真规格。4 Ω 箱接 8 Ω 功放会欠推，音量未到顶先失真，常被误判为箱差。</p>
+<h3>削波才真伤机</h3>
+<p>音量拧过大时功放输出被削平成方波，高频谐波猛增，最易烧高音单元——很多人以为声音变小是保护，其实削波时平均功率与失真都升，高音单元常在此时冒烟。功放红灯亮（削波指示）就该收手，那不是提醒你开更大，而是提醒你再大会烧毁高音。方波含丰富奇次谐波，全塞进高音单元那点线圈里生热，几秒就能熔保险丝外的音圈，是开太大烧箱的真正机理。派对高潮段削波最凶，漆包线熔毁往往只在那几秒峰值方波里。</p>
+<h3>倒相孔的气声</h3>
+<p>带倒相孔（低音反射）的音箱在孔口会喷出气流，大音量低频时发出噗噗风噪，甚至可吹动近处纸片。小口径长管在极低频时孔口风速飙升，于是廉价炮常在大声压时先听见漏气的嘶。这是空气被当作虚拟振膜的副产物，也是孔口调谐失当的听感破绽。孔口风速过高还会产生湍流噪声与谐波失真，所以大动态音箱的倒相管都做得粗短，正是为压住这股漏风。倒相管口贴纸条可被吸住又吹开，是箱内气压往复的直观证明。</p>
+<h3>近场与远场不同</h3>
+<p>贴近单元时是近场，声压随距离不按平方反比衰减；站到数倍箱体尺寸外才是远场，此时 6 dB/倍距离才成立。近场里低音与高音声中心不重合还会引入离轴相位差，越近越明显。所以同一对箱，贴脸听与房间中央听频响判若两人。录音棚近场监听就故意让你坐近、避开房间反射，听到的是箱子的真声；家用远场却总被房间染色，位置差半米频响就变。近场监听摆位要求等距正三角，偏半米低频响应即塌陷。</p>
+<h3>效率只有百分之一</h3>
+<p>动圈扬声器电声转换效率仅约 1%–2%，绝大部分输入功率变成音圈的热。标称 100 W 里真正变成声的往往不到 2 W，余下 98 W 变热散掉。小书架箱要 1 W 才到约 90 dB，大系统靠几十只单元分摊功率才敢喊到 120 dB 以上，热量管理是硬约束。所以音箱背后那片散热片、分频器上的电阻都在默默吃功率，功放为此要留大余量，因为废热得从音圈经磁路散掉，否则音圈过热烧毁。长时间满功率后磁体钢温升明显，手摸烫手是废热堆积的体感。</p>
+<h3>大系统震耳欲聋</h3>
+<p>大型演出阵列轻松突破 120 dB，唐宁顿 1988 年一场 PA 在混音塔处峰值 124 dB；超近距离可达 130–140 dB，接近痛阈并损伤听力。声压每加 3 dB 危险翻倍，140 dB 只需秒级即造成永久阈移。所以越大声越好在物理上很快撞上人体安全墙。前排观众戴耳塞不是矫情：长时间 85 dB 以上就开始累积性损伤，演出现场远超这条线，护耳是工程而非胆小。OSHA 把 85 dB 列为 8 小时暴露上限，现场常破此线，须主动降噪。</p>
+<h3>房间的声染色</h3>
+<p>同一对箱在不同房间听感迥异：平行墙产生驻波使某些低频忽强忽弱，硬质反射面让高频刺耳。六面墙间声波来回形成梳状滤波，某些频率被抵销，耳朵听来就是某个频段发空或发闷。厂家消声室测出的平坦曲线，到你家客厅早被房间改写，摆位是免费却最有效的均衡器。低频驻波让 40 Hz 与 80 Hz 在某个角落轰鸣、另一处消失，这是房间几何而非音箱的锅，靠摆位与吸音才能救。吸音棉与书架可削房间峰谷，是零成本最有效的频响修正。</p>
+<h3>指向性随频率变窄</h3>
+<p>低频波长大于箱体，近似全向辐射；频率升高波长变短，声束逐渐收窄（beaming），高频只朝正前方。波长短到与单元口径相当时，声能像手电筒而非灯泡，这把物理尺子决定了高音必须正对耳朵。所以离轴坐下会明显觉得高音没了，恒指向号角正是为对抗这一现象而设计。家用箱离轴响应差，沙发偏一点就少一截空气感；演出线阵列靠多只单元耦合把覆盖角锁死，才让全场听到差不多的频响。号角把高音张开角锁到 ±30°，全场离轴听感一致，家用箱少用此结构。</p></div>
+  </section>
+
+  <section class="block">
+    <h2 class="bh">背后的原理</h2>
+    <p class="bnote">机制层面：为什么会出现上一节那些现象。</p>
+    <div class="prose"><h3>一次性完成三种能的转换</h3>
+<p>音频信号电流流入音圈，在永久磁铁提供的恒定磁场中受到洛伦兹力。力的大小与电流成正比，方向随电流方向反转——于是音圈在磁隙中前后往复。音圈粘在振膜上，振膜推动空气，形成疏密相间的声波。</p>
+<p>数学上可以写得非常干净：F = B·l·i，配上经典的质量—弹簧—阻尼系统 m·ẍ + R_m·ẋ + K·x = B·l·i，就得到扬声器的机电耦合基本方程。整个设计史基本就是在这几个参数之间做取舍。</p>
+<h3>反电动势：一个绕不开的副作用</h3>
+<p>音圈在磁场中运动，会按法拉第定律产生反电动势 e = B·l·ẋ。它在电路里表现为一个与运动状态相关的阻抗项，与电阻、电感一起构成扬声器的复阻抗 Z(ω) = R_e + jωL_e + (B·l)²/(R_m + j(ωm − K/ω))。</p>
+<p>所以标称的「8 Ω」是个名义值。典型 8 Ω 低音单元在自由空气谐振频率 f_S 处，阻抗峰值可超过 30 Ω——这也解释了为什么功放用大功率电阻做测试负载只能粗略近似真实扬声器。</p></div>
+  </section>
+
+  <section class="block">
+    <h2 class="bh">现存实例</h2>
+    <p class="bnote">6 项。真实存在的对象、设施或已记录案例。</p>
+    <ul class="insts"><li><b>1988 唐宁顿最大 PA</b><p>Monsters of Rock 音乐节（英国唐宁顿城堡）采用 Turbosound 共 360 只音箱，标称节目功率 523 kW，混音塔处平均 118 dB、峰值 124 dB，载入吉尼斯最大 PA 系统。 <a class="isrc" href="https://tech-in-japan.github.io/articles/404363/index.html" target="_blank" rel="noopener noreferrer">来源</a></p></li>
+<li><b>感恩而死墙声系统</b><p>1970 年代 Wall of Sound 由 586 只 JBL 等单元、11 路功放组成，高约 10 m、重数百吨，是当时最强现场音响，追求台上台下听到同一声音。 <a class="isrc" href="https://tech-in-japan.github.io/articles/404363/index.html" target="_blank" rel="noopener noreferrer">来源</a></p></li>
+<li><b>d&amp;b audiotechnik GSL</b><p>据部分来源称其 GSL 系统以 144 只音箱、432 台功放、4.8 MW 功率创下极高响度纪录（有报道称 246.2 dB，该数字远超任何实测、存在争议，应视为宣传而非物理事实）。 <a class="isrc" href="https://sixtrend.com/what-is-the-loudest-stereo-in-the-world/" target="_blank" rel="noopener noreferrer">来源</a></p></li>
+<li><b>Danley Matterhorn 扬声器</b><p>Danley Sound Labs 的 Matterhorn 号称可达 160 dB，能向 1 英里外传声，用于大型户外与应急广播，是单机声压级别的极端代表。 <a class="isrc" href="https://allforturntables.com/2023/10/04/what-is-the-worlds-strongest-speakers" target="_blank" rel="noopener noreferrer">来源</a></p></li>
+<li><b>Wilson Alexandria XLF</b><p>Wilson Audio 家用旗舰音箱可输出约 130 dB，每只含六只低音、四只中音、两只高音单元，是家用领域把声压与保真同时推到极致的实例。 <a class="isrc" href="https://sixtytrend.com/what-is-the-loudest-stereo-in-the-world/" target="_blank" rel="noopener noreferrer">来源</a></p></li>
+<li><b>IEC 60268-5 测量标准</b><p>国际电工委员会标准规定在消声室、参考轴 1 m、馈额定阻抗上 1 W 粉红噪声测特性灵敏度（dB/1W·1m），是行业统一的电声测量依据，本组仅此一条为标准类条目。 <a class="isrc" href="https://www.yuhanav.com/baike/651.html" target="_blank" rel="noopener noreferrer">来源</a></p></li></ul>
+  </section>
+
+  <section class="block">
+    <h2 class="bh">进阶实例</h2>
+    <p class="bnote">8 项。把同一条规律放到更高量级上运行的真实工程对象：在役工业装置、大科学装置、尖端产品与国家级基准，每条标注所属装置或行业类别。</p>
+    <ul class="insts adv"><li><p class="ihead"><span class="icat">消费产品</span><b>L-Acoustics K2 线阵列音箱</b></p><p class="idesc">L-Acoustics K2 三分频线阵列音箱为大型巡演主力，最大声压级 147 dB，频率响应 35 Hz–20 kHz，配置双 12 英寸低频、4×6.5 英寸中频与 2×3 英寸高频单元，单箱 56 kg，配合 LA 系列功放与 ArrayProcessing 波场处理实现远场均匀覆盖。其波阵面耦合（WST）原理使多箱串列形成准柱面波。</p></li>
+<li><p class="ihead"><span class="icat">基础设施</span><b>IMAX 商用影厅六声道扬声器阵</b></p><p class="idesc">IMAX 商用影厅采用 6 声道加低频扬声器阵（Sonics 定制），总功率常超 15,000 W，使用 JBL 2404H 高频、2445J 中高频、2123H 中频与 8 只 2245H 低频单元构成低频阵，频率范围 20 Hz–20 kHz。宽频大声压使爆炸与低频特效在 20 m 以上观众区仍清晰可辨。</p></li>
+<li><p class="ihead"><span class="icat">国防与安全</span><b>AN/SQS-53C 舰壳主动声呐</b></p><p class="idesc">美国海军 AN/SQS-53C 舰壳主动声呐由 576 个 TR-343 换能器基元组成平面阵，中心频率约 3 kHz（工作 1–5 kHz），声源级约 235 dB re 1 µPa@1 m，装备于阿利·伯克级驱逐舰用于潜艇探测与测距。每个压电陶瓷基元将电信号转机械振动向水中辐射声波，回波时延给出目标距离。</p></li>
+<li><p class="ihead"><span class="icat">科研装置</span><b>Holosonics Audio Spotlight AS-24 参量超声阵</b></p><p class="idesc">Holosonics Audio Spotlight AS-24 采用参量超声阵列，以高频超声波在空气中自解调形成可指向的 audible 光束，外形 60.3×60.3×1.5 cm、重 6 kg、功耗 65 W，在 1 m 处声压级约 85 dB。其发射两束频率相近的超声波，非线性互调在空气中产生差频可听声，使声音仅在特定方向被听见。</p></li>
+<li><p class="ihead"><span class="icat">消费产品</span><b>Sennheiser HE 1 静电耳机</b></p><p class="idesc">Sennheiser HE 1 静电耳机频率响应 8 Hz–100 kHz，最大声压级 114 dB，总谐波失真低于 0.01%，由 780 V 直流极化电压驱动 2.4 µm 振膜，配真空管耳放。静电换能器以固定极板与带电振膜之间的库仑力驱动空气，频带宽、失真极低，属参考级消费音频产品。</p></li>
+<li><p class="ihead"><span class="icat">基础设施</span><b>锐丰 LAX 国家体育场扩声系统</b></p><p class="idesc">广州锐丰（LAX）为 2008 北京奥运会国家体育场（鸟巢）提供扩声系统，部署 236 只 OP4922L 线阵列音箱，分 24 个分区覆盖九万余座席，经集中功放与数字处理实现均匀覆盖与高声压。该方案在露天大空间以波阵面耦合控制声场指向，是中国大型场馆扩声的代表工程。</p></li>
+<li><p class="ihead"><span class="icat">消费产品</span><b>d&amp;b audiotechnik KSL8 线阵列音箱</b></p><p class="idesc">d&amp;b audiotechnik KSL8 三分频大型线阵列音箱最大声压级 145 dB，频率响应 54 Hz–18 kHz，配置双 10 英寸低频、单 8 英寸中频与双 1.4 英寸高频压缩驱动，单箱 58 kg，侧置低频单元实现全频段心形指向以降低舞台后方外溢。ArrayProcessing 优化全场频率响应一致，广泛用于音乐节与剧院。 <a class="isrc" href="https://www.dbaudio.com/global/en/products/all/series/sl-series/?system=ksl" target="_blank" rel="noopener noreferrer">来源</a></p></li>
+<li><p class="ihead"><span class="icat">气象与海洋</span><b>ATOC 海洋声学测温声源</b></p><p class="idesc">美国 ATOC（海洋气候声学测温）项目在夏威夷考艾岛外海约 800 m 水深布设低频声源，中心频率 75 Hz、带宽约 35 Hz，声源级 195 dB re 1 µPa@1 m，辐射声功率约 260 W，每 4 小时发 20 分钟信号。声波沿深海声道跨北太平洋传播，用传播时间变化反演大尺度海洋温度与热含量。 <a class="isrc" href="https://www.federalregister.gov/d/01-20647" target="_blank" rel="noopener noreferrer">来源</a></p></li></ul>
+  </section>
+
+  <section class="block">
+    <h2 class="bh">关键数字</h2>
+    <ul class="nums"><li><span class="nk">洛伦兹力</span><span class="nv">F = B·l·i</span><span class="nn">B 磁隙磁感应强度、l 有效导体长度、i 电流</span></li>
+<li><span class="nk">常用标称阻抗</span><span class="nv">4 Ω / 8 Ω</span><span class="nn">家用多为 8 Ω，车载多为 4 Ω</span></li>
+<li><span class="nk">谐振处阻抗峰值</span><span class="nv">8 Ω 单元可超 30 Ω</span><span class="nn">所以标称值只是名义值</span></li>
+<li><span class="nk">典型灵敏度</span><span class="nv">85–92 dB（1 W @ 1 m）</span><span class="nn">衡量电声转换效率的关键指标</span></li>
+<li><span class="nk">电声转换效率</span><span class="nv">仅约 1%–2%</span><span class="nn">绝大部分输入功率变成了音圈的热</span></li></ul>
+  </section>
+
+  <section class="block">
+    <h2 class="bh">常见误传说</h2>
+    <div class="myths"><div class="myth"><p class="claim"><span class="lab">误传</span>扬声器是「把电信号直接变成声音」</p><p class="truth"><span class="lab">实情</span>中间有明确的机械环节：电能先转磁场能，再转振膜机械振动，最后成声能。效率只有 1%–2%，其余都变成热。</p></div>
+<div class="myth"><p class="claim"><span class="lab">误传</span>8 Ω 就是 8 欧姆电阻</p><p class="truth"><span class="lab">实情</span>实际是电阻、电感与机械共振的等效组合，随频率剧烈变化，谐振处可达标称值的四倍。</p></div></div>
+  </section>
+
+  <section class="block">
+    <h2 class="bh">设计上的取舍</h2>
+    <p class="prose-p">音圈骨架材料（铝、Kapton、玻纤）要在导热、刚度、轻量之间取舍：导热好能降低热压缩、提高功率承受；但运动质量大会拖慢高频响应。定心支片与折环则负责把音圈锁定在磁隙正中，任何偏心都会变成「擦圈」失真。</p>
+  </section>
+
+  <section class="block">
+    <h2 class="bh">书库坐标</h2>
+    <p class="coord">原理主要落在 <b>05_电动力学与电磁学</b>，即本地物理书库（<code>OneDrive/physics</code>）中的对应主题目录。</p>
+    <p class="ev"><span class="evtag ev-A">证据 A 级</span>有实验结论、原始论文或权威机构数据支撑</p>
+  </section>
+
+  <section class="block">
+    <h2 class="bh">外部来源</h2>
+    <ul class="srcs"><li><a href="https://eng.libretexts.org/Bookshelves/Electrical_Engineering/Electronics/Semiconductor_Devices_-_Theory_and_Application_(Fiore)/08:_BJT_Class_A_Power_Amplifiers/8.4:_Loudspeakers" target="_blank" rel="noopener noreferrer">Engineering LibreTexts：Loudspeakers（含阻抗模型与效率）</a></li>
+<li><a href="https://iwistao.com/en-fi/blogs/iwistao/dynamic-loudspeaker-electro-acoustic-conversion-theory-and-design-analysis" target="_blank" rel="noopener noreferrer">动圈扬声器电声转换理论与设计分析（含公式推导）</a></li></ul>
+  </section>
+
+  <section class="block">
+    <h2 class="bh">英文简述</h2>
+    <p class="bnote">与上文同一组事实的英文简版，77 词，供英文授课或检索英文资料时引用。</p>
+    <div class="enbrief"><p>Audio current flows through a voice coil sitting in a constant magnetic field, and the Lorentz force, F = B l i, drives the coil back and forth. The coil moves the diaphragm, the diaphragm pushes on the air, and the air carries the sound away. Electrical impedance is not flat: at the mechanical resonance of a nominal 8 ohm driver the impedance can rise above 30 ohms, which is why amplifier ratings and enclosure tuning matter.</p></div>
+  </section>
+
+  <nav class="pager"><a class="pn prev" href="green-laser.html"><small>上一件</small>绿光激光笔</a><a class="pn next" href="smoke-detector.html"><small>下一件</small>烟雾报警器</a></nav>
+</article>
+
+</main>
+<footer class="footer">
+  <div class="wrap">
+    <p class="dim">身边的物理 · 日常器物与物理原理 · 26 件 · 13 个分支 · 静态页面，无图片、无表格、无搜索、无外部脚本与统计代码。所有条目均标注书库坐标与外部来源，误传澄清基于实验或权威资料。</p>
+  </div>
+</footer>
+<script src="../assets/app.js"></script>
+</body>
+</html>

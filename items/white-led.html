@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>白光 LED｜凝聚态与固体物理 — 身边的物理</title>
+<meta name="description" content="电子与空穴在半导体 p-n 结复合发光，波长由带隙唯一决定；蓝光 LED 加上黄色荧光粉混出白光，效率约 300 lm/W、寿命约 10 万小时。">
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<header class="topbar">
+  <div class="wrap bar">
+    <a class="brand" href="../index.html"><span class="brand-cn">身边的物理</span><span class="brand-en">EVERYDAY PHYSICS</span></a>
+    <nav class="nav"><a href="../index.html">索引</a><a href="../themes.html">按分支</a><a href="../method.html">方法与核对</a></nav>
+  </div>
+</header>
+<main class="wrap">
+
+<nav class="crumb"><a href="../index.html">索引</a><span>/</span><a href="../themes.html#t-condmat">凝聚态与固体物理</a><span>/</span><em>白光 LED</em></nav>
+
+<article class="detail">
+  <header class="dhead" style="--c:#6b5b1e">
+    <div class="dhead-tag">凝聚态与固体物理</div>
+    <h1>白光 LED</h1>
+    <p class="en">White LED</p>
+    <p class="lead">蓝光花了 30 年才做出来——不是因为它更难，而是因为材料太难长。</p>
+  </header>
+
+  <div class="verdict" style="--c:#6b5b1e"><span class="vlabel">一句话结论</span><p>电子与空穴在半导体 p-n 结复合发光，波长由带隙唯一决定；蓝光 LED 加上黄色荧光粉混出白光，效率约 300 lm/W、寿命约 10 万小时。</p></div>
+
+  <section class="block">
+    <h2 class="bh">现象详述</h2>
+    <p class="bnote">10 节 · 约 2113 字。只写观察到的事实与条件依赖，机制见下一节。</p>
+    <div class="prose ph"><h3>结温决定亮度</h3>
+<p>厂商标称光通量多在 25 ℃、脉冲电流下测得，此时结区几乎不发热；实际使用中结温常达 60–100 ℃，光输出先掉 10%–15%，所以标 1000 流明的灯泡到手常不到标称值。更反直觉的是：标称是在最优温度点，而你家的灯被封在吸顶灯里、夏天顶板 50 ℃ 以上，结温更高、折扣更大。买灯看标称流明不如看「额定温度下」的维持值，后者才是你真能得到的亮度，封顶灯具要额外打折扣。手摸灯壳若明显发烫，说明结温已高、实际亮度比标称缩水。</p>
+<h3>热失控是隐形杀手</h3>
+<p>InGaN 二极管正向电压随温度下降，若用恒压源驱动，电压一降电流就升、更热再降电压，正反馈可在瞬间烧断键合线。所以高功率 LED 必须用恒流驱动，电流锁定、电压随温度自己浮动。廉价「恒压加电阻」方案在长时间运行后极易走进热失控，表现为突然灭灯且芯片发黑。这也说明同样一颗灯珠，配好驱动能用几万小时、配差驱动几小时就废，差别在电源而非发光体，驱动比灯珠更该被挑。灯珠发黑、整灯骤灭，多半是驱动没恒流、走了热失控。</p>
+<h3>颜色随温度漂移</h3>
+<p>红光 LED 每升温 10 ℃ 亮度掉约 10%，蓝光仅约 2%；由红绿蓝三色混白的灯在高温下会偏青绿，因为红成分掉得多。荧光粉转换的白光则会因硅胶黄化而随时间转冷蓝，颜色漂移是热与老化的共同结果。这意味着你冬天觉得很舒服的暖白，夏天长时间亮着可能悄悄变冷；高档灯具用陶瓷基板与耐黄化硅胶来压住这条曲线，廉价灯则肉眼可见地越用越蓝，几年后色温明显跑偏。夏天灯用久发蓝，正是红荧光粉随温衰减快于蓝。</p>
+<h3>调光里的颜色陷阱</h3>
+<p>模拟调光降低电流会让白光偏蓝（色温升高），低亮度下尤其明显；PWM 调光在 1 kHz 以上快速通断、保持光谱不变，高档灯具用后者避免低亮度变色与可见闪烁。一个常见翻车：用普通可控硅调光器接 LED，灯在低位闪、且色温飘。正确做法是选标明「切相调光兼容」或专配 PWM 驱动的灯具。对摄影与展陈而言，颜色随亮度稳定比峰值流明更重要，这恰是模拟调光的软肋，也是价格差的一部分。低位嫌灯变色，先确认用的是 PWM 而非模拟调光。</p>
+<h3>闪烁来自驱动</h3>
+<p>廉价 mains 直驱灯会把 100/120 Hz 纹波带进亮度，肉眼或手机摄像头能拍到闪；长期暴露与头痛、眼疲劳相关。好驱动配合足够电容与恒流，闪烁百分比可压到个位数、远低于健康阈值。这是价格差异的核心之一：同样标 800 lm，驱动用料差一倍，体验天差地别。判别办法是用手机慢动作拍灯面，有滚动黑条的就是高频纹波未滤净，无条的相对干净，买前花三十秒就能筛掉一批。手机慢动作拍灯面有滚动条，就是驱动纹波没滤净。</p>
+<h3>显色与效率的交换</h3>
+<p>平均显色指数 Ra 从 70 提到 80，光效约降 10%；提到 90 再降约 20%，因为补红荧光粉发出的一部分光落到不可见的近红外，白白耗电。所以「高显色必暗一些」是物理交换，不是厂商偷工。选灯时 Ra80 已是舒适底线，Ra90 以上适合化妆、展陈、对色彩敏感的场景；只求照亮走廊，Ra70 也够。把显色与流明一起看，才不会被「超亮」宣传带偏——超高流明常是以低显色换来的。要色彩准就接受稍暗，是物理上绕不开的取舍。</p>
+<h3>静电比你能感觉的更狠</h3>
+<p>高功率 InGaN LED 的人体模型耐压仅 500–2000 V，一次你毫无知觉的静电就能在 epitaxy 层戳出分流孔，灯还能亮却漏电、早衰。拿取芯片必须接地腕带，产线地板与托盘都导电。对终端用户影响小，因为灯已封装；但 DIY 换灯珠、修灯板时徒手摸裸露灯珠，那一下的「无感」可能是潜伏失效起点。这说明 LED 的脆弱不在发光原理，而在那层纳米级外延结构对电场极其敏感，封装才是它的铠甲。徒手换灯珠前摸一下水管，是 DIY 防静电的零成本招。</p>
+<h3>散热器烫、灯面凉</h3>
+<p>LED 几乎不靠红外散热，热量从结区沿基板导到散热器，故发光面摸着温、铝壳或底板却可能烫手；封死在密闭灯具里会形成热陷阱，寿命骤减。一个反直觉观察：球泡灯塑料壳不烫，是因为热量被导到灯头金属螺口而非外壳；若灯头被严密包裹（闭口吊灯），热量出不去，结温飙升。所以「灯不烫」不等于「不热」，真正要摸的是灯头与底座。选「密闭空间适用」标的灯才稳妥，普通球泡塞进闷灯罩会早衰。灯头金属螺口烫手而塑料壳温，是热量走螺口的证据。</p>
+<h3>寿命按 L70 算</h3>
+<p>标称 50000 小时通常指光通量衰减到 70% 的时间，而非彻底不亮。实际寿命取决于散热：底板温度压在 85 ℃ 以下，才能接近厂方给出的衰减曲线；封死在闷顶里，可能一万小时就掉到 70%。用户常抱怨「标五万小时只用两年」，多因安装环境过热而非虚标。理解 L70 后该看使用温度而非裸数字，并把「够亮的时间」而非「灭灯的时间」当成真实寿命，两者可差数倍，闷顶安装尤其要打折。标五万小时多用两年就暗，往往是装进闷罩所致。</p>
+<h3>蓝光峰肉眼可辨</h3>
+<p>荧光粉转换的白光在光谱上仍留一个明显的 445–455 nm 蓝光峰，低色温灯蓝峰弱、高色温更强；这也是夜间过量蓝光争议的来源，与「纯白」的直觉相反。直视高色温 LED 光源会觉得刺眼发青，正来自这个峰。选 2700–3000 K 的灯把蓝峰压低，更适合卧室；书房用 4000 K 兼顾清醒与舒适。所谓「无蓝光危害」多指符合 RG0 分级，并非没有蓝光峰——峰仍在，只是强度与暴露时长在限值内。睡前把灯调成 2700 K，就是把蓝峰压到最低档。</p></div>
+  </section>
+
+  <section class="block">
+    <h2 class="bh">背后的原理</h2>
+    <p class="bnote">机制层面：为什么会出现上一节那些现象。</p>
+    <div class="prose"><h3>波长 = 带隙，一道简单的换算</h3>
+<p>LED 不是热光源。电子从导带落到价带与空穴复合时，多余的能量以一个光子放出。光子能量就等于带隙宽度，反过来唯一确定了颜色：红光需 1.4 eV，绿光约 2.26 eV，蓝光要 2.6–3.4 eV。</p>
+<p>问题就出在这里：带隙越宽，材料越难做。GaN（氮化镓）带隙 3.4 eV 正好合适，但它没有便宜的晶格匹配衬底，早期在蓝宝石上长出来的晶体位错密度高达约 10⁹ cm⁻²——缺陷会把能量变成热而不是光。</p>
+<h3>两个「不可能」被解决</h3>
+<p>第一是晶体质量：赤崎勇与天野浩用低温 AlN 缓冲层把位错压到约 10⁸ cm⁻²；中村修二改用低温 GaN 成核层 + 高温生长，同样拿到器件级晶体。第二是 p 型掺杂：掺 Mg 的 GaN 被 Mg–H 络合物自补偿，一度被认为是死路；后来发现电子束照射或高温退火能把氢赶走、激活受主，空穴浓度达到 10¹⁷ cm⁻³ 量级。</p>
+<p>1993 年高亮度蓝光 LED 商业化，1994 年 InGaN/AlGaN 双异质结把量子效率做到 2.7%。之后「蓝光芯片 + YAG:Ce 黄色荧光粉」的路线成为白光主流——部分蓝光被荧光粉转成黄光，未转换的蓝光与黄光混合即得白光。这也解释了为什么白光 LED 在关灯时看起来是黄色的。</p></div>
+  </section>
+
+  <section class="block">
+    <h2 class="bh">现存实例</h2>
+    <p class="bnote">6 项。真实存在的对象、设施或已记录案例。</p>
+    <ul class="insts"><li><b>Cree XLamp 系列大功率 LED</b><p>科锐的高功率照明封装（如 XHP、XSP 系列）用于路灯与灯具，单颗可达上百流明、系统光效逾 100 lm/W，是 LED 照明普及的关键器件之一。</p></li>
+<li><b>洛杉矶 LED 路灯改造</b><p>该市自 2009 年起把逾 14 万盏路灯换为 LED，至 2022 年约 98% 完成，照明用电降约 64%、年省约 114 GWh，是最大规模市政改造之一。 <a class="isrc" href="https://www.langlide.com/knowledge/led-street-lighting-energy-savings-report-2026-before-after-city-case-data-2" target="_blank" rel="noopener noreferrer">来源</a></p></li>
+<li><b>飞利浦 Lumileds Luxeon</b><p>较早商用化的高功率 LED 系列之一，用于通用照明与车灯，是蓝光芯片加荧光粉白光路线的代表产品，推动白光 LED 从指示走向照明。</p></li>
+<li><b>日亚化学蓝光 LED 与诺贝尔奖</b><p>1993 年前后日亚化学实现高亮度蓝光 LED 商用，使「蓝光芯片 + 黄荧光粉」白光成主流；赤崎勇、天野浩、中村修二因此获 2014 年诺贝尔物理学奖。 <a class="isrc" href="https://nobel-prize.net/en/nobel/fields/nobel-prize-in-physics/2014/0" target="_blank" rel="noopener noreferrer">来源</a></p></li>
+<li><b>智能手机闪光与屏下 LED</b><p>现代手机补光、键盘灯与屏幕背光大量使用白光 LED，典型单颗 20–60 mA、几十流明；其蓝光峰与荧光粉黄光混合即日常所见的白光。</p></li>
+<li><b>车用 LED 前照灯</b><p>近十五年白光 LED 进入汽车远近光与日行灯，因光效高、响应快、寿命长，逐步替代卤素与氙气灯，是白光 LED 在强规范领域落地的实例。</p></li></ul>
+  </section>
+
+  <section class="block">
+    <h2 class="bh">进阶实例</h2>
+    <p class="bnote">8 项。把同一条规律放到更高量级上运行的真实工程对象：在役工业装置、大科学装置、尖端产品与国家级基准，每条标注所属装置或行业类别。</p>
+    <ul class="insts adv"><li><p class="ihead"><span class="icat">工业</span><b>深圳 TUBU 全光谱温室补光灯</b></p><p class="idesc">深圳 TUBU 科技（中国深圳，2014 年起研产 LED）的全光谱温室补光灯，单机功率 760 W 或 1200 W，可串联最多 80 台，兼容现有 HPS 布局。红光与蓝光驱动植物光合，远红光促进开花，靠可调光谱与光强替代部分日光，用于商业温室与垂直农场补光，节能并提升作物一致性。 <a class="isrc" href="https://www.tu-bu.com/best-led-grow-lights-for-commercial-farming/" target="_blank" rel="noopener noreferrer">来源</a></p></li>
+<li><p class="ihead"><span class="icat">工业</span><b>中国 LED 植物照明市场（2024）</b></p><p class="idesc">据集邦咨询，2024 年全球 LED 植物照明市场规模约 13.15 亿美元，预计 2029 年增至 20.56 亿美元，年复合成长率 9.4%。温室大棚占六成以上份额，主流产品功率已转向 600 至 1500 W，光合光子效率（PPE）持续提升，是白色 LED 在农业光照中的规模化应用写照。 <a class="isrc" href="https://finance.sina.com.cn/stock/hkstock/hkstocknews/2025-04-16/doc-inetiweu6890090.shtml" target="_blank" rel="noopener noreferrer">来源</a></p></li>
+<li><p class="ihead"><span class="icat">通信</span><b>Oledcomm LiFiMAX2G 可见光通信</b></p><p class="idesc">法国 Oledcomm 的 LiFiMAX2G 系统于 2023 年 CES 发布，可见光通信速率提升至 2 Gbps，靠 LED 灯泡以每秒上千万次闪烁编码数据，光信号不穿墙、抗干扰。已在医院 MRI 室、工厂 AGV 等电磁敏感场景部署，是白色 LED 同时承担照明与通信的典型商用方案。 <a class="isrc" href="https://baike.baidu.com/item/Oledcomm/19416766" target="_blank" rel="noopener noreferrer">来源</a></p></li>
+<li><p class="ihead"><span class="icat">通信</span><b>激光基 LiFi 100 Gbps 实验系统</b></p><p class="idesc">英国思克莱德大学与 Kyocera SLD Laser 等演示的激光型 LiFi 系统，单个 SMD 光源可输出 450 流明白光，亮度逾 1000 cd/mm²；十通道波分复用实现逾 100 Gbps 室内接入，户外点对点 500 米达 4.8 Gbps。靠高速调制白光二极管或激光完成可见光通信，发表于 2024 年 Journal of Lightwave Technology。 <a class="isrc" href="https://arxiv.org/abs/2402.16144" target="_blank" rel="noopener noreferrer">来源</a></p></li>
+<li><p class="ihead"><span class="icat">科研装置</span><b>成都辰显光电 TFT 基 Micro-LED 量产线</b></p><p class="idesc">辰显光电（中国成都，孵化自维信诺）2024 年 12 月在成都点亮中国大陆首条 TFT 基 Micro-LED 量产线，投资逾 42 亿元。发布 88 英寸 P0.5 拼接屏，采用 25 微米芯片、巨量转移良率 99.995%、3300 万颗 LED，峰值亮度 2000 nits、对比度 26000:1、99% DCI-P3，是白色与全彩 Micro-LED 显示的产业化里程碑。 <a class="isrc" href="https://xinhuanet.com/info/20241219/d57bc20186fb4630a52a722edf2574f2/c.html" target="_blank" rel="noopener noreferrer">来源</a></p></li>
+<li><p class="ihead"><span class="icat">工业</span><b>镭昱 PowerMatch 1 全彩 Micro-LED 微显示</b></p><p class="idesc">镭昱 2024 年 9 月推出量产级 PowerMatch 1 全彩 Micro-LED 微显示屏，屏幕尺寸 0.13 英寸，分辨率 320×240，峰值亮度 25 万 nits，像素密度 6350 PPI。靠微缩 LED 阵列自发光实现超高亮度，面向 AR 眼镜与微显示，是白色 LED 向微显示延伸的高密度集成代表。 <a class="isrc" href="https://www.ledinside.cn/news/20250115-58734.html" target="_blank" rel="noopener noreferrer">来源</a></p></li>
+<li><p class="ihead"><span class="icat">工业</span><b>诺视科技 全彩 XGA Micro-LED 微显示芯片</b></p><p class="idesc">诺视科技 2024 年 8 月推出量产级单片全彩 XGA Micro-LED 微显示芯片，峰值亮度逾 50 万 nits；并与湖南大学等制备出 0.39 英寸、40 万 nits、3300 PPI 的全彩微显示芯片。靠氮化镓微型 LED 阵列自发光，面向 AR 眼镜近眼显示，是白色与全彩 Micro-LED 在微显示领域的产业化进展。 <a class="isrc" href="https://www.ledinside.cn/news/20250115-58734.html" target="_blank" rel="noopener noreferrer">来源</a></p></li>
+<li><p class="ihead"><span class="icat">工业</span><b>辰显 135 英寸 P0.7 Micro-LED 无缝屏</b></p><p class="idesc">辰显光电（成都）2024 年发布的 135 英寸 P0.7 TFT 基 Micro-LED 无缝显示屏，亮度 1500 nits、98% DCI-P3、10 bit 色深，功耗 ≤240 W/m²，物理拼缝 ≤0.1 毫米。靠玻璃基 TFT 混合驱动实现像素级独立控制，用于高端会议室、指挥中心与数字标牌，比传统 PCB 方案节能逾 20%。 <a class="isrc" href="https://www.minimicroled.com/?p=15260/" target="_blank" rel="noopener noreferrer">来源</a></p></li></ul>
+  </section>
+
+  <section class="block">
+    <h2 class="bh">关键数字</h2>
+    <ul class="nums"><li><span class="nk">GaN 带隙</span><span class="nv">3.4 eV</span><span class="nn">直接带隙，适合高效发光</span></li>
+<li><span class="nk">各色 LED 所需能量</span><span class="nv">红 1.4 eV / 绿 2.26 eV / 蓝 2.6–3.4 eV</span><span class="nn">带隙越大、所需驱动电压越高</span></li>
+<li><span class="nk">蓝光波长</span><span class="nv">450–495 nm</span><span class="nn">InGaN 量子阱发射区间</span></li>
+<li><span class="nk">后来白光 LED 的光视效能</span><span class="nv">已超 300 lm/W</span><span class="nn">白炽灯约 16 lm/W、荧光灯约 70 lm/W</span></li>
+<li><span class="nk">典型寿命</span><span class="nv">约 100000 h</span><span class="nn">远超白炽灯与荧光灯</span></li>
+<li><span class="nk">照明占全球用电</span><span class="nv">约 15%–30%（不同统计口径）</span><span class="nn">改进照明效率的杠杆效应极大</span></li></ul>
+  </section>
+
+  <section class="block">
+    <h2 class="bh">常见误传说</h2>
+    <div class="myths"><div class="myth"><p class="claim"><span class="lab">误传</span>LED 早就有红绿，蓝光只是「再补一个颜色」</p><p class="truth"><span class="lab">实情</span>蓝光在材料学上是完全不同的难题：GaN 晶体生长与 p 型掺杂两项都曾被认定为不可能，为此花了约 30 年。</p></div>
+<div class="myth"><p class="claim"><span class="lab">误传</span>白光 LED 是三种颜色芯片混出来的</p><p class="truth"><span class="lab">实情</span>主流路线不是 RGB 三芯片，而是「蓝光芯片 + 黄色荧光粉」的部分转换方案，成本更低、工艺更简单。</p></div></div>
+  </section>
+
+  <section class="block">
+    <h2 class="bh">设计上的取舍</h2>
+    <p class="prose-p">用 InGaN/GaN 多量子阱做有源区，靠铟组分的局域化俘获激子、抑制非辐射复合，把内量子效率抬到 60%–80%；再用高折射率材料的出光结构把光从晶体里「引」出来。这是材料、晶体生长、器件物理、光学四个方向同时到位才成立的成果。</p>
+  </section>
+
+  <section class="block">
+    <h2 class="bh">书库坐标</h2>
+    <p class="coord">原理主要落在 <b>07_凝聚态与固体物理 · 03_原子分子与光谱</b>，即本地物理书库（<code>OneDrive/physics</code>）中的对应主题目录。</p>
+    <p class="ev"><span class="evtag ev-A">证据 A 级</span>有实验结论、原始论文或权威机构数据支撑</p>
+  </section>
+
+  <section class="block">
+    <h2 class="bh">外部来源</h2>
+    <ul class="srcs"><li><a href="https://www.llas.cas.cn/kxcb/kpwz/201411/t20141103_299669.html" target="_blank" rel="noopener noreferrer">2014 年诺贝尔物理学奖科学背景（中科院上海光机所译）</a></li>
+<li><a href="https://www.wikiwand.com/EN/LED" target="_blank" rel="noopener noreferrer">Wikipedia / Wikiwand：Light-emitting diode（Physics of light production）</a></li>
+<li><a href="https://nobel-prize.net/en/nobel/fields/nobel-prize-in-physics/2014/0" target="_blank" rel="noopener noreferrer">Nobel Prize 2014 官方说明</a></li></ul>
+  </section>
+
+  <section class="block">
+    <h2 class="bh">英文简述</h2>
+    <p class="bnote">与上文同一组事实的英文简版，77 词，供英文授课或检索英文资料时引用。</p>
+    <div class="enbrief"><p>Electrons and holes recombine across a semiconductor p-n junction and emit photons whose energy is fixed by the band gap: 3.4 eV for GaN, giving blue at 450 to 495 nm. Coating the blue die with a yellow phosphor mixes the two colours into white, at about 300 lm/W and a service life near 100,000 hours. Red needs only 1.4 eV and green 2.26 eV, which is why red and green LEDs existed decades before blue ones.</p></div>
+  </section>
+
+  <nav class="pager"><a class="pn prev" href="fluorescent-lamp.html"><small>上一件</small>荧光灯</a><a class="pn next" href="solar-panel.html"><small>下一件</small>太阳能充电板</a></nav>
+</article>
+
+</main>
+<footer class="footer">
+  <div class="wrap">
+    <p class="dim">身边的物理 · 日常器物与物理原理 · 26 件 · 13 个分支 · 静态页面，无图片、无表格、无搜索、无外部脚本与统计代码。所有条目均标注书库坐标与外部来源，误传澄清基于实验或权威资料。</p>
+  </div>
+</footer>
+<script src="../assets/app.js"></script>
+</body>
+</html>

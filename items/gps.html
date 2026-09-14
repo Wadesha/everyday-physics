@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>手机 GPS｜相对论、引力与天体物理 — 身边的物理</title>
+<meta name="description" content="卫星钟因运动每天慢 7.2 μs、因引力势更高每天快 45.8 μs，净快 38.6 μs；不修正的话，定位误差每天累积约 11 km。">
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<header class="topbar">
+  <div class="wrap bar">
+    <a class="brand" href="../index.html"><span class="brand-cn">身边的物理</span><span class="brand-en">EVERYDAY PHYSICS</span></a>
+    <nav class="nav"><a href="../index.html">索引</a><a href="../themes.html">按分支</a><a href="../method.html">方法与核对</a></nav>
+  </div>
+</header>
+<main class="wrap">
+
+<nav class="crumb"><a href="../index.html">索引</a><span>/</span><a href="../themes.html#t-rel">相对论、引力与天体物理</a><span>/</span><em>手机 GPS</em></nav>
+
+<article class="detail">
+  <header class="dhead" style="--c:#6a3d9a">
+    <div class="dhead-tag">相对论、引力与天体物理</div>
+    <h1>手机 GPS</h1>
+    <p class="en">GPS</p>
+    <p class="lead">你手机里那颗定位芯片，每一次定位都在解相对论方程。</p>
+  </header>
+
+  <div class="verdict" style="--c:#6a3d9a"><span class="vlabel">一句话结论</span><p>卫星钟因运动每天慢 7.2 μs、因引力势更高每天快 45.8 μs，净快 38.6 μs；不修正的话，定位误差每天累积约 11 km。</p></div>
+
+  <section class="block">
+    <h2 class="bh">现象详述</h2>
+    <p class="bnote">9 节 · 约 2016 字。只写观察到的事实与条件依赖，机制见下一节。</p>
+    <div class="prose ph"><h3>你其实同时听四套系统</h3>
+<p>现代手机的定位芯片并不只收美国 GPS，同一时刻往往锁定的还有俄罗斯 GLONASS、欧盟 Galileo、中国北斗，合计二三十颗星同时在解算。多系统并用让高楼之间、峡谷里也能迅速定位，单系统的几何盲区被补上，冷天里首颗捕获也更快。所以「GPS」早已变成卫星定位的俗称，真正的 GPS 只是其中一套，其余三家同样全天候免费开放，芯片厂从高通到联发科都默认四系统兼容。手机状态栏里那个定位标的精度圈，正是四系统叠加后缩小的，单 GPS 时圆圈会明显变大。</p>
+<h3>精度取决于几何分布</h3>
+<p>定位靠测量每颗星信号的传播时间再交会得到位置，几何布局越舒展，误差越小，反之若卫星挤在一小块天区，精度稀释因子数值飙升，水平精度能从约 1 m 跌到十几米。因此接收机总在挑星、挑组合以压低这个因子（英文称 dilution of precision），城市里靠多系统补足可见星数，开阔天空下单 GPS 双频接收机也能到 1 m 上下。导航软件里那条蓝线在楼宇间跳，多半是精度稀释因子变差而非卫星丢了，车出高架桥立刻回正，单频机在树荫下常漂到三五米。</p>
+<h3>电离层延迟最扰民</h3>
+<p>信号穿过电离层会被等离子体放慢，单层延迟可达数米，是民用单频最大的误差源，且白天比夜间大、太阳活动高年更甚，因为正午电离层电子密度最高。双频接收机用 L1 与 L5 两个频率反算电子总含量来消除大部分，所以 L5 自 2010 年起被纳入现代化序列，专用于航空安全与高精度，且落在受国际保护、几乎无干扰的航空频段。太阳活动高年短波广播都受扰，GPS 单频也跟着飘，双频用户却几乎无感，这就是多频的价值。</p>
+<h3>钟差累积的恐怖速度</h3>
+<p>定位本质是比时间，卫星钟哪怕每天快 38.6 μs，折算光程约 11.6 km，而系统要求钟准到 20 至 30 ns。城市峡谷里看见的「漂移」常不是卫星错了，而是多径——信号被楼面反射后走得更远，让你误以为自己偏移了几米，玻璃幕墙与水面是典型的多径制造者。高速上巡航时车速读数稳，进隧道一瞬跳到零又回来，就是多径与失锁交替，并非真刹了车，工程上要靠多频与多系统互校来压住这类系统误差。城市楼群间精度稀释因子常被推到 4 以上，开阔天空能压到 1 附近，这十倍之差正是导航在楼宇间忽准忽飘、定位圈从几米胀到十几米的直接根源，和卫星本身准不准无关。</p>
+<h3>冷启动与热启动之差</h3>
+<p>关机后若星历过期，接收机要先搜遍天空找出可见星、再下载导航电文才能解算，冷启动可能要几十秒；若近期定位过、星历仍在，热启动一两秒就出坐标。早期单机搜星慢，如今靠辅助定位把星历经网络先下发，冷启动也被压到数秒，这叫 time-to-first-fix。老式单机冷启动常等一分钟，如今手机几秒定位，靠的是网络把星历先喂给芯片而非它自己慢慢搜，进隧道后重新定位会有明显延迟正是因为收不到星也收不到辅助。</p>
+<h3>授时比定位更隐形</h3>
+<p>电网、基站、金融交易都靠 GNSS 的纳秒级时间同步，而非位置。每颗星本质是天上飞的原子钟，地面把它和协调世界时对齐，全网基站据此握手、交易打时间戳。一旦时间信号被干扰，手机基站失步、交易错位，后果比导航偏几米严重得多。你手机能秒拨，背后是基站按 GNSS 时间帧对齐，差几微秒握手就失败，这层没人看见却时刻在跑，授时因此成为最有价值的隐形服务。证券交易所的撮合靠 GNSS 时间打微秒级时间戳，大电网靠它同步三相相位，丢星时区域停电与错单会比迷路先发生，所以关键设施都接多套互为备份的授时源。</p>
+<h3>海拔高度最不靠谱</h3>
+<p>三维定位里高度方向最弱，因为可见星几乎都在水平天区，垂直方向几何因子最差，同一台机平面能到米级，海拔却常误差十米甚至更多，山坡上显示的高度和实测常对不上。所以登山与测绘不靠单点海拔，而要靠实时动态差分把高度也压到厘米级，单频消费机报的楼层高度更只是推测而非实测。导航显示「当前海拔 120 m」和实际山头常差十几米，爬楼时数字跳得也不跟脚，正是垂直 dilution 作怪。同样的机器在平原报的海拔也许只差三五米，一进山就漂到十几米，因为四周高山挡住半数可见星，剩下几颗都压在低空，垂直几何最差。</p>
+<h3>干扰与欺骗就在身边</h3>
+<p>民用信号功率极低，到达地面仅约负一百多分贝毫瓦，容易被压制。车载干扰器、违规基站可让一片区域失锁；更有意的转发冒充则叫欺骗，能把你凭空移到几公里外。军用 M 码与加密模块正是为抗干扰抗欺骗而生，民间靠多系统互校来提高被整体误导的门槛。曾有人卖廉价干扰器想藏行踪，结果一片工地塔吊定位全乱，反而暴露了自己，因信号太弱人人可压，单一系统反而最易被逐个带偏。民航进近阶段最忌欺骗，所以机载接收机要同时比对几套系统的星历与钟差，任一独唱就判异常，港口与机场周边对干扰器的监测也最密。</p>
+<h3>位置之外还能测速</h3>
+<p>除了位置，接收机还解算速度与精确时刻，车载导航的实时车速、跑步软件的配速都来自多普勒频移而非差分。静止时若天线轻微晃动，速度读数会乱跳，这是运动学解算对微小位移敏感所致。跑步配速在隧道里突然变快或变慢，是多普勒短暂丢失后靠推算填补，出隧道才被真实速度纠正，冷天里首颗定位慢常与低温下晶振启动飘移有关，待温稳后授时与测速才准。</p></div>
+  </section>
+
+  <section class="block">
+    <h2 class="bh">背后的原理</h2>
+    <p class="bnote">机制层面：为什么会出现上一节那些现象。</p>
+    <div class="prose"><h3>两个方向相反的时钟效应</h3>
+<p>卫星以约 3874 m/s 相对地心运动，狭义相对论说它的钟要慢——每天约 −7.2 μs。但卫星离地心更远、所受引力势更高，广义相对论说靠近大质量的钟更慢，所以卫星钟反而比地面快——每天约 +45.8 μs。两者相加得到净效应：卫星钟每天快约 38.6 μs。</p>
+<p>38.6 微秒听起来微不足道，但光在这段时间里能跑约 11.6 公里。GPS 定位要求时钟精确到 20–30 纳秒，而 38 μs 是 38000 纳秒——差了三个数量级。</p>
+<h3>工程解法：直接把钟调慢</h3>
+<p>工程师没有在算法里做补偿，而是在卫星发射前就把钟的频率调偏：地面标称 10.23 MHz，卫星上出厂设定为 10.22999999543 MHz。等上了轨道，相对论效应正好把它「拉」回 10.23 MHz。</p>
+<p>还有一个更细的修正：GPS 轨道是略带偏心的椭圆，卫星忽高忽低，引力红移量也随之变化，接收机需要做周期性的偏心率修正（幅度约几十纳秒），另外还有地球自转带来的萨格纳克效应修正。</p></div>
+  </section>
+
+  <section class="block">
+    <h2 class="bh">现存实例</h2>
+    <p class="bnote">6 项。真实存在的对象、设施或已记录案例。</p>
+    <ul class="insts"><li><b>GPS III 首星 Vespucci（SV01）</b><p>2018 年 12 月 23 日首发的新一代 GPS，设计寿命 15 年，每星载 3 台增强铷钟，播 L1/L2/L5/L1C，定位精度较上代提高约 3 倍、抗干扰约 8 倍，由洛克希德·马丁建造。 <a class="isrc" href="https://www.eoportal.org/satellite-missions/gps" target="_blank" rel="noopener noreferrer">来源</a></p></li>
+<li><b>GPS Block IIF 首播 L5（SVN62）</b><p>2010 年 5 月 28 日首发，首次在民用 L5（1176.45 MHz）播信号，专用于航空安全与高精度，开启现代化第三民用频率。 <a class="isrc" href="https://www.eoportal.org/satellite-missions/gps" target="_blank" rel="noopener noreferrer">来源</a></p></li>
+<li><b>欧盟 Galileo 星座</b><p>30 颗 MEO 卫星、轨道高约 23222 km、倾角 56 度，2024 年宣布全面运行；E1/E5a/E5b/E6 多频，免费高精度服务可达约 20 cm，是精度最高的民用开放信号。 <a class="isrc" href="https://orbitalradar.com/navigation-constellations" target="_blank" rel="noopener noreferrer">来源</a></p></li>
+<li><b>中国北斗三号 BDS-3</b><p>2020 年 6 月 23 日最后一颗星于西昌发射、组网完成，35 颗星含 MEO/GEO/IGSO，B1C 取 1575.42 MHz 与 GPS L1、Galileo E1 互通，亚太精度优于全球。 <a class="isrc" href="https://orbitalradar.com/navigation-constellations" target="_blank" rel="noopener noreferrer">来源</a></p></li>
+<li><b>俄罗斯 GLONASS 星座</b><p>24 颗星、轨道高约 19130 km、倾角 64.8 度，用频分多址约 1602 MHz 起，载铯钟，高纬度可见性最佳；苏联 1982 年首发，2011 年恢复全球覆盖。 <a class="isrc" href="https://orbitalradar.com/navigation-constellations" target="_blank" rel="noopener noreferrer">来源</a></p></li>
+<li><b>NTS-2 相对论试验星（1977）</b><p>1977 年首颗携原子钟上天的 GPS 试验星，出厂把频率调偏以验证相对论修正，先按牛顿力学跑了约 20 天，结果每日快约 38 μs 与理论吻合，才打开修正开关。 <a class="isrc" href="https://www.astronomy.ohio-state.edu/~pogge/Ast162/Unit5/gps.html" target="_blank" rel="noopener noreferrer">来源</a></p></li></ul>
+  </section>
+
+  <section class="block">
+    <h2 class="bh">进阶实例</h2>
+    <p class="bnote">9 项。把同一条规律放到更高量级上运行的真实工程对象：在役工业装置、大科学装置、尖端产品与国家级基准，每条标注所属装置或行业类别。</p>
+    <ul class="insts adv"><li><p class="ihead"><span class="icat">基础设施</span><b>WAAS 广域增强系统</b></p><p class="idesc">WAAS（广域增强系统）由美国联邦航空管理局运营，于 2003 年 7 月 10 日通过认证并投入服务。该系统依托分布在美国本土、墨西哥与太平洋地区的 38 个地面参考站，实时采集 GPS 卫星的轨道偏差与原子钟误差，生成改正数后经 3 颗地球静止卫星以 L1 频段向北美空域播发。其 LPV 进近服务水平定位精度约为水平 1.5 m、垂直 2 m，使装备相应接收机的飞机可在无地面信标的情况下完成一类精密进近，目前已覆盖美国本土、阿拉斯加与墨西哥的大部分地区。</p></li>
+<li><p class="ihead"><span class="icat">基础设施</span><b>千寻位置 FindCM 全国一张网</b></p><p class="idesc">千寻位置（中国，由中国兵器工业集团与阿里巴巴合资成立）运营名为「全国一张网」的地基增强系统，在 33 个省市布设超过 2800 个全球导航卫星系统参考站，向各类终端播发 RTK 与 NRTK 实时改正数。其 FindCM 服务标称水平精度 2 cm、高程精度 5 cm，支持北斗、GPS、GLONASS、Galileo 等 5 大系统共 16 个频点，面向自动驾驶、精准农业与无人机等行业提供实时厘米级定位，是中国已实现规模商用的高精度位置服务基础设施，日均处理海量定位请求。</p></li>
+<li><p class="ihead"><span class="icat">消费产品</span><b>Trimble R12 RTK 测量接收机</b></p><p class="idesc">Trimble R12 是天宝公司推出的 RTK 全球导航卫星系统测量接收机，具备 672 个信号通道，可同时跟踪 GPS、北斗、Galileo 等十余个导航系统的信号。其 RTK 平面精度为 8 mm、高程精度为 15 mm（1σ 统计，并包含 1 ppm 的距离比例项）。配套的 CenterPoint RTX 星基增强服务在全球范围提供平面 2 cm、高程 5 cm 的实时改正，无需本地基准站即可独立工作，被广泛用于工程放样、地籍测量与形变监测等专业测量场景。</p></li>
+<li><p class="ihead"><span class="icat">科研装置</span><b>QZSS CLAS 厘米级增强服务</b></p><p class="idesc">日本准天顶卫星系统的 CLAS（厘米级增强服务）自 2018 年 11 月随「引路」4 星组网而启动，通过 L6 频点信号（速率约 2000 bps）向日本本土播发实时精密单点定位改正数。在静止基线测试条件下，其水平定位约 6 cm、垂直约 12 cm；动态车载条件下水平约 12 cm、垂直约 24 cm，使单频接收机即可获得亚分米至厘米级定位，支撑自动农耕、车道级导航与高精度定位相关的科学研究。</p></li>
+<li><p class="ihead"><span class="icat">航天与卫星</span><b>印度 NavIC 区域导航系统</b></p><p class="idesc">印度 NavIC（原称 IRNSS）区域导航系统由 7 颗卫星组成，其中 3 颗位于地球静止轨道、4 颗位于大椭圆轨道，覆盖印度本土及周边 1500 km 范围。系统播发 L5（1176.45 MHz）与 S（2492.028 MHz）双频导航信号，设计定位精度优于 20 m（2σ 置信水平），由印度空间研究组织负责运营，为海上航运、灾害预警与移动通信提供区域自主的导航能力，使印度成为少数具备独立区域导航能力的国家之一。</p></li>
+<li><p class="ihead"><span class="icat">基础设施</span><b>EGNOS 欧洲地基增强系统</b></p><p class="idesc">EGNOS 是欧洲的地基增强系统，由欧洲航天局、欧盟空间计划机构与欧洲航空安全组织共同运营，以约 40 个地面测站与 3 颗地球静止卫星向欧洲空域播发 GPS 与 Galileo 的完好性信息与改正数。其开放服务水平的定位精度约为 1 m，航空 LPV 进近的垂直引导优于 4 m，自 2009 年投入运行以来已支撑欧洲数千个机场的精密进近，是广域增强系统体系中的成熟范例。</p></li>
+<li><p class="ihead"><span class="icat">工业</span><b>基于 RTK 的农机自动导航</b></p><p class="idesc">基于 RTK 全球导航卫星系统的农机自动导航已在大田作业中规模应用：约翰迪尔 AutoTrac 等系统以厘米级定位驱动液压转向机构，使拖拉机沿预先规划的垄线行驶，横向偏差约 2.5 cm，并配合变量播种与变量施药以减少重播漏播。该系统依赖地基增强或星基改正信号，单台农机每日作业面积可达 60 至 80 公顷，显著降低对驾驶员个人经验的依赖，并提升土地利用率与作业一致性。</p></li>
+<li><p class="ihead"><span class="icat">科研装置</span><b>IGS 精密星历与 PPP</b></p><p class="idesc">国际全球导航卫星系统服务（IGS）由分布在世界各地的约 200 个连续运行跟踪站组成，其事后解算的精密星历与卫星钟差产品轨道精度优于 2.5 cm，供科研与大地测量界使用。基于此类产品的 PPP（精密单点定位）技术无需本地基准站即可在全球范围获得分米至厘米级结果，被广泛应用于板块运动监测、海平面变化研究与地震同震位移分析等地球科学课题。</p></li>
+<li><p class="ihead"><span class="icat">航天与卫星</span><b>QZSS SLAS 亚米级增强服务</b></p><p class="idesc">QZSS 的 SLAS（亚米级增强服务）通过 L1 与 L5 频点向日本及邻近区域免费播发差分改正数，标称水平定位约 1 m、垂直约 2 m，用户无需订阅即可使用。作为「引路」系统的开放层级服务，SLAS 与 CLAS 形成互补，为车载导航、灾害防范与移动终端提供比单点 GPS 更稳健的伪距增强，是日本区域导航系统的重要组成，提升了城市峡谷环境下的定位可用性。</p></li></ul>
+  </section>
+
+  <section class="block">
+    <h2 class="bh">关键数字</h2>
+    <ul class="nums"><li><span class="nk">狭义相对论效应</span><span class="nv">−7.2 μs/天</span><span class="nn">卫星轨道速度约 3874 m/s</span></li>
+<li><span class="nk">广义相对论效应</span><span class="nv">+45.8 μs/天</span><span class="nn">引力势更高等价于钟走得更快</span></li>
+<li><span class="nk">净效应</span><span class="nv">+38.6 μs/天</span><span class="nn">相对频差约 4.465×10⁻¹⁰</span></li>
+<li><span class="nk">不修正的定位误差</span><span class="nv">约 11 km/天</span><span class="nn">38.6 μs 对应光程约 11.6 km</span></li>
+<li><span class="nk">出厂频率偏移</span><span class="nv">10.22999999543 MHz（标称 10.23 MHz）</span><span class="nn">发射前预先调慢</span></li>
+<li><span class="nk">定位所需钟精度</span><span class="nv">20–30 ns</span><span class="nn">这是 38 μs 的千分之一量级</span></li></ul>
+  </section>
+
+  <section class="block">
+    <h2 class="bh">常见误传说</h2>
+    <div class="myths"><div class="myth"><p class="claim"><span class="lab">误传</span>相对论只是理论，工程上用不到</p><p class="truth"><span class="lab">实情</span>每一颗 GPS 卫星的原子钟在出厂时就被设定成「相对论上不正确」的频率。这是相对论最日常、最大规模的工程应用。</p></div>
+<div class="myth"><p class="claim"><span class="lab">误传</span>卫星钟快是因为「离地球远所以时间自由」</p><p class="truth"><span class="lab">实情</span>不准确。更严谨的说法是引力势更高处的钟相对于低处走得更快，且这个效应与速度效应方向相反、量值更大。</p></div></div>
+  </section>
+
+  <section class="block">
+    <h2 class="bh">设计上的取舍</h2>
+    <p class="prose-p">1977 年第一颗 GPS 卫星（NTS-2）上天时，有工程师不相信修正是必要的，于是把频率合成器装好但先不打开，按牛顿力学跑了 20 天。结果卫星钟每天快 38 μs，与理论预言吻合，然后才把开关打开。这大概是史上最贵的一次「对照实验」。</p>
+  </section>
+
+  <section class="block">
+    <h2 class="bh">书库坐标</h2>
+    <p class="coord">原理主要落在 <b>10_相对论引力与天体物理 · 19_天文与宇宙学</b>，即本地物理书库（<code>OneDrive/physics</code>）中的对应主题目录。</p>
+    <p class="ev"><span class="evtag ev-A">证据 A 级</span>有实验结论、原始论文或权威机构数据支撑</p>
+  </section>
+
+  <section class="block">
+    <h2 class="bh">外部来源</h2>
+    <ul class="srcs"><li><a href="https://www.astronomy.ohio-state.edu/~pogge/Ast162/Unit5/gps.html" target="_blank" rel="noopener noreferrer">Ohio State Univ.：Real-World Relativity — The GPS Navigation System</a></li>
+<li><a href="https://www.wikiwand.com/en/articles/Selective_availability" target="_blank" rel="noopener noreferrer">Wikipedia/Wikiwand：Error analysis for the Global Positioning System</a></li>
+<li><a href="https://baike.baidu.com/item/%E7%9B%B8%E5%AF%B9%E8%AE%BA%E6%95%88%E5%BA%94/12729991" target="_blank" rel="noopener noreferrer">百度百科：相对论效应（含 GNSS 修正量级）</a></li></ul>
+  </section>
+
+  <section class="block">
+    <h2 class="bh">英文简述</h2>
+    <p class="bnote">与上文同一组事实的英文简版，69 词，供英文授课或检索英文资料时引用。</p>
+    <div class="enbrief"><p>Satellite clocks run 7.2 microseconds per day slow because of special relativity and 45.8 microseconds per day fast because they sit higher in the gravitational potential, giving a net gain of 38.6 microseconds per day. Left uncorrected, that offset would accumulate into a positioning error of about 11 km per day. The correction is built into the transmitted frequency, so a receiver needs no relativistic software of its own.</p></div>
+  </section>
+
+  <nav class="pager"><a class="pn prev" href="mri.html"><small>上一件</small>核磁共振成像 MRI</a><a class="pn next" href="flash-memory.html"><small>下一件</small>U 盘与固态硬盘</a></nav>
+</article>
+
+</main>
+<footer class="footer">
+  <div class="wrap">
+    <p class="dim">身边的物理 · 日常器物与物理原理 · 26 件 · 13 个分支 · 静态页面，无图片、无表格、无搜索、无外部脚本与统计代码。所有条目均标注书库坐标与外部来源，误传澄清基于实验或权威资料。</p>
+  </div>
+</footer>
+<script src="../assets/app.js"></script>
+</body>
+</html>

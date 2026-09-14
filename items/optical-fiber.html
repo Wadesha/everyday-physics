@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>光纤宽带｜光学 — 身边的物理</title>
+<meta name="description" content="纤芯折射率略高于包层，光以大于临界角的角度射到界面时发生全反射，能量几乎无损地被囚在纤芯里反复弹射前进。">
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<header class="topbar">
+  <div class="wrap bar">
+    <a class="brand" href="../index.html"><span class="brand-cn">身边的物理</span><span class="brand-en">EVERYDAY PHYSICS</span></a>
+    <nav class="nav"><a href="../index.html">索引</a><a href="../themes.html">按分支</a><a href="../method.html">方法与核对</a></nav>
+  </div>
+</header>
+<main class="wrap">
+
+<nav class="crumb"><a href="../index.html">索引</a><span>/</span><a href="../themes.html#t-optics">光学</a><span>/</span><em>光纤宽带</em></nav>
+
+<article class="detail">
+  <header class="dhead" style="--c:#2f7d5a">
+    <div class="dhead-tag">光学</div>
+    <h1>光纤宽带</h1>
+    <p class="en">Optical fiber</p>
+    <p class="lead">一根比头发还细的玻璃丝，靠「不让光出来」把信号送到大洋彼岸。</p>
+  </header>
+
+  <div class="verdict" style="--c:#2f7d5a"><span class="vlabel">一句话结论</span><p>纤芯折射率略高于包层，光以大于临界角的角度射到界面时发生全反射，能量几乎无损地被囚在纤芯里反复弹射前进。</p></div>
+
+  <section class="block">
+    <h2 class="bh">现象详述</h2>
+    <p class="bnote">10 节 · 约 2283 字。只写观察到的事实与条件依赖，机制见下一节。</p>
+    <div class="prose ph"><h3>弯折处的红光泄漏</h3>
+<p>把入户光纤弯成小半径（小于约 30 mm）时，宏弯损耗急剧上升，光从弯曲处渗出，用红光笔（650 nm）照入即可在弯点看到暗红光晕。这就是光猫亮红灯（LOS）最常见的物理原因：线被压扁或打了急弯，纤芯里的全反射约束被破坏，能量从弯曲外侧漏出。皮线光缆标称最小弯曲半径约 30 mm，施工余量常取 40 mm 以防回弹形变。实际布放若被门缝夹、被扎带勒死，几天后误码率就会爬升，运维第一件事就是顺着线摸弯点。这种漏光肉眼在暗处能看到一点红，是光通信里最容易观察的失效模式。</p>
+<h3>背向散射曲线</h3>
+<p>用 OTDR 向光纤打入窄脉冲，仪器记录沿距离的瑞利背向散射功率。曲线上每一处接头是一个向下台阶，每一处断点是菲涅尔反射的尖峰；熟练工程师可据此把断点定位到 ±1 m 以内，并读出各段衰减与接头损耗。熔接验收阈值通常定 0.05 dB，超此即重熔，故干线几十个接头仍个个达标。长距离干线往往有几十个接头，OTDR 轨迹就是一张病历，新出现的台阶意味着某处熔接或受压出了问题。不同波长打出的曲线斜率不同，所以故障定位常同时看 1310 nm 与 1550 nm 两道轨迹。</p>
+<h3>脉冲被色散撑胖</h3>
+<p>G.652 单模光纤在 1550 nm 处色散约 17 ps/(nm·km)。若光源谱宽 0.1 nm，传 40 km 后脉冲就展宽约 68 ps；谱宽越大、距离越长，相邻比特越易重叠，误码率随之上升。10 G 链路尚可容忍约 1600 ps/nm 而不补偿，跨段距离因此被色散直接卡死。100 G 以上系统若不用色散补偿模块或低色散光纤，几千公里后就根本收不出眼图，色散是距离的天花板而非衰减。所以跨越洋的系统先在纤层面把色散压到近乎零，再用 DSP 在电域纠残余。</p>
+<h3>快慢偏振分家</h3>
+<p>真实光纤并非完美圆对称，两个正交偏振态传播速度略不同，产生偏振模色散（PMD）。老缆的 PMD 系数可达 0.5–2 ps/√km，高速信号的差分群延迟把眼图闭合成一条缝，是 40 Gbit/s 以上链路最隐蔽的隐患。PMD 统计测量需取数小时平均，单点读数波动本身比真实值还大。新建干线靠保偏工艺把 PMD 压到 0.1 ps/√km 以下，但几十年前敷设的缆今天跑 400 G 时常常被 PMD 卡脖子，只能降速或换缆。PMD 还随温度与应力随机漂移，是运维最难预测的一项。</p>
+<h3>熔接与端面脏污</h3>
+<p>合格的熔接点损耗约 0.02–0.1 dB，机械冷接约 0.2–0.5 dB。但端面沾一滴油污或一粒灰尘，反射与损耗会飙升数分贝，甚至引发反馈使激光器失稳。光纤清洁纸每面只用一次，翻面即把刚擦掉的尘带回端面。机房口诀是先擦后测，端面清洁度往往比光纤本身更决定实际性能。野外用熔接机在风沙里作业，若酒精棉不净，接头损耗能从 0.05 dB 跳到 3 dB，整段链路因此多出几公里等效衰减。所以现场熔接包里最贵的往往是那几瓶高纯酒精与无尘纸。</p>
+<h3>玻璃与空气谁更快</h3>
+<p>光在石英里的群速度比在空气里慢约 1.5 μs/km。空芯光纤让光在空气芯里跑，同等距离每公里少约 1.5 μs 时延；对金融高频交易与 AI 训练集群互联，这几微秒就是真金白银。空芯纤当前衰减仍落后石英约一个量级，商用优先放在时延敏感段而非长途干线。跨洋缆累积上万公里，时延差可达十余毫秒，高频套利与远程控制的胜负常在这毫秒之间，所以快是空芯光纤最先卖的点而非容量。空芯还顺带把非线性压到极低，单波功率可以推得更高。</p>
+<h3>入纤功率的天花板</h3>
+<p>为压住非线性，单信道入纤功率通常只约 0 dBm（1 mW）量级。拉曼阈值约每信道 500 mW，过此噪声骤起，故入纤功率被钉在毫瓦级。功率过高会激发受激布里渊散射、受激拉曼散射与四波混频，不同波长互相串扰、信噪比崩塌；相干系统于是偏爱低非线性的大有效面积光纤，如 G.654.D。C 波段塞进 80 个波长时每路必须压低，否则四波混频在中间信道长出假频率，接收端解不出原信号。所以一根纤的总光功率虽高，拆到每路却都很克制，这是容量密度背后看不见的妥协。</p>
+<h3>海底缆靠岸供电</h3>
+<p>每条跨洋缆由岸端送数千伏直流电，沿缆内铜导体供给每约 60–80 km 一个的掺铒放大中继。岸站送出的数千伏沿缆逐级降压，末端中继仅余约 30 V，压差即供电段长度的信号。一旦岸站断电或某供电段故障，整条缆会从中间段黑掉，恢复往往以天计，这是海底通信最脆弱也最易被忽略的环节。海缆船抢修要先定位断点再放缆接续，深海上千公里外一趟作业耗资数百万美元，冗余设计比纤芯本身更决定可用性。所以重要路由都做成双海底缆互为备份，断一根仍有活路。</p>
+<h3>标称容量与到手带宽</h3>
+<p>资料里的 32 Tbit/s 是设计容量（80 通道 × 400 Gbit/s 的裸速率）。实际可用带宽要扣掉前向纠错（FEC）开销约 20%，用户侧净速率约为裸速率的 0.8 倍；再叠加出租与保护路由，单根纤到手的远少于标称。单波 400 G 在 80 km 跨段后 OSNR 余量常不足 3 dB，才需要中继补光。运营商卖的是波道而非满纤，一根缆里还分了给不同客户、不同路由的保护纤，标称峰值更像实验室上限。合同里写的保障带宽要按净速率与可用波道数重新折算，不能拿满纤峰值当承诺。</p>
+<h3>一根纤里跑多色光</h3>
+<p>波分复用把一根纤分成数十个波长，每个波长独立承载一路业务。维护时若误把某信道功率调高，邻信道会因非线性受扰；所以机房里调一个波长从来不是局部操作，而是牵动整条纤的系统工程。OSC 光监控信道用 1510 nm 专波长，断纤先靠它报哪段失联再上 OTDR。不同运营商的波长规划必须错开，否则在交接站互相串光，这也是 WDM 系统要有严格光功率模板（OSNR 预算）的原因，调一台发射机要全链重算。光监控信道另占一个波长专门传网管信令，肉眼不可见却时刻在岗。</p></div>
+  </section>
+
+  <section class="block">
+    <h2 class="bh">背后的原理</h2>
+    <p class="bnote">机制层面：为什么会出现上一节那些现象。</p>
+    <div class="prose"><h3>全反射：一次「出不去」的判决</h3>
+<p>光从光密介质（高 n）射向光疏介质（低 n），入射角超过临界角 θc = arcsin(n₂/n₁) 时，折射光完全消失，全部反射回来。石英光纤纤芯 n=1.4682、包层 n=1.4629，两者只差 0.005——就是这微小的差别制造了约束条件，θc 从纤维轴量起约 85.6°。</p>
+<p>为什么差值要这么小？因为约束太强会让光线只能在很窄的锥角内进入。数值孔径 NA = √(n₁²−n₂²) ≈ 0.14，对应的受光半角只有约 8°。</p>
+<h3>单模与多模：一条路还是一堆路</h3>
+<p>多模光纤芯径 50–62.5 μm，多种模式同时传播，各自路径长度不同，脉冲会散开（模间色散），带宽—距离积只有约 500 MHz·km，只能做几百米内的机房连接。</p>
+<p>单模光纤芯径仅约 8–9 μm，只允许基模存在，彻底消除模间色散，带宽超过 100 THz，跨洋干线全部用它。1550 nm 波长处，石英的衰减低到约 0.2 dB/km——每公里只损失约 5% 的功率。</p></div>
+  </section>
+
+  <section class="block">
+    <h2 class="bh">现存实例</h2>
+    <p class="bnote">6 项。真实存在的对象、设施或已记录案例。</p>
+    <ul class="insts"><li><b>亚洲直达海缆 ADC</b><p>全长 9988 km，采用 8 对光纤，初始设计容量最高 160 Tbps，2024 年 11 月投产，连接中国、日本、新加坡等亚太地区，是亚洲容量最高的海底光缆系统。 <a class="isrc" href="https://www.chinatelecomglobal.com/whats-new/37346" target="_blank" rel="noopener noreferrer">来源</a></p></li>
+<li><b>MAREA 跨大西洋海缆</b><p>全长约 6600 km，连接美国弗吉尼亚与西班牙，含 8 对光纤，系统设计 160 Tbit/s；2019 年实测单对光纤达 26.2 Tbit/s，比设计预期高约 20%。 <a class="isrc" href="https://ecas.cas.cn/dtfb/yjdt/201802/t20180206_4935436.html" target="_blank" rel="noopener noreferrer">来源</a></p></li>
+<li><b>中国电信空芯光纤试验</b><p>采用支撑管空芯光纤（ST-HCF），平均衰减 0.083 dB/km（1557.4 nm），在仅 EDFA 配置下实现 611.9 km 单跨无中继 800 Gbit/s 实时传输，刷新世界纪录。 <a class="isrc" href="https://www.chinatelecom.com.cn/ct/news/gdxw/162285.html" target="_blank" rel="noopener noreferrer">来源</a></p></li>
+<li><b>空芯光纤量子—经典共传</b><p>2026 年 8 月，中国电信等在 101.6 km 空芯光纤上实现 37.6 Tbps 经典传输与 5 kbps 量子密钥稳定共传，刷新量子—经典共纤传输距离纪录。 <a class="isrc" href="https://new.qq.com/rain/a/20260909A0E8R400" target="_blank" rel="noopener noreferrer">来源</a></p></li>
+<li><b>东莞—香港跨境空芯光缆</b><p>长约 110 km 的跨境商用线路，双向时延做到 0.93 ms（低于普通石英光纤），是三大运营商各自首条商用空芯线路之一。 <a class="isrc" href="https://www.toutiao.com/article/7683436357909365257/" target="_blank" rel="noopener noreferrer">来源</a></p></li>
+<li><b>2Africa 环非洲海缆</b><p>全长约 45000 km，连接 33 国以上，采用 16 对光纤与空分复用，总容量 180+ Tbps，2024 年前后陆续投运，是迄今覆盖最广的洲际海底系统之一。 <a class="isrc" href="https://mapyourtech.com/?p=44292/" target="_blank" rel="noopener noreferrer">来源</a></p></li></ul>
+  </section>
+
+  <section class="block">
+    <h2 class="bh">进阶实例</h2>
+    <p class="bnote">7 项。把同一条规律放到更高量级上运行的真实工程对象：在役工业装置、大科学装置、尖端产品与国家级基准，每条标注所属装置或行业类别。</p>
+    <ul class="insts adv"><li><p class="ihead"><span class="icat">基础设施</span><b>SEA-ME-WE 6 海底光缆</b></p><p class="idesc">SEA-ME-WE 6 是连接新加坡、马来西亚与法国马赛的洲际海底通信缆，全长约 19200 km，含 10 对光纤，每对设计容量 12.6 Tbps，系统总设计容量 126 Tbps，采用空分复用技术，约 5 亿美元投资，参与方含中国联通，2025 年前后分段投运。它是亚欧间主干通信基础设施之一，承担跨洋互联网与金融流量的大容量承载，是典型的国家级海缆工程，其路由经马赛接入欧洲骨干网，是亚欧数字贸易的物理底层之一。</p></li>
+<li><p class="ihead"><span class="icat">基础设施</span><b>PEACE 和平光缆</b></p><p class="idesc">PEACE（和平）跨洋海底光缆由中国企业主导，规划全长 15000 km（远期延至 25000 km），单对速率 200 Gbps、容量 16 Tbps，连接巴基斯坦、吉布提、肯尼亚、埃及与法国马赛，2022 年 12 月 22 日商用。它是「一带一路」数字通道中由中国主导建设并运营的国际海缆基础设施，缩短亚欧与中非间的路由时延，提升中国在全球海缆网络中的话语权，其落地使中国与非洲、欧洲间新增直达海缆通道，绕开传统中转节点。 <a class="isrc" href="https://www.submarinenetworks.com/en/systems/asia-europe-africa/peace" target="_blank" rel="noopener noreferrer">来源</a></p></li>
+<li><p class="ihead"><span class="icat">科研装置</span><b>LAMOST 郭守敬望远镜光纤光谱</b></p><p class="idesc">中国科学院国家天文台兴隆观测站的 LAMOST 配备 4000 个光纤定位单元，焦面直径 1.75 m，经 16 台光谱仪在 370 至 900 nm 同时获取 4000 个天体光谱，视场 5 度。截至 2025 年 10 月累计发布 2807 万条光谱、1159 万组恒星参数，数据量稳居世界第一，是大规模光纤光谱巡天的中国在役大科学装置，为银河系结构与演化研究提供海量样本，其发布的恒星参数集已被用于重构银河系结构与化学演化历史。 <a class="isrc" href="https://www.cas.cn/cm/202511/t20251105_5087552.shtml" target="_blank" rel="noopener noreferrer">来源</a></p></li>
+<li><p class="ihead"><span class="icat">科研装置</span><b>DESI 暗能量光谱仪</b></p><p class="idesc">暗能量光谱仪（DESI）安装于美国基特峰 Mayall 4 m 望远镜，以 5020 个机器人光纤定位器每 20 分钟采集 5000 条天体光谱，五年计划获取 3500 万星系与 240 万类星体，2021 年 5 月启动。其光纤定位器在直径约 0.8 m 焦面板上将光纤指向数千目标，绘制宇宙大尺度结构以约束暗能量演化，是光纤光谱天文在河外巡天中的旗舰级科研项目，其首批成果已约束暗能量状态方程，刷新宇宙膨胀历史的关键测量。 <a class="isrc" href="https://noirlab.edu/public/videos/desi_numbers/" target="_blank" rel="noopener noreferrer">来源</a></p></li>
+<li><p class="ihead"><span class="icat">基础设施</span><b>分布式声波传感管道监测</b></p><p class="idesc">基于光纤瑞利后向散射相位解调的分布式声波传感（DAS）用单台 interrogator 覆盖达 100 km 管线，空间分辨率 1 m，可在 90 秒内探测 20 L/min 的泄漏。浙江电网以 DAS 沿 1800 km 电缆通道布设，将通信光缆兼作传感光纤，实时监听第三方施工与异常振动，是能源管网的规模化光纤监测基础设施，也可用于周界安防与地震波记录，该技术在油气管道与通信干线中推广，将存量光缆转化为分布式传感器。 <a class="isrc" href="https://www.21ic.com/a/1002719.html" target="_blank" rel="noopener noreferrer">来源</a></p></li>
+<li><p class="ihead"><span class="icat">医疗</span><b>医用柔性光纤内镜</b></p><p class="idesc">柔性纤维支气管镜以传像束光纤传导影像，典型顶端直径 5.2 mm，活检通道直径 2.2 mm，经自然腔道进入体内观察气道、鼻咽与膀胱。数万根单丝光纤以有序排列把物镜端的像逐点传到目镜端，配合照明光纤提供冷光，是微创诊断与活检中广泛使用的医用光纤器械，较刚性内镜显著提升患者耐受与到达范围。 <a class="isrc" href="https://www.goldhealthmedical.com/p/flexible-fiber-bronchoscopenasopharyngoscopecystoscopeu" target="_blank" rel="noopener noreferrer">来源</a></p></li>
+<li><p class="ihead"><span class="icat">工业</span><b>高功率光纤激光器</b></p><p class="idesc">IPG 光子的 YLS 系列光纤激光器输出 10 至 100 kW、波长 1070 nm，电光效率高于 40%；中国锐科激光 2021 年 12 月推出国内首台 100 kW 工业光纤激光器。双包层增益光纤把泵浦光约束在内包层、信号光在纤芯放大，结构紧凑且免准直，已成为切割、焊接与增材制造的主力工业光源，高功率机型用于船舶与压力容器厚板加工，其光束经光纤柔性传导，便于集成进机器人焊接产线与自动化产线。 <a class="isrc" href="https://raycuslaser.com/view/3065.html" target="_blank" rel="noopener noreferrer">来源</a></p></li></ul>
+  </section>
+
+  <section class="block">
+    <h2 class="bh">关键数字</h2>
+    <ul class="nums"><li><span class="nk">纤芯 / 包层折射率</span><span class="nv">1.4682 / 1.4629</span><span class="nn">石英掺锗芯 + 纯石英包层</span></li>
+<li><span class="nk">临界角</span><span class="nv">≈ 85.6°（自纤维轴量）</span><span class="nn">sinθc = n₂/n₁</span></li>
+<li><span class="nk">数值孔径 NA</span><span class="nv">≈ 0.14，受光半角 ≈ 8°</span><span class="nn">NA = √(n₁² − n₂²)</span></li>
+<li><span class="nk">单模芯径</span><span class="nv">约 8–9 μm</span><span class="nn">仅基模传播</span></li>
+<li><span class="nk">最低衰减窗口</span><span class="nv">≈ 0.2 dB/km @ 1550 nm</span><span class="nn">每公里保留约 95% 功率</span></li>
+<li><span class="nk">单纤对容量</span><span class="nv">约 32 Tbit/s（80 通道 × 400 Gbit/s）</span><span class="nn">C 波段密集波分复用</span></li></ul>
+  </section>
+
+  <section class="block">
+    <h2 class="bh">常见误传说</h2>
+    <div class="myths"><div class="myth"><p class="claim"><span class="lab">误传</span>光纤纤芯是空心的</p><p class="truth"><span class="lab">实情</span>纤芯是实心掺杂玻璃，光在玻璃里传播。空芯光子晶体光纤是特殊例外，不是常规产品。</p></div>
+<div class="myth"><p class="claim"><span class="lab">误传</span>临界角从纤维轴量</p><p class="truth"><span class="lab">实情</span>临界角必须从界面法线量起。之所以容易搞错，是因为光纤里界面的法线恰好垂直于轴。</p></div>
+<div class="myth"><p class="claim"><span class="lab">误传</span>光在光纤里跑直线</p><p class="truth"><span class="lab">实情</span>因全反射，光在纤芯里每米要弹射成千上万次，只是每次反射几乎不损失能量。</p></div></div>
+  </section>
+
+  <section class="block">
+    <h2 class="bh">设计上的取舍</h2>
+    <p class="prose-p">掺铒光纤放大器（EDFA）让信号无需转成电就能放大，一次能同时放大约 80 个波分通道；再配合波分复用，一根光纤就成了 32 Tbit/s 的通道。两者叠加，才是「一根玻璃丝撑起整个互联网」的技术条件。</p>
+  </section>
+
+  <section class="block">
+    <h2 class="bh">书库坐标</h2>
+    <p class="coord">原理主要落在 <b>06_光学 · 05_电动力学与电磁学</b>，即本地物理书库（<code>OneDrive/physics</code>）中的对应主题目录。</p>
+    <p class="ev"><span class="evtag ev-A">证据 A 级</span>有实验结论、原始论文或权威机构数据支撑</p>
+  </section>
+
+  <section class="block">
+    <h2 class="bh">外部来源</h2>
+    <ul class="srcs"><li><a href="https://unseel.com/physics/optical-fiber" target="_blank" rel="noopener noreferrer">Optical Fiber（含全反射/NA/衰减量级）</a></li>
+<li><a href="https://wraycastle.com/blogs/knowledge-base/how-fibre-optic-communication-works" target="_blank" rel="noopener noreferrer">Wray Castle：How Fibre Optic Communication Works</a></li>
+<li><a href="https://www.sfu.ca/~gchapman/e894/e894l23o.pdf" target="_blank" rel="noopener noreferrer">SFU：Optical Wave Guides &amp; Fiber Optics（典型参数对比表）</a></li></ul>
+  </section>
+
+  <section class="block">
+    <h2 class="bh">英文简述</h2>
+    <p class="bnote">与上文同一组事实的英文简版，67 词，供英文授课或检索英文资料时引用。</p>
+    <div class="enbrief"><p>The core carries a slightly higher refractive index than the cladding, 1.4682 against 1.4629. Light arriving at the interface beyond the critical angle undergoes total internal reflection, so the energy stays trapped in the core and bounces forward with very little loss, which is what makes multi-kilometre spans possible. The numerical aperture is about 0.14, giving an acceptance half-angle of roughly 8 degrees at the launch end.</p></div>
+  </section>
+
+  <nav class="pager"><a class="pn prev" href="ar-coating.html"><small>上一件</small>眼镜减反射膜</a><a class="pn next" href="optical-disc.html"><small>下一件</small>CD / DVD 光盘</a></nav>
+</article>
+
+</main>
+<footer class="footer">
+  <div class="wrap">
+    <p class="dim">身边的物理 · 日常器物与物理原理 · 26 件 · 13 个分支 · 静态页面，无图片、无表格、无搜索、无外部脚本与统计代码。所有条目均标注书库坐标与外部来源，误传澄清基于实验或权威资料。</p>
+  </div>
+</footer>
+<script src="../assets/app.js"></script>
+</body>
+</html>
