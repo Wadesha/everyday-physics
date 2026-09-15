@@ -11,12 +11,12 @@
 <header class="topbar">
   <div class="wrap bar">
     <a class="brand" href="../index.html"><span class="brand-cn">身边的物理</span><span class="brand-en">EVERYDAY PHYSICS</span></a>
-    <nav class="nav"><a href="../index.html">索引</a><a href="../themes.html">按分支</a><a href="../method.html">方法与核对</a></nav>
+    <nav class="nav"><a href="../index.html">按分支</a><a href="../method.html">方法与核对</a></nav>
   </div>
 </header>
 <main class="wrap">
 
-<nav class="crumb"><a href="../index.html">索引</a><span>/</span><a href="../themes.html#t-condmat">凝聚态与固体物理</a><span>/</span><em>太阳能充电板</em></nav>
+<nav class="crumb"><a href="../index.html">按分支</a><span>/</span><a href="../index.html#t-condmat">凝聚态与固体物理</a><span>/</span><em>太阳能充电板</em></nav>
 
 <article class="detail">
   <header class="dhead" style="--c:#6b5b1e">
@@ -54,6 +54,15 @@
   </section>
 
   <section class="block">
+    <h2 class="bh">去哪儿看</h2>
+    <p class="bnote">4 处。需要走到某个地方、或等到某种条件出现，才能亲眼看到的同一条规律；先写你会看到什么，再写它为什么发生。</p>
+    <ul class="insts scenes"><li><b>正午和傍晚差得比想象中多<span class="swhere">找一块小太阳能板接上万用表或者一只小灯泡，在晴天里分别于正午和太阳快落山时拿到室外平放。</span></b><div class="sbody"><p><span class="lab s-see">看到</span>正午的电流是傍晚的好几倍，灯泡亮得刺眼；傍晚同样的板子只够让灯泡勉强发红，甚至完全不亮。板子没动、没脏、没坏，只是太阳低了。</p><p><span class="lab s-why">原理</span>到达地面的太阳辐照度跟太阳高度角的正弦成正比。太阳低的时候同样的光斜着摊在更长的路上，穿过更厚的大气、被吸收和散射掉更多，落到板上的能量只剩一小部分。傍晚那点光不是「弱一点」，是弱掉好几倍。</p></div></li>
+<li><b>树荫下掉的不是一点点<span class="swhere">晴天把太阳能板放在满发状态，再把它挪到树叶斑驳的树荫下，保持其他条件不变。</span></b><div class="sbody"><p><span class="lab s-see">看到</span>电流不是掉百分之几十，而是一下子掉到满发的一两成甚至更低，比「阴影占了几分之一」的直觉要严重得多。有时候某几片叶子挡住的位置一变，读数就剧烈跳动。</p><p><span class="lab s-why">原理</span>光电池是电流源，一串电池通常串联起来用。被遮住的那一片不能发电，反而在整串电流的推动下变成阻值很大的负载，把整个串联回路的电流一起拖下去。所以遮一小块和遮一大块对输出的打击几乎一样重。这也是大型电站必须定期清掉鸟粪和落灰的原因。</p></div></li>
+<li><b>阴天居然还能充一点<span class="swhere">挑一个阴天，把太阳能板拿到室外对着天，接上小灯泡或者充电器，别放到阴影里。</span></b><div class="sbody"><p><span class="lab s-see">看到</span>灯泡还能亮，只是比晴天暗很多，光色也偏灰；充电很慢，但万用表上的读数确实在动。云层不算特别厚的时候，电流有时能到晴天的两三成。</p><p><span class="lab s-why">原理</span>云层主要挡住直射光，但大量可见光仍以散射的形式从整个天空到达地面，阴天里天空依然很亮就是这个道理。硅电池能吸收从近红外到可见光一大段波长，散过来的这些光子照样能激发出载流子，只是数量少、方向杂，效率低。</p></div></li>
+<li><b>雪地和水面反射的光也能用<span class="swhere">雪后晴天站在雪地边，或者站在湖泊、水库岸边，把太阳能板朝向雪面或者水面而不是太阳。</span></b><div class="sbody"><p><span class="lab s-see">看到</span>照样能测到不小的电流，雪地那一侧甚至明显强过同样角度朝草地或朝柏油路。板子明明是背对着太阳的，读数却不像在「摸黑」。</p><p><span class="lab s-why">原理</span>太阳光到达地面后有一部分被反射，反射率取决于下垫面。新雪的反射率能到百分之八十以上，水面在低角度入射时也有相当高的反射。这些反射出来的光仍携带能量，只要落进板面就会被吸收，所以朝雪、朝水也能发电。积雪电站冬季的反射增益正来自这里。</p></div></li></ul>
+  </section>
+
+  <section class="block">
     <h2 class="bh">背后的原理</h2>
     <p class="bnote">机制层面：为什么会出现上一节那些现象。</p>
     <div class="prose"><h3>两种损失构成了硬天花板</h3>
@@ -65,27 +74,33 @@
 
   <section class="block">
     <h2 class="bh">现存实例</h2>
-    <p class="bnote">7 项。真实存在的对象、设施或已记录案例。</p>
-    <ul class="insts"><li><b>Topaz 太阳能电站</b><p>位于美国加州 Carrizo Plain，2014 年投运，装机容量 550 MW（直流约 752 MW）、占地约 4700 英亩，采用 First Solar 的 CdTe 薄膜组件，曾是世界最大光伏电站。 <a class="isrc" href="https://openei.org/wiki/InSPIRE/Sites/Topaz%20Solar%20Farm" target="_blank" rel="noopener noreferrer">来源</a></p></li>
-<li><b>Bhadla 太阳能园区</b><p>印度拉贾斯坦邦的超大型光伏园区，2020 年前后并网、容量约 2245 MW，建在干旱盐碱地上，是全球规模前列的集中式光伏电站之一。 <a class="isrc" href="https://www.wikiwand.com/en/List_of_photovoltaic_power_stations" target="_blank" rel="noopener noreferrer">来源</a></p></li>
-<li><b>腾格里沙漠光伏电站</b><p>中国宁夏腾格里沙漠的光伏基地，2016 年规模约 1547 MW，是早期超大规模沙漠光伏的代表，显示干旱区快速铺装光伏的能力。 <a class="isrc" href="https://www.wikiwand.com/en/List_of_photovoltaic_power_stations" target="_blank" rel="noopener noreferrer">来源</a></p></li>
-<li><b>Solar Star 光伏电站</b><p>美国加州的两期项目，合计约 579 MW，2015 年投运，曾为北美最大光伏电站，采用单轴跟踪支架以提升容量因子。</p></li>
-<li><b>国际空间站太阳能阵列</b><p>空间站八片光伏翼合计约 120 kW，为轨道实验室持续供电；其电池为砷化镓多结，效率远高于地面硅板，是太空光伏的现役实例。</p></li>
-<li><b>阳光动力 2 号太阳能飞机</b><p>2015–2016 年完成有人驾驶太阳能环球飞行，机翼铺满晶硅电池驱动四台电动机，证明光伏可在昼夜连续任务中作为唯一能源。</p></li>
-<li><b>家庭屋顶光伏系统</b><p>典型 residential 屋顶约 5–10 kW、十几到几十块组件，配组串或微逆变器；其实际年发电受朝向、遮挡、积灰与温度系数共同决定，远低于标称之和。</p></li></ul>
+    <p class="bnote">10 项。真实存在的对象、设施或已记录案例。</p>
+    <ul class="insts"><li><b>Topaz 太阳能电站</b><p>加州中部的 Topaz 电站 2014 年并网，铺了上千英亩的薄膜电池板。发电高峰时够几十万户人家用。它说明太阳能到这个规模，已经能顶一个中小城市用电。 <a class="isrc" href="https://openei.org/wiki/InSPIRE/Sites/Topaz%20Solar%20Farm" target="_blank" rel="noopener noreferrer">来源</a></p></li>
+<li><b>Bhadla 太阳能园区</b><p>印度拉贾斯坦邦的 Bhadla 园区建在干旱盐碱地上，容量超过两吉瓦。它证明沙漠也能成发电大户，只是清洁灰尘成了日常大事。那里日照强，板子几乎全年满负荷附近转。 <a class="isrc" href="https://www.wikiwand.com/en/List_of_photovoltaic_power_stations" target="_blank" rel="noopener noreferrer">来源</a></p></li>
+<li><b>腾格里沙漠光伏电站</b><p>宁夏腾格里沙漠这片基地 2016 年规模就到了一千五百多兆瓦。它在干旱区快速铺板的能力，让沙漠也能产电。戈壁上的电站，最头疼的就是风沙盖住板子。 <a class="isrc" href="https://www.wikiwand.com/en/List_of_photovoltaic_power_stations" target="_blank" rel="noopener noreferrer">来源</a></p></li>
+<li><b>Solar Star 光伏电站</b><p>加州 Solar Star 两期合计约 579 兆瓦，2015 年投运。它用了单轴跟踪支架，让板子跟着太阳转、多发电。北美的老牌大电站里，它算靠跟踪支架提效的典型。</p></li>
+<li><b>国际空间站太阳能阵列</b><p>空间站的八片光伏翼合计约 120 千瓦，给轨道实验室供电。它用的是砷化镓多结电池，效率比地面硅板高得多。在天上没云没夜，太阳一照就发电。</p></li>
+<li><b>阳光动力 2 号太阳能飞机</b><p>阳光动力 2 号在 2015 到 2016 年完成了有人驾驶太阳能环球飞行。机翼铺满电池板，驱动四台电动机。它证明光伏能在昼夜连飞里当唯一能源，不靠一滴油。</p></li>
+<li><b>家庭屋顶光伏系统</b><p>普通人家屋顶大约装 5 到 10 千瓦，十几到几十块板子。实际一年发多少电，全看朝向、遮挡和积灰。标称加起来很漂亮，真到手往往要打个折。</p></li>
+<li><b>Kamuthi 太阳能电站</b><p>印度泰米尔纳德邦的 Kamuthi 电站 2016 年建成，容量 648 兆瓦。它靠一批自带太阳能的机器人每天擦板，省下大量人工。它证明新兴国家也能一口气建起巨型光伏厂。 <a class="isrc" href="https://news.cri.cn/20161130/54ec87c5-da17-f83f-9dda-df9226735fb6.html" target="_blank" rel="noopener noreferrer">来源</a></p></li>
+<li><b>Noor Abu Dhabi 光伏电站</b><p>阿布扎比的 Noor 电站 2019 年商运，容量约 1.18 吉瓦，用了三百多万块板。它一天发的电够九万人用。沙漠里它靠无水机器人天天清灰，保住发电效率。 <a class="isrc" href="https://www.guinnessworldrecords.cn/world-records/66165-largest-solar-power-facility" target="_blank" rel="noopener noreferrer">来源</a></p></li>
+<li><b>淮南水面漂浮光伏电站</b><p>安徽淮南把采煤沉陷区的水面利用起来，铺了 150 兆瓦漂浮光伏。板子浮在水上不占耕地，水体还能帮组件降温提效。它一年发的电够约九万家庭用，是废地变能源的样本。 <a class="isrc" href="http://www.sasac.gov.cn/n2588030/n2588934/c8328297/content.html" target="_blank" rel="noopener noreferrer">来源</a></p></li></ul>
   </section>
 
   <section class="block">
     <h2 class="bh">进阶实例</h2>
-    <p class="bnote">8 项。把同一条规律放到更高量级上运行的真实工程对象：在役工业装置、大科学装置、尖端产品与国家级基准，每条标注所属装置或行业类别。</p>
-    <ul class="insts adv"><li><p class="ihead"><span class="icat">能源</span><b>中国 共和塔拉滩光伏园区</b></p><p class="idesc">中国青海共和塔拉滩光伏园区是全球最大光伏基地，累计并网容量约 15.6 GW（1560 万千瓦），占地约 609 平方公里，自 2011 年起多期建设，配 720 万余块组件，年发电量约 17898 GWh。靠大面积晶硅方阵将高原强日照转为电能，是晶硅光伏在能源尺度上的巨型工程。 <a class="isrc" href="https://interestingengineering.com/energy/biggest-solar-farms-reshaping-energy-future" target="_blank" rel="noopener noreferrer">来源</a></p></li>
-<li><p class="ihead"><span class="icat">能源</span><b>新疆米东光伏项目</b></p><p class="idesc">中国新疆米东光伏项目 2024 年 6 月并网，单站 3.5 GW 为当时全球最大单体光伏电站，占地沙漠地形，年发电约 60.9 亿 kWh，由国投电力等建设。另有 0.5 GW 电站与 9.35 GW 在建，规划总 25.75 GW，靠大规模单晶与双面组件将戈壁日照转化为电网电力。 <a class="isrc" href="https://interestingengineering.com/energy/biggest-solar-farms-reshaping-energy-future" target="_blank" rel="noopener noreferrer">来源</a></p></li>
-<li><p class="ihead"><span class="icat">基础设施</span><b>甘肃武威九墩滩光伏治沙园区</b></p><p class="idesc">甘肃武威凉州区九墩滩光伏治沙示范园区规划占地 50 万亩、装机 1500 万千瓦，截至 2024 年已入驻 11 家企业、建成 220 万千瓦，年发电约 260.25 亿 kWh。光伏板下种植梭梭等耐旱植物固沙，靠板上发电、板下治沙实现清洁能源与荒漠化治理协同。 <a class="isrc" href="https://gs.cnr.cn/gsxw/kx/20241212/t20241212_527006980.shtml" target="_blank" rel="noopener noreferrer">来源</a></p></li>
-<li><p class="ihead"><span class="icat">能源</span><b>宁夏盐池 100MW 农光互补</b></p><p class="idesc">宁夏盐池县 100 MW 农光互补项目在光伏板下种植苜蓿，年发电约 1.2 亿 kWh、产草约 3000 吨，靠支架抬高组件使光与作物共享土地，是光伏加牧草的典型。中国农光互补累计装机 2024 年逾 15 GW，占全球六成以上，实现发电与农业双收益。</p></li>
-<li><p class="ihead"><span class="icat">航天与卫星</span><b>中国天宫空间站 柔性太阳翼</b></p><p class="idesc">中国天宫空间站采用第三代柔性太阳电池翼，天和核心舱单翼展开面积约 67 平方米、双翼 134 平方米；问天实验舱单翼展开超 55 米、面积逾 100 平方米。电池为柔性三结砷化镓，厚度约 40 微米、单位面积重约 180 g/m²、光电效率约 32%，三舱组合日发电近 1000 度。 <a class="isrc" href="https://baike.baidu.com/item/%E4%B8%89%E5%9E%8B%E5%A4%AA%E9%98%B3%E7%BF%BC/62122480" target="_blank" rel="noopener noreferrer">来源</a></p></li>
-<li><p class="ihead"><span class="icat">科研装置</span><b>牛津光伏 钙钛矿叠层组件（商用首秀）</b></p><p class="idesc">英国 Oxford PV 的钙钛矿与硅叠层组件 2024 年 9 月首次商用发货至美国电站，组件效率 24.5%（实验室纪录 26.9%），72 片组件较标准硅组件多发约 20% 电量，由德国 Brandenburg 兆瓦级中试线生产。靠钙钛矿顶电池吸收高能光子、硅底电池吸收低能光子提升效率，是叠层电池从实验室走向电站的里程碑。 <a class="isrc" href="https://oxfordpv.com/press-releases/oxford-pv-solar-technology-patent" target="_blank" rel="noopener noreferrer">来源</a></p></li>
-<li><p class="ihead"><span class="icat">工业</span><b>杭州纤纳 三峡 50MW 钙钛矿示范</b></p><p class="idesc">杭州纤纳光电 2024 年 11 月向三峡新能源 50 MW 光伏示范项目交付四端钙钛矿与硅叠层组件，为国内首次钙钛矿叠层组件商业应用；500 kW 示范电站设计完成，计划 2024 年底并网。靠溶液法钙钛矿薄膜与硅电池叠加，提升单位面积发电量，是钙钛矿叠层迈向 GW 级量产的先行项目。 <a class="isrc" href="https://www.perovskite-info.com/?page=59" target="_blank" rel="noopener noreferrer">来源</a></p></li>
-<li><p class="ihead"><span class="icat">能源</span><b>沙特 NEOM 绿氢 光储制氢</b></p><p class="idesc">沙特 NEOM 绿氢项目由 ACWA Power、Air Products 与 NEOM 合资，配套逾 4 GW 风光发电、2.2 GW 电解槽，计划日产绿氢 600 吨（2026 年底），以绿氨出口。光伏阵列逾 560 万块组件，靠太阳能与风能满足电解制氢用电，是光伏电力转化为化学燃料的超大型工程。 <a class="isrc" href="https://english.alarabiya.net/News/saudi-arabia/2024/08/21/saudi-arabia-s-neom-green-hydrogen-plant-launches-mass-recruitment-drive" target="_blank" rel="noopener noreferrer">来源</a></p></li></ul>
+    <p class="bnote">11 项。把同一条规律放到更高量级上运行的真实工程对象：在役工业装置、大科学装置、尖端产品与国家级基准，每条标注所属装置或行业类别。</p>
+    <ul class="insts adv"><li><p class="ihead"><span class="icat">能源</span><b>中国 共和塔拉滩光伏园区</b></p><p class="idesc">青海塔拉滩把上千平方公里荒原铺满晶硅电池板，发电规模能顶一个省用电。它说明你阳台那块小太阳能板背后的原理，放大几亿倍就是能驱动城市的电站，风沙大却偏偏最适合发电。 <a class="isrc" href="https://interestingengineering.com/energy/biggest-solar-farms-reshaping-energy-future" target="_blank" rel="noopener noreferrer">来源</a></p></li>
+<li><p class="ihead"><span class="icat">能源</span><b>新疆米东光伏项目</b></p><p class="idesc">新疆米东单站 3.5 GW，把戈壁日照变成电网的电。一年发六十亿度，沙漠里铺出的蓝板一眼望不到头，是超大规模光伏的样本，相当于几百万户一年的用电。 <a class="isrc" href="https://interestingengineering.com/energy/biggest-solar-farms-reshaping-energy-future" target="_blank" rel="noopener noreferrer">来源</a></p></li>
+<li><p class="ihead"><span class="icat">基础设施</span><b>甘肃武威九墩滩光伏治沙园区</b></p><p class="idesc">武威在沙地上铺光伏板，板上发电板下种梭梭固沙。规划装机一千五百万千瓦，发电和治沙一起做，让荒漠既能产电又不再扬沙，光伏板下的影子正好护住苗。 <a class="isrc" href="https://gs.cnr.cn/gsxw/kx/20241212/t20241212_527006980.shtml" target="_blank" rel="noopener noreferrer">来源</a></p></li>
+<li><p class="ihead"><span class="icat">能源</span><b>宁夏盐池 100MW 农光互补</b></p><p class="idesc">盐池把光伏板架高，板下种苜蓿养地。一年发一亿多度电还产三千吨草，发电和种地共用一块地，是农光互补的实在样本。羊吃板下草人收板上电，一地两用互不打架。</p></li>
+<li><p class="ihead"><span class="icat">航天与卫星</span><b>中国天宫空间站 柔性太阳翼</b></p><p class="idesc">天宫的太阳翼像折纸一样展开，单翼上百平米。它用柔性三结砷化镓电池，三舱组合一天发近千度电，把阳光直接在天上变成直流电，绕地球飞也不用拉电线。 <a class="isrc" href="https://baike.baidu.com/item/%E4%B8%89%E5%9E%8B%E5%A4%AA%E9%98%B3%E7%BF%BC/62122480" target="_blank" rel="noopener noreferrer">来源</a></p></li>
+<li><p class="ihead"><span class="icat">科研装置</span><b>牛津光伏 钙钛矿叠层组件（商用首秀）</b></p><p class="idesc">牛津光伏 2024 年把钙钛矿叠硅的组件首次发货到电站。效率 24.5%，比标准硅板多发两成电，是叠层电池从实验室走出来的第一步，同一块板子多榨出两成阳光。 <a class="isrc" href="https://oxfordpv.com/press-releases/oxford-pv-solar-technology-patent" target="_blank" rel="noopener noreferrer">来源</a></p></li>
+<li><p class="ihead"><span class="icat">工业</span><b>杭州纤纳 三峡 50MW 钙钛矿示范</b></p><p class="idesc">纤纳 2024 年给三峡交付五十兆瓦钙钛矿叠层组件。这是国内首次把钙钛矿叠层用到电站，靠溶液法薄膜在同样面积上多榨出电能，国产钙钛矿终于上了网。 <a class="isrc" href="https://www.perovskite-info.com/?page=59" target="_blank" rel="noopener noreferrer">来源</a></p></li>
+<li><p class="ihead"><span class="icat">能源</span><b>沙特 NEOM 绿氢 光储制氢</b></p><p class="idesc">NEOM 项目用四百多万块光伏板发电电解水制氢。配套风光逾四 GW，计划日产绿氢六百吨，把太阳能先变成电再变成可存的燃料，存起来就能跨海运出去。 <a class="isrc" href="https://english.alarabiya.net/News/saudi-arabia/2024/08/21/saudi-arabia-s-neom-green-hydrogen-plant-launches-mass-recruitment-drive" target="_blank" rel="noopener noreferrer">来源</a></p></li>
+<li><p class="ihead"><span class="icat">能源</span><b>加纳 太阳能水泵灌溉</b></p><p class="idesc">加纳北部四个村子用太阳能泵抽水浇地，面板总共 22.5 千瓦。一天抽上百万升水，让农户一年能多收两三茬菜，不再靠天吃饭，原先买柴油泵的钱也省了。 <a class="isrc" href="https://www.gh.undp.org/content/ghana/en/home/ourwork/crisispreventionandrecovery/successstories/tapping-the-sun-to-increase-rural-incomes-in-ghana.html" target="_blank" rel="noopener noreferrer">来源</a></p></li>
+<li><p class="ihead"><span class="icat">基础设施</span><b>肯尼亚 Kiunga 太阳能海水淡化</b></p><p class="idesc">肯尼亚海边小镇用太阳能板驱动海水淡化，装机 50 千瓦。一天产七万五千升干净水，供一万五千居民喝上不咸的水，海边人终于不用扛桶走远路，孩子拉肚子也少了。 <a class="isrc" href="https://givepower.org/news/solar-beats-salt-bringing-clean-water-to-coastal-kenyans" target="_blank" rel="noopener noreferrer">来源</a></p></li>
+<li><p class="ihead"><span class="icat">航天与卫星</span><b>空客 Zephyr 太阳能无人机</b></p><p class="idesc">空客的 Zephyr 靠机翼铺满的太阳能板在平流层飞行。翼展 25 米却只重 75 公斤，曾连续飞 64 天，把晒太阳变成了不落地的伪卫星，天上待俩月还能当通信站。 <a class="isrc" href="https://baike.baidu.com/item/%E8%A5%BF%E9%A3%8E%E5%8F%B7%E5%A4%AA%E9%98%B3%E8%83%BD%E9%A3%9E%E6%9C%BA/8591042" target="_blank" rel="noopener noreferrer">来源</a></p></li></ul>
   </section>
 
   <section class="block">

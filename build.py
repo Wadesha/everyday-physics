@@ -5,14 +5,15 @@
     python build.py
 
 从 data_a.py / data_b.py 读取条目，从 expand_*.py 读取现象详述与现存实例，生成：
-    index.html          索引页（紧凑列表，无搜索、无筛选控件）
-    themes.html         按物理分支浏览
+    index.html          首页：按物理分支列出全部器物（无卡片墙、无搜索、无筛选控件）
     method.html         采集方法、证据分级、误传总表、来源总表、书库映射
     items/<slug>.html   每件器物一个详情页
     data/items.json     结构化数据（便于二次利用）
 
-详情页层次：一句话结论，然后依次是现象详述、背后的原理、现存实例、关键数字、
-常见误传说、设计上的取舍、书库坐标、外部来源。
+全站只有两个入口页。首页即分支页，不再单独生成索引页或卡片列表。
+
+详情页层次：一句话结论，然后依次是现象详述、去哪儿看、背后的原理、现存实例、
+进阶实例、关键数字、常见误传说、设计上的取舍、书库坐标、外部来源、英文简述。
 “现象详述”只写观察到的事实与条件依赖（变化规律、边界情形、反直觉细节、
 可感知量级、不同档次差别、常见误判）；“背后的原理”才解释机制，两者不重复。
 
@@ -21,7 +22,7 @@
     2. 禁止图片：不使用图像、矢量图、图标字体与背景图，也不引用 media 标签。
     3. 禁止表格：不使用 HTML 表格系列标签，一律用列表与网格行呈现。
     4. 禁止 emoji：不使用任何 emoji 码位，也不使用箭头、圈号等符号作装饰。
-    5. 禁止搜索：无搜索框、无搜索逻辑、无筛选控件；分支导航由 themes.html 承担。
+    5. 禁止搜索：无搜索框、无搜索逻辑、无筛选控件；分支导航由首页承担。
     6. 禁止星号加粗标记：字号、字重与颜色由样式表承担。
 
 改内容：改 data_a.py / data_b.py（条目与原理）、改 expand_*.py（现象与实例），
@@ -70,8 +71,24 @@ def _load_advanced():
     return merged
 
 
+def _load_scenes():
+    """合并全部 scene_*.py 中的 SCENES 字典（去哪儿看：可到达的场景与背后的原理）。"""
+    merged = {}
+    for path in sorted(glob.glob(os.path.join(ROOT, "scene_*.py"))):
+        name = os.path.splitext(os.path.basename(path))[0]
+        spec = importlib.util.spec_from_file_location(name, path)
+        mod = importlib.util.module_from_spec(spec)
+        spec.loader.exec_module(mod)
+        for k, v in mod.SCENES.items():
+            if k in merged:
+                raise SystemExit("scene 出现重复条目：" + k)
+            merged[k] = v
+    return merged
+
+
 EXPAND = _load_expand()
 ADVANCED = _load_advanced()
+SCENES = _load_scenes()
 
 
 def _load_en():
@@ -98,11 +115,13 @@ for _it in ITEMS_A + ITEMS_B:
                       phenomena=_ex.get("phenomena", []),
                       instances=_ex.get("instances", []),
                       advanced=ADVANCED.get(_it["slug"], []),
+                      scenes=SCENES.get(_it["slug"], []),
                       en_brief=EN.get(_it["slug"], "")))
 
 N_PHEN = sum(len(i["phenomena"]) for i in ITEMS)
 N_INST = sum(len(i["instances"]) for i in ITEMS)
 N_ADV = sum(len(i["advanced"]) for i in ITEMS)
+N_SCENE = sum(len(i["scenes"]) for i in ITEMS)
 N_ENW = sum(len(i["en_brief"].split()) for i in ITEMS)
 CH_PHEN = sum(len(p[1]) for i in ITEMS for p in i["phenomena"])
 N_NUMS = sum(len(i["numbers"]) for i in ITEMS)
@@ -134,8 +153,7 @@ E = html.escape
 
 def shell(prefix, title, desc, body, active="", js=True):
     nav = [
-        ("index.html", "索引", "index"),
-        ("themes.html", "按分支", "themes"),
+        ("index.html", "按分支", "index"),
         ("method.html", "方法与核对", "method"),
     ]
     links = "".join(
@@ -172,42 +190,6 @@ def shell(prefix, title, desc, body, active="", js=True):
 """
 
 
-def theme_chip(key):
-    name, _, color = THEMES[key]
-    return f'<span class="chip" style="--c:{color}">{E(name)}</span>'
-
-
-# ---------------------------------------------------------------- 索引页
-
-def build_index():
-    cards = []
-    for it in ITEMS:
-        name, folder, color = THEMES[it["theme"]]
-        nums = "".join(
-            f'<li><span>{E(k)}</span><b>{E(v)}</b></li>' for k, v, _ in it["numbers"][:3])
-        cards.append(f"""<article class="card">
-  <a class="card-link" href="items/{it['slug']}.html">
-    <div class="card-top"><h3>{E(it['name'])}</h3><span class="chip" style="--c:{color}">{E(name)}</span></div>
-    <p class="en">{E(it['en'])}</p>
-    <p class="lead">{E(it['lead'])}</p>
-    <ul class="mini">{nums}</ul>
-    <div class="card-foot"><span>现象 {len(it['phenomena'])} 节 · 实例 {len(it['instances'])} 项 · 进阶 {len(it['advanced'])} 项 · 误传 {len(it['myths'])} 条</span><span class="go">看现象</span></div>
-  </a>
-</article>""")
-
-    body = f"""
-<section class="hero">
-  <h1>你身边已经运行着一整座物理实验室</h1>
-  <p class="hero-sub">微波炉、保温杯、U 盘、门把手、彩虹、机翼——{len(ITEMS)} 件日常器物，每一件背后都有一条被反复验证的物理定律。这里先把现象本身逐条写清：冷热怎么分布、声音从哪里来、随时间怎么变、在什么条件下失效、哪些细节最反直觉；再拆到能算的数字，并顺手纠正流传最广的错解。</p>
-  <p class="stats"><b>{len(ITEMS)}</b><span>件器物</span><b>{len(THEMES)}</b><span>个分支</span><b>{N_PHEN}</b><span>节现象详述</span><b>{N_INST}</b><span>项现存实例</span><b>{N_ADV}</b><span>项进阶实例</span><b>{N_NUMS}</b><span>组数字</span><b>{N_MYTHS}</b><span>条误传澄清</span></p>
-  <p class="hero-en">{len(ITEMS)} everyday objects, each one a working physics experiment: first what you actually observe, then why it happens, then the numbers behind it, and last the myths worth dropping. Every entry closes with a short English summary of the same facts, for teaching and for looking up English-language sources.</p>
-</section>
-
-<section class="grid">{''.join(cards)}</section>
-"""
-    return shell("", SITE, "日常器物背后的物理原理，含关键数字与误传澄清。", body, "index", js=False)
-
-
 # ---------------------------------------------------------------- 详情页
 
 def build_item(it, prev, nxt):
@@ -239,11 +221,21 @@ def build_item(it, prev, nxt):
                if u else ""))
         for cat, nm, ds, u in it["advanced"])
 
+    scene_html = "\n".join(
+        '<li><b>{t}<span class="swhere">{w}</span></b>'
+        '<div class="sbody">'
+        '<p><span class="lab s-see">看到</span>{s}</p>'
+        '<p><span class="lab s-why">原理</span>{y}{src}</p>'
+        '</div></li>'.format(
+            t=E(t), w=E(w), s=E(s), y=E(y),
+            src=(f' <a class="isrc" href="{E(u)}" target="_blank" rel="noopener noreferrer">来源</a>'
+                 if u else ""))
+        for t, w, s, y, u in it["scenes"])
+
     nums = "\n".join(
         f'<li><span class="nk">{E(k)}</span><span class="nv">{E(v)}</span>'
         f'<span class="nn">{E(note)}</span></li>'
         for k, v, note in it["numbers"])
-
     myths = "\n".join(
         f'<div class="myth"><p class="claim"><span class="lab">误传</span>{E(c)}</p>'
         f'<p class="truth"><span class="lab">实情</span>{E(t)}</p></div>'
@@ -267,7 +259,7 @@ def build_item(it, prev, nxt):
     ph_chars = sum(len(p) for _, p in it["phenomena"])
     enw = len(it["en_brief"].split())
     body = f"""
-<nav class="crumb"><a href="../index.html">索引</a><span>/</span><a href="../themes.html#t-{it['theme']}">{E(name)}</a><span>/</span><em>{E(it['name'])}</em></nav>
+<nav class="crumb"><a href="../index.html">按分支</a><span>/</span><a href="../index.html#t-{it['theme']}">{E(name)}</a><span>/</span><em>{E(it['name'])}</em></nav>
 
 <article class="detail">
   <header class="dhead" style="--c:{color}">
@@ -283,6 +275,12 @@ def build_item(it, prev, nxt):
     <h2 class="bh">现象详述</h2>
     <p class="bnote">{len(it['phenomena'])} 节 · 约 {ph_chars} 字。只写观察到的事实与条件依赖，机制见下一节。</p>
     <div class="prose ph">{phen_html}</div>
+  </section>
+
+  <section class="block">
+    <h2 class="bh">去哪儿看</h2>
+    <p class="bnote">{len(it['scenes'])} 处。需要走到某个地方、或等到某种条件出现，才能亲眼看到的同一条规律；先写你会看到什么，再写它为什么发生。</p>
+    <ul class="insts scenes">{scene_html}</ul>
   </section>
 
   <section class="block">
@@ -341,9 +339,9 @@ def build_item(it, prev, nxt):
     return shell("../", f"{it['name']}｜{name}", it["verdict"], body, "")
 
 
-# ---------------------------------------------------------------- 分支页
+# ---------------------------------------------------------------- 首页（按分支）
 
-def build_themes():
+def build_home():
     secs = []
     for k, (name, folder, color) in THEMES.items():
         its = [it for it in ITEMS if it["theme"] == k]
@@ -359,12 +357,13 @@ def build_themes():
 
     body = f"""
 <section class="hero">
-  <h1>从 {len(THEMES)} 个分支回到同一批日常器物</h1>
-  <p class="hero-sub">每一节对应本地物理书库（<code>OneDrive/physics</code>）中的一个主题目录。把同一件东西放在不同分支下看，常常会看到不同的原理在同时起作用——比如空气炸锅既在热力学里，也在流体力学里。</p>
+  <h1>你身边已经运行着一整座物理实验室</h1>
+  <p class="hero-sub">微波炉、保温杯、U 盘、门把手、彩虹、机翼——{len(ITEMS)} 件日常器物，每一件背后都有一条被反复验证的物理定律。下面按 {len(THEMES)} 个物理分支排开，每一支对应本地物理书库（<code>OneDrive/physics</code>）里的一个主题目录。点任意一件进去，先看现象本身怎么分布、怎么随时间变、在什么条件下失效、哪些细节最反直觉，再往下是几处能亲眼看到的现场、背后的原理、可算的数字，以及流传最广的错解。</p>
+  <p class="hero-en">{len(ITEMS)} everyday objects, each one a working physics experiment, arranged under {len(THEMES)} branches: first what you observe, then where to go and watch it yourself, then why it happens, then the numbers, and last the myths worth dropping. Each entry ends with an English summary of the same facts.</p>
 </section>
 {''.join(secs)}
 """
-    return shell("", "按物理分支浏览", f"按 {len(THEMES)} 个物理分支浏览 {len(ITEMS)} 件日常器物。", body, "themes", js=False)
+    return shell("", SITE, f"按 {len(THEMES)} 个物理分支浏览 {len(ITEMS)} 件日常器物背后的物理原理。", body, "index", js=False)
 
 
 # ---------------------------------------------------------------- 方法页
@@ -400,7 +399,7 @@ def build_method():
     body = f"""
 <section class="hero">
   <h1>怎么保证这些条目不是科普小作文</h1>
-  <p class="hero-sub">这一页说明条目是怎么来的、现象描述到什么颗粒度、实例收到什么标准、哪些数字可以信到什么程度、以及每一条误传澄清的依据在哪儿。整站 {len(ITEMS)} 条、{N_PHEN} 节现象详述（约 {CH_PHEN} 字）、{N_INST} 项现存实例、{N_ADV} 项进阶实例、{len(rows)} 条误传、{N_ENW} 词英文简述，全部可以逐条回溯到外部来源。</p>
+  <p class="hero-sub">这一页说明条目是怎么来的、现象描述到什么颗粒度、实例收到什么标准、去哪儿看凭什么算可复现、哪些数字可以信到什么程度、以及每一条误传澄清的依据在哪儿。整站 {len(ITEMS)} 条、{N_PHEN} 节现象详述（约 {CH_PHEN} 字）、{N_SCENE} 处可去的现场、{N_INST} 项现存实例、{N_ADV} 项进阶实例、{len(rows)} 条误传、{N_ENW} 词英文简述，全部可以逐条回溯到外部来源。</p>
 </section>
 
 <section class="block">
@@ -409,6 +408,7 @@ def build_method():
     <li><b>选题</b>：从本地物理书库（<code>OneDrive/physics</code>，{len(THEMES)} 个主题目录）里挑出日常能碰到、且原理可算的器物，而不是挑最热门的。</li>
     <li><b>分两层写</b>：先写现象层——观察到什么、随条件怎么变、时间上怎么演化、什么情况下失效、哪些细节反直觉；再写机制层，解释为什么。两层不重复，现象层不预设读者已经知道原理。</li>
     <li><b>找现存实例</b>：为每件器物找出真实存在的对象、设施或已记录案例，尽量给出可核验来源，而不是只讲抽象原理。</li>
+    <li><b>标出可去的现场</b>：每件器物再补四处普通人够得着的场景——走到哪里、等到什么条件，就能亲眼看同一条规律，并逐条写清会看到什么、为什么。</li>
     <li><b>联网核查</b>：对每一件器物逐项检索，优先取原始论文、政府与标准机构文件、大学课程讲义、厂商技术文档；查不到来源的数字一律不写。</li>
     <li><b>抽取数字</b>：把原理落到可核验的数值上——频率、波长、温度、效率、厚度、浓度。没有数字的条目一律退回重查。</li>
     <li><b>误传比对</b>：专门检索常见误解与 misconception，把流传最广的错解找出来逐条反驳，并给出正确机制。</li>
@@ -433,6 +433,17 @@ def build_method():
     <li>现存实例回答同一件事物还能在哪儿见到；进阶实例进一步要求量级：在役工业装置、大科学装置、尖端产品与国家级基准，同一条物理规律在更高量级上运行的真实工程对象，每条标注所属装置或行业类别。</li>
     <li>每条必须给出可核对的来源链接或可检索的专有名称（含型号、站址、机构名）。查不到实名的对象一律不收。</li>
     <li>不收发明时间线式的小知识、不收「某某最早提出」这类人物典故，除非它本身就是正在运行的装置。</li>
+  </ul>
+</section>
+
+<section class="block">
+  <h2 class="bh">去哪儿看的收录标准</h2>
+  <ul class="bounds">
+    <li>每处场景必须能被普通人复现：写清去哪儿、什么时候去、要什么天气、海拔、季节或是做什么动作，地点与条件都真实存在，不虚构地名。</li>
+    <li>同一处场景按固定三段写：先写亲眼看得到什么，再写它为什么发生。观察部分只允许写感官能确认的事实，配上最少的量化数字帮读者建立概念。</li>
+    <li>四处场景必须彼此不同：不同的地点、季节、时段或操作方式，不允许四段都在讲同一件事。</li>
+    <li>不写实验室专属的观测：需要示波器、真空腔、专用仪器才能完成的不收，除非那个场景本身就在公共场所可以走到。</li>
+    <li>不需要走到户外，甚至不需要离开厨房和浴室——判断标准是这条规律的触发条件是否普通人够得着，而不是地点在不在室外。</li>
   </ul>
 </section>
 
@@ -464,15 +475,15 @@ def build_method():
 
 <section class="block">
   <h2 class="bh">如何重新生成</h2>
-  <p class="prose-p">本站不是手写 HTML，而是从结构化数据生成的。条目与原理写在 <code>data_a.py</code>（厨房、家电与电磁）与 <code>data_b.py</code>（光学、量子、核、相对论与力学）里，现象详述与现存实例写在 <code>expand_01.py</code> 至 <code>expand_04.py</code> 里，进阶实例写在 <code>inst_01.py</code> 至 <code>inst_05.py</code> 里，英文简述写在 <code>en_01.py</code> 里，均按 slug 索引。改完内容只要重跑生成脚本，索引页、分支页、方法页、所有详情页会自动重建；新增一条现象小节、一项实例、一项进阶实例或一段英文简述，会自动出现在对应页面与本页的统计里。</p>
+  <p class="prose-p">本站不是手写 HTML，而是从结构化数据生成的。条目与原理写在 <code>data_a.py</code>（厨房、家电与电磁）与 <code>data_b.py</code>（光学、量子、核、相对论与力学）里，现象详述与现存实例写在 <code>expand_01.py</code> 至 <code>expand_04.py</code> 里，进阶实例写在 <code>inst_01.py</code> 至 <code>inst_05.py</code> 里，去哪儿看写在 <code>scene_01.py</code> 至 <code>scene_05.py</code> 里，英文简述写在 <code>en_01.py</code> 里，均按 slug 索引。改完内容只要重跑生成脚本，首页、方法页与所有详情页会自动重建；新增一条现象小节、一处现场、一项实例、一项进阶实例或一段英文简述，会自动出现在对应页面与本页的统计里。</p>
   <pre class="code">python build.py</pre>
-  <p class="prose-p dim">生成物：<code>index.html</code>、<code>themes.html</code>、<code>method.html</code>、<code>items/*.html</code>（{len(ITEMS)} 个）、<code>data/items.json</code>。</p>
+  <p class="prose-p dim">生成物：<code>index.html</code>（按分支首页）、<code>method.html</code>、<code>items/*.html</code>（{len(ITEMS)} 个）、<code>data/items.json</code>。</p>
 </section>
 
 <section class="block">
   <h2 class="bh">全站形式约束</h2>
   <ul class="bounds">
-    <li><b>极致紧凑</b>：小字号、紧行距、小留白，页面上没有装饰性大块空白。索引页一屏即可纵览大部分条目。</li>
+    <li><b>极致紧凑</b>：小字号、紧行距、小留白，页面上没有装饰性大块空白。首页按分支排开，一屏即可纵览大部分器物。</li>
     <li><b>无图片</b>：不使用任何位图或矢量插图，不引用图标字体，不设背景图。现象层只用文字描述，不靠插图代替描述。</li>
     <li><b>无表格</b>：不使用 HTML 表格元素，数字、映射与总表一律以列表和网格行呈现。</li>
     <li><b>无 emoji</b>：不使用任何 emoji 码位，也不使用箭头、圈号等符号做装饰。</li>
@@ -502,9 +513,7 @@ def main():
     os.makedirs(os.path.join(ROOT, "data"), exist_ok=True)
 
     with open(os.path.join(ROOT, "index.html"), "w", encoding="utf-8") as f:
-        f.write(build_index())
-    with open(os.path.join(ROOT, "themes.html"), "w", encoding="utf-8") as f:
-        f.write(build_themes())
+        f.write(build_home())
     with open(os.path.join(ROOT, "method.html"), "w", encoding="utf-8") as f:
         f.write(build_method())
 
@@ -521,6 +530,8 @@ def main():
         "folders": it["folders"], "verdict": it["verdict"], "evidence": it["evidence"],
         "enBrief": it["en_brief"],
         "phenomena": [{"title": t, "text": p} for t, p in it["phenomena"]],
+        "scenes": [{"title": t, "where": w, "see": s, "why": y, "url": u}
+                   for t, w, s, y, u in it["scenes"]],
         "instances": [{"name": n, "detail": d, "url": u} for n, d, u in it["instances"]],
         "advanced": [{"cat": c, "name": n, "detail": d, "url": u} for c, n, d, u in it["advanced"]],
         "numbers": [{"k": k, "v": v, "note": n} for k, v, n in it["numbers"]],
@@ -533,11 +544,11 @@ def main():
                     for k, v in THEMES.items()], "items": data},
                   f, ensure_ascii=False, indent=2)
 
-    print("index.html / themes.html / method.html")
+    print("index.html（按分支首页） / method.html")
     print("items/: %d 个详情页" % len(ITEMS))
     print("data/items.json")
-    print("条目 %d 件 · 分支 %d 个 · 现象 %d 节（%d 字）· 实例 %d 项 · 进阶实例 %d 项 · 数字 %d 组 · 误传 %d 条 · 英文 %d 词"
-          % (len(ITEMS), len(THEMES), N_PHEN, CH_PHEN, N_INST, N_ADV, N_NUMS, N_MYTHS, N_ENW))
+    print("条目 %d 件 · 分支 %d 个 · 现象 %d 节（%d 字）· 现场 %d 处 · 实例 %d 项 · 进阶实例 %d 项 · 数字 %d 组 · 误传 %d 条 · 英文 %d 词"
+          % (len(ITEMS), len(THEMES), N_PHEN, CH_PHEN, N_SCENE, N_INST, N_ADV, N_NUMS, N_MYTHS, N_ENW))
 
 
 if __name__ == "__main__":

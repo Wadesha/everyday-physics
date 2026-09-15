@@ -11,14 +11,14 @@
 <header class="topbar">
   <div class="wrap bar">
     <a class="brand" href="index.html"><span class="brand-cn">身边的物理</span><span class="brand-en">EVERYDAY PHYSICS</span></a>
-    <nav class="nav"><a href="index.html">索引</a><a href="themes.html">按分支</a><a href="method.html" class="on">方法与核对</a></nav>
+    <nav class="nav"><a href="index.html">按分支</a><a href="method.html" class="on">方法与核对</a></nav>
   </div>
 </header>
 <main class="wrap">
 
 <section class="hero">
   <h1>怎么保证这些条目不是科普小作文</h1>
-  <p class="hero-sub">这一页说明条目是怎么来的、现象描述到什么颗粒度、实例收到什么标准、哪些数字可以信到什么程度、以及每一条误传澄清的依据在哪儿。整站 26 条、242 节现象详述（约 54995 字）、153 项现存实例、205 项进阶实例、61 条误传、2020 词英文简述，全部可以逐条回溯到外部来源。</p>
+  <p class="hero-sub">这一页说明条目是怎么来的、现象描述到什么颗粒度、实例收到什么标准、去哪儿看凭什么算可复现、哪些数字可以信到什么程度、以及每一条误传澄清的依据在哪儿。整站 26 条、242 节现象详述（约 54995 字）、104 处可去的现场、216 项现存实例、279 项进阶实例、61 条误传、2020 词英文简述，全部可以逐条回溯到外部来源。</p>
 </section>
 
 <section class="block">
@@ -27,6 +27,7 @@
     <li><b>选题</b>：从本地物理书库（<code>OneDrive/physics</code>，13 个主题目录）里挑出日常能碰到、且原理可算的器物，而不是挑最热门的。</li>
     <li><b>分两层写</b>：先写现象层——观察到什么、随条件怎么变、时间上怎么演化、什么情况下失效、哪些细节反直觉；再写机制层，解释为什么。两层不重复，现象层不预设读者已经知道原理。</li>
     <li><b>找现存实例</b>：为每件器物找出真实存在的对象、设施或已记录案例，尽量给出可核验来源，而不是只讲抽象原理。</li>
+    <li><b>标出可去的现场</b>：每件器物再补四处普通人够得着的场景——走到哪里、等到什么条件，就能亲眼看同一条规律，并逐条写清会看到什么、为什么。</li>
     <li><b>联网核查</b>：对每一件器物逐项检索，优先取原始论文、政府与标准机构文件、大学课程讲义、厂商技术文档；查不到来源的数字一律不写。</li>
     <li><b>抽取数字</b>：把原理落到可核验的数值上——频率、波长、温度、效率、厚度、浓度。没有数字的条目一律退回重查。</li>
     <li><b>误传比对</b>：专门检索常见误解与 misconception，把流传最广的错解找出来逐条反驳，并给出正确机制。</li>
@@ -51,6 +52,17 @@
     <li>现存实例回答同一件事物还能在哪儿见到；进阶实例进一步要求量级：在役工业装置、大科学装置、尖端产品与国家级基准，同一条物理规律在更高量级上运行的真实工程对象，每条标注所属装置或行业类别。</li>
     <li>每条必须给出可核对的来源链接或可检索的专有名称（含型号、站址、机构名）。查不到实名的对象一律不收。</li>
     <li>不收发明时间线式的小知识、不收「某某最早提出」这类人物典故，除非它本身就是正在运行的装置。</li>
+  </ul>
+</section>
+
+<section class="block">
+  <h2 class="bh">去哪儿看的收录标准</h2>
+  <ul class="bounds">
+    <li>每处场景必须能被普通人复现：写清去哪儿、什么时候去、要什么天气、海拔、季节或是做什么动作，地点与条件都真实存在，不虚构地名。</li>
+    <li>同一处场景按固定三段写：先写亲眼看得到什么，再写它为什么发生。观察部分只允许写感官能确认的事实，配上最少的量化数字帮读者建立概念。</li>
+    <li>四处场景必须彼此不同：不同的地点、季节、时段或操作方式，不允许四段都在讲同一件事。</li>
+    <li>不写实验室专属的观测：需要示波器、真空腔、专用仪器才能完成的不收，除非那个场景本身就在公共场所可以走到。</li>
+    <li>不需要走到户外，甚至不需要离开厨房和浴室——判断标准是这条规律的触发条件是否普通人够得着，而不是地点在不在室外。</li>
   </ul>
 </section>
 
@@ -218,15 +230,15 @@
 
 <section class="block">
   <h2 class="bh">如何重新生成</h2>
-  <p class="prose-p">本站不是手写 HTML，而是从结构化数据生成的。条目与原理写在 <code>data_a.py</code>（厨房、家电与电磁）与 <code>data_b.py</code>（光学、量子、核、相对论与力学）里，现象详述与现存实例写在 <code>expand_01.py</code> 至 <code>expand_04.py</code> 里，进阶实例写在 <code>inst_01.py</code> 至 <code>inst_05.py</code> 里，英文简述写在 <code>en_01.py</code> 里，均按 slug 索引。改完内容只要重跑生成脚本，索引页、分支页、方法页、所有详情页会自动重建；新增一条现象小节、一项实例、一项进阶实例或一段英文简述，会自动出现在对应页面与本页的统计里。</p>
+  <p class="prose-p">本站不是手写 HTML，而是从结构化数据生成的。条目与原理写在 <code>data_a.py</code>（厨房、家电与电磁）与 <code>data_b.py</code>（光学、量子、核、相对论与力学）里，现象详述与现存实例写在 <code>expand_01.py</code> 至 <code>expand_04.py</code> 里，进阶实例写在 <code>inst_01.py</code> 至 <code>inst_05.py</code> 里，去哪儿看写在 <code>scene_01.py</code> 至 <code>scene_05.py</code> 里，英文简述写在 <code>en_01.py</code> 里，均按 slug 索引。改完内容只要重跑生成脚本，首页、方法页与所有详情页会自动重建；新增一条现象小节、一处现场、一项实例、一项进阶实例或一段英文简述，会自动出现在对应页面与本页的统计里。</p>
   <pre class="code">python build.py</pre>
-  <p class="prose-p dim">生成物：<code>index.html</code>、<code>themes.html</code>、<code>method.html</code>、<code>items/*.html</code>（26 个）、<code>data/items.json</code>。</p>
+  <p class="prose-p dim">生成物：<code>index.html</code>（按分支首页）、<code>method.html</code>、<code>items/*.html</code>（26 个）、<code>data/items.json</code>。</p>
 </section>
 
 <section class="block">
   <h2 class="bh">全站形式约束</h2>
   <ul class="bounds">
-    <li><b>极致紧凑</b>：小字号、紧行距、小留白，页面上没有装饰性大块空白。索引页一屏即可纵览大部分条目。</li>
+    <li><b>极致紧凑</b>：小字号、紧行距、小留白，页面上没有装饰性大块空白。首页按分支排开，一屏即可纵览大部分器物。</li>
     <li><b>无图片</b>：不使用任何位图或矢量插图，不引用图标字体，不设背景图。现象层只用文字描述，不靠插图代替描述。</li>
     <li><b>无表格</b>：不使用 HTML 表格元素，数字、映射与总表一律以列表和网格行呈现。</li>
     <li><b>无 emoji</b>：不使用任何 emoji 码位，也不使用箭头、圈号等符号做装饰。</li>

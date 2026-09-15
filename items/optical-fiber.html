@@ -11,12 +11,12 @@
 <header class="topbar">
   <div class="wrap bar">
     <a class="brand" href="../index.html"><span class="brand-cn">身边的物理</span><span class="brand-en">EVERYDAY PHYSICS</span></a>
-    <nav class="nav"><a href="../index.html">索引</a><a href="../themes.html">按分支</a><a href="../method.html">方法与核对</a></nav>
+    <nav class="nav"><a href="../index.html">按分支</a><a href="../method.html">方法与核对</a></nav>
   </div>
 </header>
 <main class="wrap">
 
-<nav class="crumb"><a href="../index.html">索引</a><span>/</span><a href="../themes.html#t-optics">光学</a><span>/</span><em>光纤宽带</em></nav>
+<nav class="crumb"><a href="../index.html">按分支</a><span>/</span><a href="../index.html#t-optics">光学</a><span>/</span><em>光纤宽带</em></nav>
 
 <article class="detail">
   <header class="dhead" style="--c:#2f7d5a">
@@ -54,6 +54,15 @@
   </section>
 
   <section class="block">
+    <h2 class="bh">去哪儿看</h2>
+    <p class="bnote">4 处。需要走到某个地方、或等到某种条件出现，才能亲眼看到的同一条规律；先写你会看到什么，再写它为什么发生。</p>
+    <ul class="insts scenes"><li><b>把光纤弯成小圈，侧面会漏光<span class="swhere">找一根透明塑料光纤或者有护套的塑料导光丝，关灯，用手机充电口旁的白灯或者手电照它的一端，把中段弯成一个小圈。</span></b><div class="sbody"><p><span class="lab s-see">看到</span>弯得越急的地方，弧的外侧渗出越亮的光斑，直段则安安静静什么都不漏。把弯拉直，那处光斑立刻消失。整根丝像被划开一道口子。</p><p><span class="lab s-why">原理</span>光纤靠全反射把光锁在纤芯里：只要光射到芯壁的角度大于临界角，就会被百分之百反射回来。弯曲会让外侧那一面的入射角变小，小到低于临界角时，这一部分光就不再被反射、而是折射出去。所以弯得越急、曲率半径越小，漏得越多。这也是光纤布线有最小弯曲半径要求的原因。</p></div></li>
+<li><b>暗处看，整根纤芯是一根红线<span class="swhere">在暗环境里用低功率红色激光笔照一段剥掉涂覆层的石英光纤的一端，从侧面看这根细丝，不要把眼睛正对端面。</span></b><div class="sbody"><p><span class="lab s-see">看到</span>整根纤芯从头到尾是一条极细的亮红线，颜色均匀、几乎不见衰减；把光纤轻微弯一下，弯处的亮点会格外刺眼。护套和包层并不亮，只有芯那一线在发光。</p><p><span class="lab s-why">原理</span>光被反复全反射地关在只有几微米到几十微米粗的纤芯里，几乎不从侧壁跑掉，所以从侧面看它整根都亮。你也正好看到全反射并不是「光被完全困住」，散射和端面反射仍会让极少部分漏出来，才让这条线在黑暗里可见。真正传信号时，这么一点点漏光累积几公里也足够把信号削掉。</p></div></li>
+<li><b>光猫上那盏闪红光的灯<span class="swhere">家里断网的时候，去看光猫（那台接光纤的小盒子）上的指示灯，注意标着 LOS 或者「光信号」的那一盏。</span></b><div class="sbody"><p><span class="lab s-see">看到</span>网通的时候它不亮或者常亮绿灯，一断网就变成一闪一闪的红灯，同时所有上网的灯都灭掉。重启光猫多半没用，把线重插有时能恢复。</p><p><span class="lab s-why">原理</span>这盏灯看的不是网速，而是光猫有没有收到足够强度的光。LOS 是信号丢失的缩写，闪红表示进到光猫的光功率掉到门限以下，原因可能是光纤被施工挖断、接头脏了、弯折过度导致侧漏，或者对端设备故障。它直接反映了「光纤里的光」这件事本身，而不是上层设备的软件问题。</p></div></li>
+<li><b>一根比头发粗一点的线管整个小区<span class="swhere">留意楼道里的光缆分纤箱，还有运营商入户的那根白色扁平皮线光缆，顺着它找到家里的光猫。</span></b><div class="sbody"><p><span class="lab s-see">看到</span>一根只有两三毫米粗、里面只有一根极细玻璃丝的白线，同时承担了全家人的上网、电视和电话，长度能拉上百米甚至几公里，中途没有任何中继设备。和同样距离的铜缆比，它细得多、也轻得多。</p><p><span class="lab s-why">原理</span>单模光纤在常用的一千三百纳米和一千五百五十纳米窗口上，衰减只有每公里零点二到零点三五分贝，也就是跑十公里还剩九成以上的光。光本身频率极高，一根芯里可以同时跑上百个不同波长的通道，互不干扰，所以容量大得惊人。一根细丝的带宽能顶一捆铜缆，原因在这里。</p></div></li></ul>
+  </section>
+
+  <section class="block">
     <h2 class="bh">背后的原理</h2>
     <p class="bnote">机制层面：为什么会出现上一节那些现象。</p>
     <div class="prose"><h3>全反射：一次「出不去」的判决</h3>
@@ -66,25 +75,31 @@
 
   <section class="block">
     <h2 class="bh">现存实例</h2>
-    <p class="bnote">6 项。真实存在的对象、设施或已记录案例。</p>
-    <ul class="insts"><li><b>亚洲直达海缆 ADC</b><p>全长 9988 km，采用 8 对光纤，初始设计容量最高 160 Tbps，2024 年 11 月投产，连接中国、日本、新加坡等亚太地区，是亚洲容量最高的海底光缆系统。 <a class="isrc" href="https://www.chinatelecomglobal.com/whats-new/37346" target="_blank" rel="noopener noreferrer">来源</a></p></li>
-<li><b>MAREA 跨大西洋海缆</b><p>全长约 6600 km，连接美国弗吉尼亚与西班牙，含 8 对光纤，系统设计 160 Tbit/s；2019 年实测单对光纤达 26.2 Tbit/s，比设计预期高约 20%。 <a class="isrc" href="https://ecas.cas.cn/dtfb/yjdt/201802/t20180206_4935436.html" target="_blank" rel="noopener noreferrer">来源</a></p></li>
-<li><b>中国电信空芯光纤试验</b><p>采用支撑管空芯光纤（ST-HCF），平均衰减 0.083 dB/km（1557.4 nm），在仅 EDFA 配置下实现 611.9 km 单跨无中继 800 Gbit/s 实时传输，刷新世界纪录。 <a class="isrc" href="https://www.chinatelecom.com.cn/ct/news/gdxw/162285.html" target="_blank" rel="noopener noreferrer">来源</a></p></li>
-<li><b>空芯光纤量子—经典共传</b><p>2026 年 8 月，中国电信等在 101.6 km 空芯光纤上实现 37.6 Tbps 经典传输与 5 kbps 量子密钥稳定共传，刷新量子—经典共纤传输距离纪录。 <a class="isrc" href="https://new.qq.com/rain/a/20260909A0E8R400" target="_blank" rel="noopener noreferrer">来源</a></p></li>
-<li><b>东莞—香港跨境空芯光缆</b><p>长约 110 km 的跨境商用线路，双向时延做到 0.93 ms（低于普通石英光纤），是三大运营商各自首条商用空芯线路之一。 <a class="isrc" href="https://www.toutiao.com/article/7683436357909365257/" target="_blank" rel="noopener noreferrer">来源</a></p></li>
-<li><b>2Africa 环非洲海缆</b><p>全长约 45000 km，连接 33 国以上，采用 16 对光纤与空分复用，总容量 180+ Tbps，2024 年前后陆续投运，是迄今覆盖最广的洲际海底系统之一。 <a class="isrc" href="https://mapyourtech.com/?p=44292/" target="_blank" rel="noopener noreferrer">来源</a></p></li></ul>
+    <p class="bnote">9 项。真实存在的对象、设施或已记录案例。</p>
+    <ul class="insts"><li><b>亚洲直达海缆 ADC</b><p>亚洲直达海缆 ADC 在 2024 年 11 月刚刚投产，全长接近一万公里，把中国、日本和新加坡连在一起。它最高能跑 160 Tbps，是眼下亚洲容量最大的海底光缆。 <a class="isrc" href="https://www.chinatelecomglobal.com/whats-new/37346" target="_blank" rel="noopener noreferrer">来源</a></p></li>
+<li><b>MAREA 跨大西洋海缆</b><p>MAREA 是一条跨大西洋海缆，从美国弗吉尼亚一路铺到西班牙，全长约 6600 公里。2019 年工程师实测，单对光纤跑到了 26.2 Tbps，比当初设计还高两成。 <a class="isrc" href="https://ecas.cas.cn/dtfb/yjdt/201802/t20180206_4935436.html" target="_blank" rel="noopener noreferrer">来源</a></p></li>
+<li><b>中国电信空芯光纤试验</b><p>中国电信在一条空芯光纤上做了试验，光在空气芯里跑而不是玻璃里。611.9 公里的距离上不靠中继直接传了 800 Gbps，平均衰减只有 0.083 dB/km，刷新了世界纪录。 <a class="isrc" href="https://www.chinatelecom.com.cn/ct/news/gdxw/162285.html" target="_blank" rel="noopener noreferrer">来源</a></p></li>
+<li><b>空芯光纤量子—经典共传</b><p>2026 年 8 月，中国电信在 101.6 公里空芯光纤上同时传了经典光信号和量子密钥。经典通道跑 37.6 Tbps，量子通道也稳稳工作，把两者共传的距离纪录又往前推了一步。 <a class="isrc" href="https://new.qq.com/rain/a/20260909A0E8R400" target="_blank" rel="noopener noreferrer">来源</a></p></li>
+<li><b>东莞—香港跨境空芯光缆</b><p>这条从东莞拉到香港的跨境线路长约 110 公里，是三大运营商最早商用的空芯光缆之一。它的双向时延只有 0.93 毫秒，比普通玻璃光纤还要快一点。 <a class="isrc" href="https://www.toutiao.com/article/7683436357909365257/" target="_blank" rel="noopener noreferrer">来源</a></p></li>
+<li><b>2Africa 环非洲海缆</b><p>2Africa 是一条绕着非洲走的超级海缆，全长约四万五千公里，串起三十多个国家。它用 16 对光纤，总容量超过 180 Tbps，是眼下覆盖国家最多的洲际海底系统之一。 <a class="isrc" href="https://mapyourtech.com/?p=44292/" target="_blank" rel="noopener noreferrer">来源</a></p></li>
+<li><b>TAT-8 首条跨洋光纤</b><p>TAT-8 是第一条跨大洋的光纤海缆，1988 年投产，从美国连到英法，全长约 6700 公里。它只用三对光纤就顶得上四万路电话，把跨洋通信带进了光的时代。 <a class="isrc" href="https://en.wikipedia.org/wiki/TAT-8" target="_blank" rel="noopener noreferrer">来源</a></p></li>
+<li><b>Google Grace Hopper 海缆</b><p>Google 的 Grace Hopper 海缆 2022 年开通，从纽约连到英国和西班牙，用了 16 对光纤。它总容量约 340 Tbps，是谷歌自己第一条通往西班牙的跨洋线路。 <a class="isrc" href="https://en.wikipedia.org/wiki/Grace_Hopper_(submarine_communications_cable)" target="_blank" rel="noopener noreferrer">来源</a></p></li>
+<li><b>康宁 1970 低损耗光纤</b><p>1970 年康宁的凯克、莫勒和舒尔茨做出第一根够用的光纤，光损耗降到 17 dB/km。这个周五下午的发现，让长距离光通信从想法变成了可能。 <a class="isrc" href="https://www.corning.com/optical-communications/in/en/home/products/fiber/optical-fiber-innovation.html" target="_blank" rel="noopener noreferrer">来源</a></p></li></ul>
   </section>
 
   <section class="block">
     <h2 class="bh">进阶实例</h2>
-    <p class="bnote">7 项。把同一条规律放到更高量级上运行的真实工程对象：在役工业装置、大科学装置、尖端产品与国家级基准，每条标注所属装置或行业类别。</p>
-    <ul class="insts adv"><li><p class="ihead"><span class="icat">基础设施</span><b>SEA-ME-WE 6 海底光缆</b></p><p class="idesc">SEA-ME-WE 6 是连接新加坡、马来西亚与法国马赛的洲际海底通信缆，全长约 19200 km，含 10 对光纤，每对设计容量 12.6 Tbps，系统总设计容量 126 Tbps，采用空分复用技术，约 5 亿美元投资，参与方含中国联通，2025 年前后分段投运。它是亚欧间主干通信基础设施之一，承担跨洋互联网与金融流量的大容量承载，是典型的国家级海缆工程，其路由经马赛接入欧洲骨干网，是亚欧数字贸易的物理底层之一。</p></li>
-<li><p class="ihead"><span class="icat">基础设施</span><b>PEACE 和平光缆</b></p><p class="idesc">PEACE（和平）跨洋海底光缆由中国企业主导，规划全长 15000 km（远期延至 25000 km），单对速率 200 Gbps、容量 16 Tbps，连接巴基斯坦、吉布提、肯尼亚、埃及与法国马赛，2022 年 12 月 22 日商用。它是「一带一路」数字通道中由中国主导建设并运营的国际海缆基础设施，缩短亚欧与中非间的路由时延，提升中国在全球海缆网络中的话语权，其落地使中国与非洲、欧洲间新增直达海缆通道，绕开传统中转节点。 <a class="isrc" href="https://www.submarinenetworks.com/en/systems/asia-europe-africa/peace" target="_blank" rel="noopener noreferrer">来源</a></p></li>
-<li><p class="ihead"><span class="icat">科研装置</span><b>LAMOST 郭守敬望远镜光纤光谱</b></p><p class="idesc">中国科学院国家天文台兴隆观测站的 LAMOST 配备 4000 个光纤定位单元，焦面直径 1.75 m，经 16 台光谱仪在 370 至 900 nm 同时获取 4000 个天体光谱，视场 5 度。截至 2025 年 10 月累计发布 2807 万条光谱、1159 万组恒星参数，数据量稳居世界第一，是大规模光纤光谱巡天的中国在役大科学装置，为银河系结构与演化研究提供海量样本，其发布的恒星参数集已被用于重构银河系结构与化学演化历史。 <a class="isrc" href="https://www.cas.cn/cm/202511/t20251105_5087552.shtml" target="_blank" rel="noopener noreferrer">来源</a></p></li>
-<li><p class="ihead"><span class="icat">科研装置</span><b>DESI 暗能量光谱仪</b></p><p class="idesc">暗能量光谱仪（DESI）安装于美国基特峰 Mayall 4 m 望远镜，以 5020 个机器人光纤定位器每 20 分钟采集 5000 条天体光谱，五年计划获取 3500 万星系与 240 万类星体，2021 年 5 月启动。其光纤定位器在直径约 0.8 m 焦面板上将光纤指向数千目标，绘制宇宙大尺度结构以约束暗能量演化，是光纤光谱天文在河外巡天中的旗舰级科研项目，其首批成果已约束暗能量状态方程，刷新宇宙膨胀历史的关键测量。 <a class="isrc" href="https://noirlab.edu/public/videos/desi_numbers/" target="_blank" rel="noopener noreferrer">来源</a></p></li>
-<li><p class="ihead"><span class="icat">基础设施</span><b>分布式声波传感管道监测</b></p><p class="idesc">基于光纤瑞利后向散射相位解调的分布式声波传感（DAS）用单台 interrogator 覆盖达 100 km 管线，空间分辨率 1 m，可在 90 秒内探测 20 L/min 的泄漏。浙江电网以 DAS 沿 1800 km 电缆通道布设，将通信光缆兼作传感光纤，实时监听第三方施工与异常振动，是能源管网的规模化光纤监测基础设施，也可用于周界安防与地震波记录，该技术在油气管道与通信干线中推广，将存量光缆转化为分布式传感器。 <a class="isrc" href="https://www.21ic.com/a/1002719.html" target="_blank" rel="noopener noreferrer">来源</a></p></li>
-<li><p class="ihead"><span class="icat">医疗</span><b>医用柔性光纤内镜</b></p><p class="idesc">柔性纤维支气管镜以传像束光纤传导影像，典型顶端直径 5.2 mm，活检通道直径 2.2 mm，经自然腔道进入体内观察气道、鼻咽与膀胱。数万根单丝光纤以有序排列把物镜端的像逐点传到目镜端，配合照明光纤提供冷光，是微创诊断与活检中广泛使用的医用光纤器械，较刚性内镜显著提升患者耐受与到达范围。 <a class="isrc" href="https://www.goldhealthmedical.com/p/flexible-fiber-bronchoscopenasopharyngoscopecystoscopeu" target="_blank" rel="noopener noreferrer">来源</a></p></li>
-<li><p class="ihead"><span class="icat">工业</span><b>高功率光纤激光器</b></p><p class="idesc">IPG 光子的 YLS 系列光纤激光器输出 10 至 100 kW、波长 1070 nm，电光效率高于 40%；中国锐科激光 2021 年 12 月推出国内首台 100 kW 工业光纤激光器。双包层增益光纤把泵浦光约束在内包层、信号光在纤芯放大，结构紧凑且免准直，已成为切割、焊接与增材制造的主力工业光源，高功率机型用于船舶与压力容器厚板加工，其光束经光纤柔性传导，便于集成进机器人焊接产线与自动化产线。 <a class="isrc" href="https://raycuslaser.com/view/3065.html" target="_blank" rel="noopener noreferrer">来源</a></p></li></ul>
+    <p class="bnote">10 项。把同一条规律放到更高量级上运行的真实工程对象：在役工业装置、大科学装置、尖端产品与国家级基准，每条标注所属装置或行业类别。</p>
+    <ul class="insts adv"><li><p class="ihead"><span class="icat">基础设施</span><b>SEA-ME-WE 6 海底光缆</b></p><p class="idesc">SEA-ME-WE 6 这条横穿亚欧的海底光缆，把几大洲的网速绑在一起。它和你家宽带背后是同一件事：光在比头发丝还细的玻璃丝里靠不断全反射往前跑，几乎不跑丢能量，所以能一口气跨过半个地球。</p></li>
+<li><p class="ihead"><span class="icat">基础设施</span><b>PEACE 和平光缆</b></p><p class="idesc">和平光缆从中国牵到法国，中间串起非洲好几国。一条缆就是一条洲际信息主动脉，你刷的跨境网页和视频，很多就从这海底玻璃丝里过。它让亚欧非之间少绕一大圈路。比老路由快出小半拍。 <a class="isrc" href="https://www.submarinenetworks.com/en/systems/asia-europe-africa/peace" target="_blank" rel="noopener noreferrer">来源</a></p></li>
+<li><p class="ihead"><span class="icat">科研装置</span><b>LAMOST 郭守敬望远镜光纤光谱</b></p><p class="idesc">兴隆山上这台望远镜，用四千根光纤同时戳向四千颗星。每根光纤把那颗星的光拽进光谱仪，一夜能攒下海量星谱，用来画银河的族谱。它发过的星谱比谁都多。它一次能盯的星星抵得上老法子几千夜。 <a class="isrc" href="https://www.cas.cn/cm/202511/t20251105_5087552.shtml" target="_blank" rel="noopener noreferrer">来源</a></p></li>
+<li><p class="ihead"><span class="icat">科研装置</span><b>DESI 暗能量光谱仪</b></p><p class="idesc">DESI 装在美军基特峰的大望远镜上，五千个机械手同时把光纤对向五千个星系。每二十分钟扫一轮，靠海量星点去猜暗能量怎么拽着宇宙膨胀。光纤在这干的是指路员的活。它替星星省了人工对准的工夫。 <a class="isrc" href="https://noirlab.edu/public/videos/desi_numbers/" target="_blank" rel="noopener noreferrer">来源</a></p></li>
+<li><p class="ihead"><span class="icat">基础设施</span><b>分布式声波传感管道监测</b></p><p class="idesc">沿管线的通信光缆顺便兼职听声。一台仪器能管上百公里，哪里在偷偷漏或者被人挖，一分钟内它就听出来报警，省去派人沿线巡。一根旧缆就成了百里长的耳朵。原本要人扛仪器走几十公里。 <a class="isrc" href="https://www.21ic.com/a/1002719.html" target="_blank" rel="noopener noreferrer">来源</a></p></li>
+<li><p class="ihead"><span class="icat">医疗</span><b>医用柔性光纤内镜</b></p><p class="idesc">这根软管子从嘴里进去，头上一束光纤把体内的像传出来。顶端比筷子还细，医生看着屏幕就能查气管和胃，不用开刀。几万根细丝排齐才拼得出清楚画面。冷光照亮组织不被烤着。 <a class="isrc" href="https://www.goldhealthmedical.com/p/flexible-fiber-bronchoscopenasopharyngoscopecystoscopeu" target="_blank" rel="noopener noreferrer">来源</a></p></li>
+<li><p class="ihead"><span class="icat">工业</span><b>高功率光纤激光器</b></p><p class="idesc">IPG 这类光纤激光器把光关在比发丝粗不了多少的纤芯里放大，能喷出上万瓦的刀。切钢板焊飞船都靠它，电转光还比老灯省一大截。光从光纤里软软拐弯，接进机械臂也方便。 <a class="isrc" href="https://raycuslaser.com/view/3065.html" target="_blank" rel="noopener noreferrer">来源</a></p></li>
+<li><p class="ihead"><span class="icat">国防与安全</span><b>光纤陀螺仪</b></p><p class="idesc">潜艇和导弹靠它认方向，里面没有转子的转盘，全是一圈光纤。光顺着正反两圈转一下就露出微小时差，靠这差算出拐了多大角度。它不靠星星不靠卫星闷头也能定向。陀螺仪这名就是光纤做陀螺。 <a class="isrc" href="https://en.wikipedia.org/wiki/Fibre_optic_gyroscope" target="_blank" rel="noopener noreferrer">来源</a></p></li>
+<li><p class="ihead"><span class="icat">通信</span><b>光纤到户 FTTH</b></p><p class="idesc">光纤到户把那根玻璃丝直接拉进你家墙里。以前靠铜线传信号，现在光跑进来百兆千兆的网速才稳得住，看 4K 也不转圈。一栋楼一根主纤，再分到各户门口。这是宽带最后一百米换成光的那段。 <a class="isrc" href="https://en.wikipedia.org/wiki/Fiber_to_the_x" target="_blank" rel="noopener noreferrer">来源</a></p></li>
+<li><p class="ihead"><span class="icat">医疗</span><b>医用光纤测温</b></p><p class="idesc">做核磁共振时金属体温计会出事，于是把光纤探进体内测温。它不怕磁场，尖头只有针粗，能贴着肿瘤看放疗时烧到多少度。光在丝里报温度机器读得准。比水银计安全，也比贴片测得深。 <a class="isrc" href="https://en.wikipedia.org/wiki/Fiber_optic_sensor" target="_blank" rel="noopener noreferrer">来源</a></p></li></ul>
   </section>
 
   <section class="block">

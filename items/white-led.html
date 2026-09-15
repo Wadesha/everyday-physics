@@ -11,12 +11,12 @@
 <header class="topbar">
   <div class="wrap bar">
     <a class="brand" href="../index.html"><span class="brand-cn">身边的物理</span><span class="brand-en">EVERYDAY PHYSICS</span></a>
-    <nav class="nav"><a href="../index.html">索引</a><a href="../themes.html">按分支</a><a href="../method.html">方法与核对</a></nav>
+    <nav class="nav"><a href="../index.html">按分支</a><a href="../method.html">方法与核对</a></nav>
   </div>
 </header>
 <main class="wrap">
 
-<nav class="crumb"><a href="../index.html">索引</a><span>/</span><a href="../themes.html#t-condmat">凝聚态与固体物理</a><span>/</span><em>白光 LED</em></nav>
+<nav class="crumb"><a href="../index.html">按分支</a><span>/</span><a href="../index.html#t-condmat">凝聚态与固体物理</a><span>/</span><em>白光 LED</em></nav>
 
 <article class="detail">
   <header class="dhead" style="--c:#6b5b1e">
@@ -54,6 +54,15 @@
   </section>
 
   <section class="block">
+    <h2 class="bh">去哪儿看</h2>
+    <p class="bnote">4 处。需要走到某个地方、或等到某种条件出现，才能亲眼看到的同一条规律；先写你会看到什么，再写它为什么发生。</p>
+    <ul class="insts scenes"><li><b>手机拍 LED 灯出现彩色条纹<span class="swhere">用旧手机或者数码相机对着点亮的白光 LED 灯、或者另一块 LED 屏幕拍一张照片。</span></b><div class="sbody"><p><span class="lab s-see">看到</span>肉眼看着均匀的白光，在照片里却变成一条条明暗相间、还带彩色的横纹，换个角度条纹会移动。用屏幕取景就没有，拍 LED 灯才有。</p><p><span class="lab s-why">原理</span>很多 LED 靠快速开关来调光或者供电，开关频率在几百到几千赫兹。拍照时传感器是一行一行逐行曝光的，也就是卷帘快门，每一行曝光时看到的亮度可能正处在开关周期的不同位置，于是亮度起伏被记成了条纹。人眼有视觉暂留，看不出这种快速起伏。</p></div></li>
+<li><b>同一间屋里两盏灯的色温不一样<span class="swhere">同一间房间装一盏暖光 LED 和一盏老式节能灯，晚上关掉其他灯，看它们照在白墙和白纸上的颜色。</span></b><div class="sbody"><p><span class="lab s-see">看到</span>暖光 LED 那盏照出来偏黄偏橙，白纸像被染了一层奶油色；节能灯那盏偏青白，同一张纸显得更冷。两盏灯都写着「白光」，看起来却完全不是一种白。</p><p><span class="lab s-why">原理</span>白光 LED 本身发的是蓝光，靠芯片上那层黄色荧光粉把一部分蓝光转成黄光，蓝加黄混合成人眼感受到的白。荧光粉的比例和配方不同，混出来的色温就不同，偏黄就是暖白，偏蓝就是冷白。单色灯泡并不存在「标准白光」这个东西。</p></div></li>
+<li><b>手电光斑边缘带了颜色<span class="swhere">拿一只便宜的 LED 手电或者用手机闪光灯，照在几米外的白墙上，仔细看光斑从中心到边缘的颜色。</span></b><div class="sbody"><p><span class="lab s-see">看到</span>中心看起来是白的，往边缘一圈偏蓝或者偏黄，颜色一层一层不均匀，离墙越近越明显。有的机器拍下来比肉眼看着更花。</p><p><span class="lab s-why">原理</span>蓝光和黄光的出射角度分布并不一样：芯片发出的蓝光往侧前方跑得更多，荧光粉转换出的黄光向各个方向散得更均匀。从不同角度看，进到眼睛里的蓝黄比例就变了，混出来的白也跟着偏色。这是白光 LED 的固有特性，也被叫角度色偏。</p></div></li>
+<li><b>拆开一只坏掉的 LED 灯泡<span class="swhere">找一只坏掉的 LED 灯泡，在断电的情况下轻轻旋开或者敲开灯头，看里面的那块小板。</span></b><div class="sbody"><p><span class="lab s-see">看到</span>里面排着一串米粒大小的小方块，颜色是淡黄的，像涂了一层漆；数量不多，每个小方块旁边连着细细的走线。整块板子比同样亮度的白炽灯灯丝复杂得多。</p><p><span class="lab s-why">原理</span>那些淡黄色的小方块就是发光核心，下面是发蓝光的芯片，上面那层黄色是荧光粉涂层。通电后芯片发蓝光，一部分被荧光粉转成黄光，蓝黄混合成了眼睛看到的白。一只灯泡的亮度由这些小方块的数量和驱动电流共同决定，装得越密越亮。</p></div></li></ul>
+  </section>
+
+  <section class="block">
     <h2 class="bh">背后的原理</h2>
     <p class="bnote">机制层面：为什么会出现上一节那些现象。</p>
     <div class="prose"><h3>波长 = 带隙，一道简单的换算</h3>
@@ -66,26 +75,31 @@
 
   <section class="block">
     <h2 class="bh">现存实例</h2>
-    <p class="bnote">6 项。真实存在的对象、设施或已记录案例。</p>
-    <ul class="insts"><li><b>Cree XLamp 系列大功率 LED</b><p>科锐的高功率照明封装（如 XHP、XSP 系列）用于路灯与灯具，单颗可达上百流明、系统光效逾 100 lm/W，是 LED 照明普及的关键器件之一。</p></li>
-<li><b>洛杉矶 LED 路灯改造</b><p>该市自 2009 年起把逾 14 万盏路灯换为 LED，至 2022 年约 98% 完成，照明用电降约 64%、年省约 114 GWh，是最大规模市政改造之一。 <a class="isrc" href="https://www.langlide.com/knowledge/led-street-lighting-energy-savings-report-2026-before-after-city-case-data-2" target="_blank" rel="noopener noreferrer">来源</a></p></li>
-<li><b>飞利浦 Lumileds Luxeon</b><p>较早商用化的高功率 LED 系列之一，用于通用照明与车灯，是蓝光芯片加荧光粉白光路线的代表产品，推动白光 LED 从指示走向照明。</p></li>
-<li><b>日亚化学蓝光 LED 与诺贝尔奖</b><p>1993 年前后日亚化学实现高亮度蓝光 LED 商用，使「蓝光芯片 + 黄荧光粉」白光成主流；赤崎勇、天野浩、中村修二因此获 2014 年诺贝尔物理学奖。 <a class="isrc" href="https://nobel-prize.net/en/nobel/fields/nobel-prize-in-physics/2014/0" target="_blank" rel="noopener noreferrer">来源</a></p></li>
-<li><b>智能手机闪光与屏下 LED</b><p>现代手机补光、键盘灯与屏幕背光大量使用白光 LED，典型单颗 20–60 mA、几十流明；其蓝光峰与荧光粉黄光混合即日常所见的白光。</p></li>
-<li><b>车用 LED 前照灯</b><p>近十五年白光 LED 进入汽车远近光与日行灯，因光效高、响应快、寿命长，逐步替代卤素与氙气灯，是白光 LED 在强规范领域落地的实例。</p></li></ul>
+    <p class="bnote">8 项。真实存在的对象、设施或已记录案例。</p>
+    <ul class="insts"><li><b>Cree XLamp 系列大功率 LED</b><p>科锐的 XLamp 是常见的大功率照明灯珠，单颗就能出上百流明。它用在路灯和灯具里，把白光 LED 从指示灯变成能照路的灯。你家附近不少路灯可能就藏着它。</p></li>
+<li><b>洛杉矶 LED 路灯改造</b><p>洛杉矶从 2009 年起把十几万盏路灯换成 LED，到 2022 年基本换完。照明用电掉了约六成，一年省下不少电。它是城市换 LED 里最常被当样板的例子。 <a class="isrc" href="https://www.langlide.com/knowledge/led-street-lighting-energy-savings-report-2026-before-after-city-case-data-2" target="_blank" rel="noopener noreferrer">来源</a></p></li>
+<li><b>飞利浦 Lumileds Luxeon</b><p>Luxeon 是较早商用的大功率 LED 系列，用在通用照明和车灯上。它走蓝光芯片加黄荧光粉的路线，把白光 LED 从指示小灯变成能照明的灯。老玩家配灯常提它。</p></li>
+<li><b>日亚化学蓝光 LED 与诺贝尔奖</b><p>1993 年前后日亚化学做出高亮度蓝光 LED，配上黄荧光粉就能出白光。赤崎勇、天野浩和中村修二因此拿了 2014 年诺贝尔物理学奖。没有蓝光，今天的白光 LED 灯就不会存在。 <a class="isrc" href="https://nobel-prize.net/en/nobel/fields/nobel-prize-in-physics/2014/0" target="_blank" rel="noopener noreferrer">来源</a></p></li>
+<li><b>智能手机闪光与屏下 LED</b><p>手机补光、键盘灯和屏幕背光都靠白光 LED。单颗才几十毫安、几十流明，靠蓝光峰加黄荧光粉混出白光。你每天盯着的亮屏，背面是成千上万颗小 LED。</p></li>
+<li><b>车用 LED 前照灯</b><p>近十五年白光 LED 进了汽车的远近光和日行灯。它亮得更快、更省电、也更耐用到不怎么坏。你晚上看到偏蓝白的犀利车灯，多半就是 LED。</p></li>
+<li><b>Philips Hue 智能 LED 灯</b><p>飞利浦 2012 年推出 Hue，用手机就能调家里灯的颜色和亮度。它把 LED 灯变成连网设备，一个桥接器能管几十盏灯。这是消费级智能照明最早落地的产品之一。 <a class="isrc" href="https://www.signify.com/global/about/news/press-release-archive/2012/20121029-connected-lighting-system-for-the-home" target="_blank" rel="noopener noreferrer">来源</a></p></li>
+<li><b>首尔市 LED 公共照明替换</b><p>首尔市把公共建筑、地铁站和路灯大批换成 LED，还加了感应调光。示范路段夜里没人时自动变暗，节电超过三成。它说明城市换 LED 不只是省电，还能治光污染。 <a class="isrc" href="https://koreatimes.co.kr/www/nation/2023/12/281_259792.html" target="_blank" rel="noopener noreferrer">来源</a></p></li></ul>
   </section>
 
   <section class="block">
     <h2 class="bh">进阶实例</h2>
-    <p class="bnote">8 项。把同一条规律放到更高量级上运行的真实工程对象：在役工业装置、大科学装置、尖端产品与国家级基准，每条标注所属装置或行业类别。</p>
-    <ul class="insts adv"><li><p class="ihead"><span class="icat">工业</span><b>深圳 TUBU 全光谱温室补光灯</b></p><p class="idesc">深圳 TUBU 科技（中国深圳，2014 年起研产 LED）的全光谱温室补光灯，单机功率 760 W 或 1200 W，可串联最多 80 台，兼容现有 HPS 布局。红光与蓝光驱动植物光合，远红光促进开花，靠可调光谱与光强替代部分日光，用于商业温室与垂直农场补光，节能并提升作物一致性。 <a class="isrc" href="https://www.tu-bu.com/best-led-grow-lights-for-commercial-farming/" target="_blank" rel="noopener noreferrer">来源</a></p></li>
-<li><p class="ihead"><span class="icat">工业</span><b>中国 LED 植物照明市场（2024）</b></p><p class="idesc">据集邦咨询，2024 年全球 LED 植物照明市场规模约 13.15 亿美元，预计 2029 年增至 20.56 亿美元，年复合成长率 9.4%。温室大棚占六成以上份额，主流产品功率已转向 600 至 1500 W，光合光子效率（PPE）持续提升，是白色 LED 在农业光照中的规模化应用写照。 <a class="isrc" href="https://finance.sina.com.cn/stock/hkstock/hkstocknews/2025-04-16/doc-inetiweu6890090.shtml" target="_blank" rel="noopener noreferrer">来源</a></p></li>
-<li><p class="ihead"><span class="icat">通信</span><b>Oledcomm LiFiMAX2G 可见光通信</b></p><p class="idesc">法国 Oledcomm 的 LiFiMAX2G 系统于 2023 年 CES 发布，可见光通信速率提升至 2 Gbps，靠 LED 灯泡以每秒上千万次闪烁编码数据，光信号不穿墙、抗干扰。已在医院 MRI 室、工厂 AGV 等电磁敏感场景部署，是白色 LED 同时承担照明与通信的典型商用方案。 <a class="isrc" href="https://baike.baidu.com/item/Oledcomm/19416766" target="_blank" rel="noopener noreferrer">来源</a></p></li>
-<li><p class="ihead"><span class="icat">通信</span><b>激光基 LiFi 100 Gbps 实验系统</b></p><p class="idesc">英国思克莱德大学与 Kyocera SLD Laser 等演示的激光型 LiFi 系统，单个 SMD 光源可输出 450 流明白光，亮度逾 1000 cd/mm²；十通道波分复用实现逾 100 Gbps 室内接入，户外点对点 500 米达 4.8 Gbps。靠高速调制白光二极管或激光完成可见光通信，发表于 2024 年 Journal of Lightwave Technology。 <a class="isrc" href="https://arxiv.org/abs/2402.16144" target="_blank" rel="noopener noreferrer">来源</a></p></li>
-<li><p class="ihead"><span class="icat">科研装置</span><b>成都辰显光电 TFT 基 Micro-LED 量产线</b></p><p class="idesc">辰显光电（中国成都，孵化自维信诺）2024 年 12 月在成都点亮中国大陆首条 TFT 基 Micro-LED 量产线，投资逾 42 亿元。发布 88 英寸 P0.5 拼接屏，采用 25 微米芯片、巨量转移良率 99.995%、3300 万颗 LED，峰值亮度 2000 nits、对比度 26000:1、99% DCI-P3，是白色与全彩 Micro-LED 显示的产业化里程碑。 <a class="isrc" href="https://xinhuanet.com/info/20241219/d57bc20186fb4630a52a722edf2574f2/c.html" target="_blank" rel="noopener noreferrer">来源</a></p></li>
-<li><p class="ihead"><span class="icat">工业</span><b>镭昱 PowerMatch 1 全彩 Micro-LED 微显示</b></p><p class="idesc">镭昱 2024 年 9 月推出量产级 PowerMatch 1 全彩 Micro-LED 微显示屏，屏幕尺寸 0.13 英寸，分辨率 320×240，峰值亮度 25 万 nits，像素密度 6350 PPI。靠微缩 LED 阵列自发光实现超高亮度，面向 AR 眼镜与微显示，是白色 LED 向微显示延伸的高密度集成代表。 <a class="isrc" href="https://www.ledinside.cn/news/20250115-58734.html" target="_blank" rel="noopener noreferrer">来源</a></p></li>
-<li><p class="ihead"><span class="icat">工业</span><b>诺视科技 全彩 XGA Micro-LED 微显示芯片</b></p><p class="idesc">诺视科技 2024 年 8 月推出量产级单片全彩 XGA Micro-LED 微显示芯片，峰值亮度逾 50 万 nits；并与湖南大学等制备出 0.39 英寸、40 万 nits、3300 PPI 的全彩微显示芯片。靠氮化镓微型 LED 阵列自发光，面向 AR 眼镜近眼显示，是白色与全彩 Micro-LED 在微显示领域的产业化进展。 <a class="isrc" href="https://www.ledinside.cn/news/20250115-58734.html" target="_blank" rel="noopener noreferrer">来源</a></p></li>
-<li><p class="ihead"><span class="icat">工业</span><b>辰显 135 英寸 P0.7 Micro-LED 无缝屏</b></p><p class="idesc">辰显光电（成都）2024 年发布的 135 英寸 P0.7 TFT 基 Micro-LED 无缝显示屏，亮度 1500 nits、98% DCI-P3、10 bit 色深，功耗 ≤240 W/m²，物理拼缝 ≤0.1 毫米。靠玻璃基 TFT 混合驱动实现像素级独立控制，用于高端会议室、指挥中心与数字标牌，比传统 PCB 方案节能逾 20%。 <a class="isrc" href="https://www.minimicroled.com/?p=15260/" target="_blank" rel="noopener noreferrer">来源</a></p></li></ul>
+    <p class="bnote">11 项。把同一条规律放到更高量级上运行的真实工程对象：在役工业装置、大科学装置、尖端产品与国家级基准，每条标注所属装置或行业类别。</p>
+    <ul class="insts adv"><li><p class="ihead"><span class="icat">工业</span><b>深圳 TUBU 全光谱温室补光灯</b></p><p class="idesc">这是深圳产的温室补光灯，单机七百多瓦可串几十台。红光蓝光催光合、远红促开花，靠可调光谱代替部分阳光让大棚多产菜，冬天也能种出夏天菜，城里超市的叶菜多靠它。 <a class="isrc" href="https://www.tu-bu.com/best-led-grow-lights-for-commercial-farming/" target="_blank" rel="noopener noreferrer">来源</a></p></li>
+<li><p class="ihead"><span class="icat">工业</span><b>中国 LED 植物照明市场（2024）</b></p><p class="idesc">2024 年全球 LED 植物照明市场约十三亿美元。温室占了六成以上，主流功率转向六七百瓦，是白光 LED 在农业光照里的放量，种菜这件事也用上芯片光。 <a class="isrc" href="https://finance.sina.com.cn/stock/hkstock/hkstocknews/2025-04-16/doc-inetiweu6890090.shtml" target="_blank" rel="noopener noreferrer">来源</a></p></li>
+<li><p class="ihead"><span class="icat">通信</span><b>Oledcomm LiFiMAX2G 可见光通信</b></p><p class="idesc">法国这家公司的系统让 LED 灯以每秒上千万次闪烁传数据。光不穿墙还抗干扰，医院 MRI 室和工厂 AGV 已在用，灯同时照亮和上网，保密场景偏爱这种光网。 <a class="isrc" href="https://baike.baidu.com/item/Oledcomm/19416766" target="_blank" rel="noopener noreferrer">来源</a></p></li>
+<li><p class="ihead"><span class="icat">通信</span><b>激光基 LiFi 100 Gbps 实验系统</b></p><p class="idesc">英国团队用激光型 LiFi 做到百 G 速率。十通道波分复用，户外五百米还能传近五 G，靠高速调制白光完成室内可见光通信，把灯变成超宽带宽带。 <a class="isrc" href="https://arxiv.org/abs/2402.16144" target="_blank" rel="noopener noreferrer">来源</a></p></li>
+<li><p class="ihead"><span class="icat">科研装置</span><b>成都辰显光电 TFT 基 Micro-LED 量产线</b></p><p class="idesc">辰显 2024 年底在成都点亮首条 TFT 基 Micro-LED 线。八十八寸屏用二十五微米芯片，巨量转移良率近百分之百，是微显示量产的起步，一颗颗微灯珠被搬到玻璃上。 <a class="isrc" href="https://xinhuanet.com/info/20241219/d57bc20186fb4630a52a722edf2574f2/c.html" target="_blank" rel="noopener noreferrer">来源</a></p></li>
+<li><p class="ihead"><span class="icat">工业</span><b>镭昱 PowerMatch 1 全彩 Micro-LED 微显示</b></p><p class="idesc">镭昱 2024 年推出 0.13 寸全彩微显示屏，峰值亮度二十五万尼特。靠微缩 LED 阵列自发光，瞄着 AR 眼镜那类近眼显示，比手机屏亮出好几百倍。 <a class="isrc" href="https://www.ledinside.cn/news/20250115-58734.html" target="_blank" rel="noopener noreferrer">来源</a></p></li>
+<li><p class="ihead"><span class="icat">工业</span><b>诺视科技 全彩 XGA Micro-LED 微显示芯片</b></p><p class="idesc">诺视 2024 年量产单片全彩微显示芯片，峰值亮度超五十万尼特。靠氮化镓微型 LED 阵列自发光，它把白光 LED 缩到芝麻大，专做 AR 眼镜近眼显示，亮到能在大太阳下看清。 <a class="isrc" href="https://www.ledinside.cn/news/20250115-58734.html" target="_blank" rel="noopener noreferrer">来源</a></p></li>
+<li><p class="ihead"><span class="icat">工业</span><b>辰显 135 英寸 P0.7 Micro-LED 无缝屏</b></p><p class="idesc">辰显 2024 年发的 135 寸无缝大屏，亮度 1500 尼特。玻璃基 TFT 逐像素控光，用在会议室和指挥中心，比老方案省下两成电，拼接缝细到几乎看不见。 <a class="isrc" href="https://www.minimicroled.com/?p=15260/" target="_blank" rel="noopener noreferrer">来源</a></p></li>
+<li><p class="ihead"><span class="icat">基础设施</span><b>洛杉矶县 LED 路灯改造</b></p><p class="idesc">洛杉矶县把六万盏老路灯换成 LED，电费直接砍掉一半。白色 LED 把电变成又亮又省的光，让整条街夜里清清楚楚，还顺手少了碳排，居民说晚上走路踏实多了。 <a class="isrc" href="https://pw.lacounty.gov/projects/led-streetlight-conversion/" target="_blank" rel="noopener noreferrer">来源</a></p></li>
+<li><p class="ihead"><span class="icat">科研装置</span><b>NASA 太空菜园 Veggie</b></p><p class="idesc">国际空间站上的 Veggie 用红蓝绿 LED 在失重里种生菜。灯一组才 90 瓦，靠可调光谱代替太阳，让航天员在天上也能吃到新鲜菜，长途飞行不至于缺维生素。 <a class="isrc" href="https://www.nasa.gov/content/growing-plants-in-space/" target="_blank" rel="noopener noreferrer">来源</a></p></li>
+<li><p class="ihead"><span class="icat">工业</span><b>飞利浦 GreenPower LED 植物照明</b></p><p class="idesc">飞利浦的 GreenPower 植物灯给温室和垂直农场配光配方。红蓝光催作物生长，种菜种果都能调光谱，把白光 LED 的本事用在种地上，荷兰菜农用它一年收多茬。 <a class="isrc" href="https://www.signify.com/global/lighting-academy/browser/webinar/horticulture-led-lighting-recordings" target="_blank" rel="noopener noreferrer">来源</a></p></li></ul>
   </section>
 
   <section class="block">

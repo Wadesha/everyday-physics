@@ -13,7 +13,7 @@ import sys
 import tempfile
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-OUT = os.path.join(tempfile.gettempdir(), "ep-layout-shot")
+OUT = os.path.join(tempfile.mkdtemp(prefix="ep-layout-shot-"), "out")
 
 HIDE = r"""
 <script>
@@ -51,7 +51,7 @@ def main():
     keep = sys.argv[2:] or ["现存实例", "进阶实例", "英文简述"]
     if os.path.isdir(OUT):
         shutil.rmtree(OUT, ignore_errors=True)
-    os.makedirs(OUT)
+    os.makedirs(OUT, exist_ok=True)
     site = os.path.join(OUT, "site")
     os.makedirs(site)
     for name in os.listdir(root):

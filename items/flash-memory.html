@@ -11,12 +11,12 @@
 <header class="topbar">
   <div class="wrap bar">
     <a class="brand" href="../index.html"><span class="brand-cn">身边的物理</span><span class="brand-en">EVERYDAY PHYSICS</span></a>
-    <nav class="nav"><a href="../index.html">索引</a><a href="../themes.html">按分支</a><a href="../method.html">方法与核对</a></nav>
+    <nav class="nav"><a href="../index.html">按分支</a><a href="../method.html">方法与核对</a></nav>
   </div>
 </header>
 <main class="wrap">
 
-<nav class="crumb"><a href="../index.html">索引</a><span>/</span><a href="../themes.html#t-qm">量子力学</a><span>/</span><em>U 盘与固态硬盘</em></nav>
+<nav class="crumb"><a href="../index.html">按分支</a><span>/</span><a href="../index.html#t-qm">量子力学</a><span>/</span><em>U 盘与固态硬盘</em></nav>
 
 <article class="detail">
   <header class="dhead" style="--c:#5b4b8a">
@@ -52,6 +52,15 @@
   </section>
 
   <section class="block">
+    <h2 class="bh">去哪儿看</h2>
+    <p class="bnote">4 处。需要走到某个地方、或等到某种条件出现，才能亲眼看到的同一条规律；先写你会看到什么，再写它为什么发生。</p>
+    <ul class="insts scenes"><li><b>进度条一走完就拔U盘<span class="swhere">往 U 盘里拷一个大文件，看进度条刚走到百分之百就立刻拔下来，插到另一台电脑上打开。</span></b><div class="sbody"><p><span class="lab s-see">看到</span>运气不好时文件打不开、大小不对，或者整段视频后面是坏的；有时候原地重新插回去反而又能读全。多试几次，总有一次会出事。</p><p><span class="lab s-why">原理</span>系统提示复制完成，只是说明数据已经交到写入队列里，还没有全部落到闪存芯片上。闪存的写入必须先擦除、再编程，还要做磨损均衡和垃圾回收，这些动作在后台进行，需要时间。这时拔掉就是打断一次尚未完成的写操作，擦到一半的存储块数据就坏了。所以弹出设备这个动作本身是有物理意义的，不只是礼貌。</p></div></li>
+<li><b>新固态盘写到一半会掉速<span class="swhere">在一台刚买不久的固态盘上连续写入几十个 G 的大文件，盯着传输速度的读数看。</span></b><div class="sbody"><p><span class="lab s-see">看到</span>开头几秒到十几秒很快，能冲到标称速度；写进去一定量之后速度会突然掉下来，跌到原来的几分之一，之后一直上不去。停下来让它休息一会儿再写，又能快一段。</p><p><span class="lab s-why">原理</span>闪存单元每层能存的比特越多，写入越慢、寿命越短，所以厂商用一部分容量扮成高速的缓存区来吸收突发写入，先把数据草草放进去，等空闲时再慢慢搬进大头。缓存区写满之后，数据必须按慢的那一档速度直接落盘，于是速度掉崖。这也是标称速度总要有条件说明的原因。</p></div></li>
+<li><b>U盘忘在衣服里洗过还能读<span class="swhere">把一只旧 U 盘忘在裤兜里，跟着衣服洗一遍再晾干，然后插到电脑上试试。同一批里也有洗完就彻底没反应的。</span></b><div class="sbody"><p><span class="lab s-see">看到</span>晾干之后不少还能正常读到里面的文件，擦干净看起来完全没事；也有的插上去毫无反应或者只认出一部分容量。能不能活下来，几乎完全看水有没有在通电状态下进去。</p><p><span class="lab s-why">原理</span>闪存盘里没有任何机械运动部件，怕的是进水短路而不是水本身。断电状态下进去的水只要在通电前彻底蒸发，电路就还是好的；如果带着水插上电，相邻的焊点和引脚之间被导通，芯片可能在几毫秒内烧掉。所以进水之后的关键是别急着通电，先彻底晾干。</p></div></li>
+<li><b>拆开一只坏U盘看里面<span class="swhere">找一只已经读不出来的 U 盘，用小刀沿着接缝轻轻撬开外壳，看里面那块小小的电路板。</span></b><div class="sbody"><p><span class="lab s-see">看到</span>板上只有两三块黑色的小方块加几个比米粒还小的贴片元件，没有齿轮、没有转轴、没有可动的部件。和拆开移动硬盘看到的旋转盘片与磁头完全是两种东西。</p><p><span class="lab s-why">原理</span>数据存在浮栅晶体管里：往栅极注入电荷表示 0，抽走表示 1，断电之后电荷仍被绝缘层困住，所以能长期保存。写入靠的是在绝缘层两侧加高电压把电子推过去或拉出来，每写一次就轻微损耗一次绝缘层，磨损到头就再也存不住。它的寿命单位因此是「擦写次数」而不是使用时间。</p></div></li></ul>
+  </section>
+
+  <section class="block">
     <h2 class="bh">背后的原理</h2>
     <p class="bnote">机制层面：为什么会出现上一节那些现象。</p>
     <div class="prose"><h3>经典物理说：过不去</h3>
@@ -64,26 +73,32 @@
 
   <section class="block">
     <h2 class="bh">现存实例</h2>
-    <p class="bnote">6 项。真实存在的对象、设施或已记录案例。</p>
-    <ul class="insts"><li><b>三星 990 PRO 2TB 固态盘</b><p>M.2 2280、PCIe 4.0，顺序读 7450 MB/s、写 6900 MB/s，3 位 TLC、2 GB 缓存、标称 1200 TBW，型号 MZ-V9P2T0BW，是消费级旗舰代表。 <a class="isrc" href="https://www.samsung.com/us/memory-storage/nvme-ssd/990-pro-w-heatsink-pcie-4-0-nvme-ssd-2tb-sku-mz-v9p2t0cw/" target="_blank" rel="noopener noreferrer">来源</a></p></li>
-<li><b>三星 980 PRO 1TB 固态盘</b><p>PCIe 4.0 首代旗舰，顺序读 7000 MB/s，用三星 V-NAND 3 位 MLC（即 TLC）与自研 Elpis 主控，是 980 PRO 系列基准型号。 <a class="isrc" href="https://www.samsung.com/uk/memory-storage/nvme-ssd/980-pro-pcle-4-0-nvme-m-2-ssd-1tb-mz-v8p1t0bw/" target="_blank" rel="noopener noreferrer">来源</a></p></li>
-<li><b>致态 Ti600 2TB（长江存储 232 层 QLC）</b><p>2023 年 7 月推出的 M.2 盘，用长江存储 232 层 QLC 3D NAND，读 7000 MB/s、写 6000 MB/s，五年 800 TBW；TechInsights 测得其位密度 19.8 Gb/mm² 为当时商用最高。 <a class="isrc" href="https://www.dostor.com/p/85871.html" target="_blank" rel="noopener noreferrer">来源</a></p></li>
-<li><b>美光 232 层 TLC 3D NAND</b><p>美光 2022 年率先出货 232 层 TLC，用于 Crucial 等消费盘；同代铠侠/西数为 218 层、SK 海力士为 238 层，行业整体进入 200 层时代。 <a class="isrc" href="https://www.esmchina.com/marketnews/45427.html" target="_blank" rel="noopener noreferrer">来源</a></p></li>
-<li><b>SK 海力士 238 层 TLC</b><p>2023 年 6 月宣布量产的 238 层 TLC 3D NAND，为当时层数最高的单代产品之一，I/O 速度较前代提升明显，供货企业级与消费级盘。 <a class="isrc" href="https://www.esmchina.com/marketnews/45427.html" target="_blank" rel="noopener noreferrer">来源</a></p></li>
-<li><b>铠侠 BiCS FLASH 332 层</b><p>2026 年交付样品的第十代 BiCS FLASH，堆叠 332 层、位密度约 36.4 Gb/mm²，采用 CMOS 直接键合阵列架构，代表 3D NAND 层数竞赛的最新节点。 <a class="isrc" href="https://baike.baidu.com/item/3D%20NAND%E9%97%A2%E5%AD%98/67833272" target="_blank" rel="noopener noreferrer">来源</a></p></li></ul>
+    <p class="bnote">9 项。真实存在的对象、设施或已记录案例。</p>
+    <ul class="insts"><li><b>三星 990 PRO 2TB 固态盘</b><p>三星 990 PRO 是消费级旗舰固态盘，接口 PCIe 4.0，顺序读取约 7450 MB/s。它用三层单元颗粒，耐写量标到 1200 TB，适合常写大户。 <a class="isrc" href="https://www.samsung.com/us/memory-storage/nvme-ssd/990-pro-w-heatsink-pcie-4-0-nvme-ssd-2tb-sku-mz-v9p2t0cw/" target="_blank" rel="noopener noreferrer">来源</a></p></li>
+<li><b>三星 980 PRO 1TB 固态盘</b><p>三星 980 PRO 是首代 PCIe 4.0 旗舰，顺序读取约 7000 MB/s，用自研主控和三层颗粒。它是很多高端游戏本和台式机的标配盘，速度够快。 <a class="isrc" href="https://www.samsung.com/uk/memory-storage/nvme-ssd/980-pro-pcle-4-0-nvme-m-2-ssd-1tb-mz-v8p1t0bw/" target="_blank" rel="noopener noreferrer">来源</a></p></li>
+<li><b>致态 Ti600 2TB（长江存储 232 层 QLC）</b><p>致态 Ti600 用长江存储 232 层四层单元颗粒，顺序读约 7000 MB/s，耐写量 800 TB。它容量大又便宜，适合存照片视频这类冷数据。 <a class="isrc" href="https://www.dostor.com/p/85871.html" target="_blank" rel="noopener noreferrer">来源</a></p></li>
+<li><b>美光 232 层 TLC 3D NAND</b><p>美光 2022 年率先量产 232 层三层单元颗粒，用在自家 Crucial 等盘里。同一年行业整体跨过两百层，闪存密度和便宜程度都上了台阶。 <a class="isrc" href="https://www.esmchina.com/marketnews/45427.html" target="_blank" rel="noopener noreferrer">来源</a></p></li>
+<li><b>SK 海力士 238 层 TLC</b><p>SK 海力士 2023 年量产的 238 层三层单元颗粒，是当时层数最高的单代产品之一，读写更快。它同时供给企业盘和消费盘使用，是高端盘的常见芯。 <a class="isrc" href="https://www.esmchina.com/marketnews/45427.html" target="_blank" rel="noopener noreferrer">来源</a></p></li>
+<li><b>铠侠 BiCS FLASH 332 层</b><p>铠侠第十代 BiCS FLASH 叠到 332 层，位密度约 36.4 Gb/mm²，用芯片直接键合的新结构。它代表 3D 闪存层数竞赛的最新高度，领先一步。 <a class="isrc" href="https://baike.baidu.com/item/3D%20NAND%E9%97%A2%E5%AD%98/67833272" target="_blank" rel="noopener noreferrer">来源</a></p></li>
+<li><b>Crucial T705 2TB 固态盘</b><p>英睿达 T705 走 PCIe 5.0 接口，顺序读取冲到约 14500 MB/s，用美光 232 层颗粒。它是消费盘里目前最快的一档，发热也大，要配散热。 <a class="isrc" href="https://www.microcenter.com/product/677289/crucial-t705-2tb-micron-232l-tlc-nand-pcie-gen-5-x4-nvme-m2-internal-ssd" target="_blank" rel="noopener noreferrer">来源</a></p></li>
+<li><b>致态 TiPlus7100 固态盘</b><p>致态 TiPlus7100 用长江存储 Xtacking 3.0 技术，232 层颗粒，顺序读约 7000 MB/s。它单面薄、不烫，适合塞进轻薄本，很省空间。 <a class="isrc" href="https://www.ymtc.com/cn/products/43.html?cat=41" target="_blank" rel="noopener noreferrer">来源</a></p></li>
+<li><b>Solidigm D5-P5336 企业级固态盘</b><p>Solidigm 的 D5-P5336 是企业盘，用四层单元颗粒，单盘最大 61.44 TB，主攻数据中心冷存储。它把容量堆到消费盘的好几十倍。 <a class="isrc" href="https://www.solidigm.com/products/data-center/product-briefs/d5-p5336-product-brief.html" target="_blank" rel="noopener noreferrer">来源</a></p></li></ul>
   </section>
 
   <section class="block">
     <h2 class="bh">进阶实例</h2>
-    <p class="bnote">8 项。把同一条规律放到更高量级上运行的真实工程对象：在役工业装置、大科学装置、尖端产品与国家级基准，每条标注所属装置或行业类别。</p>
-    <ul class="insts adv"><li><p class="ihead"><span class="icat">工业</span><b>长江存储武汉三期 232 层工厂</b></p><p class="idesc">长江存储武汉三期工厂量产 232 层 Xtacking 4.0 架构的 TLC 三维闪存，芯片间接口速率达到 2400 MT/s，单颗 die 容量为 1 Tb。该晶圆厂当前月产能约 20 万片晶圆，规划逐步提升至 30 万片，产线中国产设备占比超过 45%，是中国在三维存储领域实现规模化量产的代表性项目。其产品用于固态硬盘与嵌入式存储，已在数据中心与消费电子市场形成稳定供货，标志着国内存储芯片制造能力的实质突破。</p></li>
-<li><p class="ihead"><span class="icat">工业</span><b>Micron 新加坡 3D NAND 工厂</b></p><p class="idesc">美光新加坡工厂量产 232 层三维 NAND 闪存，单颗 die 容量为 1 Tb、可封装为 2 TB 的成品，采用 CuA（阵列下 CMOS）架构以提升位密度与读写效率。新加坡基地是该公司在亚洲的 3D NAND 主力产地之一，月投片规模位居全球前列，产品主要供应数据中心固态硬盘与消费级存储卡，体现了三维堆叠工艺在良率控制与制造成本上的成熟量产能力。</p></li>
-<li><p class="ihead"><span class="icat">工业</span><b>铠侠北上 Fab2 BiCS10 332 层</b></p><p class="idesc">铠侠北上 Fab2 工厂量产第十代 BiCS FLASH（即 BiCS10）三维闪存，堆叠层数达到 332 层，芯片接口速率 4800 MT/s（即 4.8 Gb/s），位密度超过 29 Gb/mm²，单颗 die 为 1 Tb 的 TLC 颗粒。该产线于 2025 年 9 月进入量产，采用先进的晶圆键合与多层堆叠工艺，是新一代高密度存储的代表性工艺，面向企业级与消费级固态存储市场批量供货，相比上一代工艺在相同面积内提供更高的容量与带宽，显著降低单位比特成本。</p></li>
-<li><p class="ihead"><span class="icat">科研装置</span><b>长江存储 Xtacking 混合键合</b></p><p class="idesc">Xtacking 是长江存储提出的晶圆级混合键合技术：将 CMOS 逻辑电路与存储阵列分别在不同晶圆上制造，再通过铜对铜面对面键合，使外围电路不再挤占阵列面积、接口速率突破 2400 MT/s。该架构把存储单元与读写电路在结构上解耦，缩短了互联距离并提升输入输出带宽，是三维闪存领域由中国团队主导的结构创新，已被后续多代产品采用。</p></li>
-<li><p class="ihead"><span class="icat">工业</span><b>车规级 3D NAND 存储</b></p><p class="idesc">车规级三维闪存依据 AEC-Q100 可靠性标准认证，工作温度覆盖 −40 至 105 °C，耐受车载环境的持续振动与温度循环，典型器件可支持 1500 次以上的编程擦除循环。其采用 LDPC 纠错编码与端到端数据保护，单颗 die 容量达 512 Gb，用于智能座舱、高级驾驶辅助与事件记录系统，在电动汽车与自动驾驶产线中已形成稳定供货与完整的车规验证体系。</p></li>
-<li><p class="ihead"><span class="icat">航天与卫星</span><b>航天抗辐射 NAND 存储</b></p><p class="idesc">面向航天器与卫星的抗辐射三维闪存采用 SLC 架构与加固工艺，单器件容量为 64 Gb，可承受总电离剂量超过 100 krad、并能抵抗单粒子翻转效应，工作温度范围 −55 至 125 °C。这类存储用于星载载荷的数据记录、姿态控制计算机与星间通信，已随多颗遥感与科学卫星在轨长期运行，是航天电子实现自主可控与长寿命任务保障的关键器件。</p></li>
-<li><p class="ihead"><span class="icat">工业</span><b>三星平泽 P1 3D NAND 工厂</b></p><p class="idesc">三星电子平泽 P1 工厂是其最先进的三维 NAND 生产基地之一，量产采用第九代 V-NAND 工艺，堆叠层数超过 280 层，月晶圆产能约 20 万片。该厂配备全自动物料搬运系统与超高等级洁净室，产品覆盖 1 Tb 及以上大容量的 TLC 与 QLC 颗粒，供应企业级固态硬盘与高性能移动存储，体现了超高层数堆叠工艺的量产实力与良率控制水平。</p></li>
-<li><p class="ihead"><span class="icat">科研装置</span><b>三维闪存位密度研究</b></p><p class="idesc">学术界与产业界持续追求三维闪存的位密度极限，当前主流研究目标已进入每平方毫米 30 Gb 的量级。提升路径包括增加堆叠层数、缩小字线间距、采用多比特的 TLC 与 QLC 编码，以及 CBA 与 Xtacking 等键合架构。以现已量产的 332 层器件为例，其位密度超过 29 Gb/mm²；研究重点正转向层数扩展所引发的晶片应力、良率下降与读出干扰控制等物理极限问题。</p></li></ul>
+    <p class="bnote">11 项。把同一条规律放到更高量级上运行的真实工程对象：在役工业装置、大科学装置、尖端产品与国家级基准，每条标注所属装置或行业类别。</p>
+    <ul class="insts adv"><li><p class="ihead"><span class="icat">工业</span><b>长江存储武汉三期 232 层工厂</b></p><p class="idesc">长江存储武汉三期量产 232 层三维闪存，单颗芯片能存一太比特。厂房一个月能出二十万片晶圆，国产设备占了快一半。你买的固态硬盘里，很可能就有这类国产颗粒。</p></li>
+<li><p class="ihead"><span class="icat">工业</span><b>Micron 新加坡 3D NAND 工厂</b></p><p class="idesc">美光在新加坡量产 232 层三维闪存，单颗能封成两太字节的成品。它是亚洲主力产地之一，月投片量排在世界前列，数据中心和存储卡里的颗粒不少出自这里。</p></li>
+<li><p class="ihead"><span class="icat">工业</span><b>铠侠北上 Fab2 BiCS10 332 层</b></p><p class="idesc">铠侠北上工厂量产第十代 BiCS 闪存，叠到 332 层，接口速率冲到每秒 4.8G。同样面积里能塞进更多容量和带宽，企业级和家用固态盘都开始用这批新颗粒。</p></li>
+<li><p class="ihead"><span class="icat">科研装置</span><b>长江存储 Xtacking 混合键合</b></p><p class="idesc">Xtacking 把读写电路和存储阵列分在两片晶圆上做，再面对面键合到一起。这样电路不抢阵列的地盘，输入输出更快。这种结构思路由中国团队提出，已被多代产品沿用。</p></li>
+<li><p class="ihead"><span class="icat">工业</span><b>车规级 3D NAND 存储</b></p><p class="idesc">车用闪存按车规认证，能扛零下四十到一百多度的折腾，单颗存五百多吉比特。它用纠错编码护着数据，跑在智能座舱和驾驶辅助里，一辆车开十年也少见坏块。</p></li>
+<li><p class="ihead"><span class="icat">航天与卫星</span><b>航天抗辐射 NAND 存储</b></p><p class="idesc">卫星上的闪存得抗辐射，用 SLC 架构和加固工艺，单颗存六十四吉比特。它能顶住太空的辐照和单粒子翻转，记录载荷数据、存姿态程序，陪卫星在轨工作好些年。</p></li>
+<li><p class="ihead"><span class="icat">工业</span><b>三星平泽 P1 3D NAND 工厂</b></p><p class="idesc">三星平泽 P1 厂量产第九代 V-NAND，叠超 280 层，一个月出二十万片晶圆。全自动化搬运、超高洁净，做出一太比特以上的大容量颗粒，喂给企业级固态盘和高性能存储。</p></li>
+<li><p class="ihead"><span class="icat">科研装置</span><b>三维闪存位密度研究</b></p><p class="idesc">学界和厂家还在追更高的位密度，目标已进到每平方毫米三十吉比特的量级。路子是堆更多层、缩更细的线距，以及用 TLC、QLC 多存几比特。层数再高，应力和干扰就成了新麻烦。</p></li>
+<li><p class="ihead"><span class="icat">工业</span><b>SK海力士 321层 4D NAND</b></p><p class="idesc">SK 海力士做出 321 层 4D NAND，单颗一太比特，比上一代效率高近六成。它把电荷存在绝缘层而不是金属里，单元间不串扰，是冲过三百层的第一款样品。 <a class="isrc" href="https://news.skhynix.com/sk-hynix-showcases-samples-of-worlds-first-321-layer-nand" target="_blank" rel="noopener noreferrer">来源</a></p></li>
+<li><p class="ihead"><span class="icat">航天与卫星</span><b>NASA 毅力号火星车闪存</b></p><p class="idesc">毅力号把拍到的照片和探测数据存在 NAND 闪存里，机上有几吉字节的非易失空间。它要扛火星的低温和辐射，断电也不丢数据，等绕火星的轨道器把数据回传地球。 <a class="isrc" href="https://en.wikipedia.org/wiki/Perseverance_(rover)" target="_blank" rel="noopener noreferrer">来源</a></p></li>
+<li><p class="ihead"><span class="icat">消费产品</span><b>PlayStation 5 固态硬盘</b></p><p class="idesc">PS5 里的固态硬盘是用 3D NAND 闪存堆出来的，读取能到每秒 5.5G。游戏因此秒进，几乎不转圈。它和手机存储卡本是同一种技术，只是规模和速度放大了许多。 <a class="isrc" href="https://www.playstation.com/en-us/consoles/ps5/" target="_blank" rel="noopener noreferrer">来源</a></p></li></ul>
   </section>
 
   <section class="block">

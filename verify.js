@@ -3,7 +3,7 @@
  *
  * 覆盖两类断言：
  *   A. 形式约束（硬性）：无图片、无表格、无 emoji、无搜索、无星号标记、紧凑化样式生效。
- *   B. 功能正确：卡片数、详情页与数据一致、链接完整、翻页与键盘导航、方法页聚合。
+ *   B. 功能正确：首页按分支覆盖、详情页与数据一致、链接完整、翻页与键盘导航、方法页聚合。
  */
 const fs = require('fs');
 const path = require('path');
@@ -121,32 +121,49 @@ const rel = p => path.relative(ROOT, p).replace(/\\/g, '/');
   ok('英文简述为左细线文本块，无需图片或表格承载',
      /\.enbrief\{[^}]*border-left/.test(css) && /\.hero-en\{/.test(css));
 
-  // ==================================================== [2] 索引页
-  console.log('\n[2] 索引页 index.html（jsdom 真实加载）');
+  // ==================================================== [2] 首页
+  console.log('\n[2] 首页 index.html（按分支，jsdom 真实加载）');
   const dom = await load('index.html');
   const w = dom.window, d = w.document;
   await sleep(200);
 
-  const cards = d.querySelectorAll('.grid .card');
-  ok('渲染 ' + data.items.length + ' 张卡片', cards.length === data.items.length,
-     'actual=' + cards.length);
+  ok('首页不再有任何卡片墙与统计条残留',
+     d.querySelectorAll('.grid, .card, .card-foot, .mini, .chip, .stats').length === 0,
+     '残留=' + d.querySelectorAll('.grid, .card, .card-foot, .mini, .chip, .stats').length);
+  ok('导航只剩「按分支」「方法与核对」两项，且不含「索引」',
+     (() => {
+       const as = [...d.querySelectorAll('.nav a')].map(a => a.textContent.trim());
+       return as.length === 2 && as[0] === '按分支' && as[1] === '方法与核对' &&
+              !as.some(t => t.includes('索引'));
+     })(),
+     [...d.querySelectorAll('.nav a')].map(a => a.textContent.trim()).join(' / '));
   ok('页面上没有任何输入控件', d.querySelectorAll('input,form,select,textarea').length === 0);
   ok('页面上没有搜索/筛选残留节点',
      !d.getElementById('q') && !d.getElementById('lucky') && !d.getElementById('count') &&
      !d.getElementById('empty') && d.querySelectorAll('.fchip').length === 0);
-  const mini = [...cards].map(c => c.querySelectorAll('.mini li').length);
-  ok('每张卡片 3 行数字', mini.every(n => n === 3), '异常=' + mini.filter(n => n !== 3).length);
-  ok('卡片标注现象节数、实例数、进阶实例数与误传数',
-     [...cards].every(c => /现象 \d+ 节 · 实例 \d+ 项 · 进阶 \d+ 项 · 误传 \d+ 条/.test(c.querySelector('.card-foot').textContent)),
-     [...cards].map(c => c.querySelector('.card-foot').textContent).find(x => !/现象 \d+ 节/.test(x)) || '');
-  ok('卡片均链到详情页',
-     [...cards].every(c => /^items\/[a-z0-9-]+\.html$/.test(c.querySelector('a').getAttribute('href'))));
-  ok('索引页不依赖脚本即可显示全部条目（无 hidden 卡片）',
-     [...cards].every(c => !c.hidden));
-  ok('首页统计含现象与进阶实例总量',
-     new RegExp('>\\s*' + data.items.reduce((s, i) => s + i.phenomena.length, 0) + '\\s*<\\/b>\\s*<span>节现象详述').test(d.body.innerHTML) &&
-     new RegExp('>\\s*' + data.items.reduce((s, i) => s + i.advanced.length, 0) + '\\s*<\\/b>\\s*<span>项进阶实例').test(d.body.innerHTML),
-     (d.body.innerHTML.match(/<span>节现象详述<\/span>/) || []).length + ' 处标记');
+
+  const secs = [...d.querySelectorAll('.tsec')];
+  const wantThemes = data.themes.filter(t => data.items.some(i => i.theme === t.id));
+  ok('按 ' + wantThemes.length + ' 个分支各渲染一节', secs.length === wantThemes.length,
+     'actual=' + secs.length);
+  ok('每节的标题、书库目录与件数均落盘',
+     wantThemes.every(t => {
+       const sec = secs.find(s => s.id === 't-' + t.id);
+       if (!sec) return false;
+       const n = data.items.filter(i => i.theme === t.id).length;
+       return sec.textContent.includes(t.name) && sec.textContent.includes(t.folder) &&
+              sec.textContent.includes(n + ' 件');
+     }));
+  const homeLinks = [...d.querySelectorAll('.tlist a')].map(a => a.getAttribute('href'));
+  ok('首页列出全部 ' + data.items.length + ' 件器物，且逐条链到详情页',
+     homeLinks.length === data.items.length &&
+     homeLinks.every(h => /^items\/[a-z0-9-]+\.html$/.test(h)) &&
+     new Set(homeLinks).size === data.items.length,
+     'actual=' + homeLinks.length);
+  ok('首页不依赖脚本即可显示全部条目（无隐藏节点）',
+     [...d.querySelectorAll('.tlist a')].every(a => !a.hidden));
+  ok('全站不再引用 themes.html 与索引页',
+     !d.body.innerHTML.includes('themes.html') && !data.items.some(i => i.theme === 'themes'));
   const heroEn = d.querySelector('.hero-en');
   ok('首页含一句英文总述（纯英文、不超过 60 词）',
      !!heroEn && !/[\u4e00-\u9fff]/.test(heroEn.textContent) &&
@@ -167,6 +184,8 @@ const rel = p => path.relative(ROOT, p).replace(/\\/g, '/');
     // 现存实例区块必须以「进阶实例」标题收尾，否则会把进阶条目一并计入
     const inBlock = h.slice(h.indexOf('class="insts"'), h.indexOf('进阶实例'));
     const advBlock = h.slice(h.indexOf('class="insts adv"'), h.indexOf('class="nums"'));
+    // 去哪儿看区块止于「背后的原理」标题
+    const scBlock = h.slice(h.indexOf('class="insts scenes"'), h.indexOf('背后的原理'));
     const srcBlock = h.slice(h.indexOf('class="srcs"'), h.indexOf('class="pager"'));
     const checks = [
       [h.includes(esc(it.name)), '标题'],
@@ -195,6 +214,18 @@ const rel = p => path.relative(ROOT, p).replace(/\\/g, '/');
        '进阶实例逐条落盘'],
       [it.advanced.every(a => advBlock.includes(esc(a.cat))), '进阶实例类别标签落盘'],
       [it.advanced.every(a => !a.url || advBlock.includes(esc(a.url))), '进阶实例来源链接落盘'],
+      [h.includes('去哪儿看'), '去哪儿看板块'],
+      [(scBlock.match(/<li>/g) || []).length === it.scenes.length,
+       '现场处数=' + it.scenes.length + ' 实际=' + (scBlock.match(/<li>/g) || []).length],
+      [it.scenes.every(s => scBlock.includes(esc(s.title)) && scBlock.includes(esc(s.where)) &&
+                            scBlock.includes(esc(s.see)) && scBlock.includes(esc(s.why))),
+       '现场逐条落盘'],
+      [(scBlock.match(/class="lab s-see"/g) || []).length === it.scenes.length &&
+       (scBlock.match(/class="lab s-why"/g) || []).length === it.scenes.length,
+       '现场每条都有「看到」与「原理」两段'],
+      [(scBlock.match(/class="swhere"/g) || []).length === it.scenes.length,
+       '现场每条都有去处与时机'],
+      [it.scenes.every(s => !s.url || scBlock.includes(esc(s.url))), '现场来源链接落盘'],
       [(srcBlock.match(/<li>/g) || []).length === it.sources.length, '来源条数=' + it.sources.length],
       [(h.match(/class="nk"/g) || []).length === it.numbers.length, '数字行数=' + it.numbers.length],
       [(h.match(/class="myth"/g) || []).length === it.myths.length, '误传条数=' + it.myths.length],
@@ -237,8 +268,49 @@ const rel = p => path.relative(ROOT, p).replace(/\\/g, '/');
      advAll.every(a => a.cat.length <= 8),
      advAll.filter(a => a.cat.length > 8).slice(0, 3).map(a => a.cat).join(' | '));
 
-  const enAll = data.items.map(i => i.enBrief || '');
-  const enWords = enAll.reduce((s, t) => s + t.split(/\s+/).filter(Boolean).length, 0);
+  const scAll = data.items.flatMap(i => i.scenes);
+  const scSee = scAll.reduce((s, x) => s + x.see.length, 0);
+  const scWhy = scAll.reduce((s, x) => s + x.why.length, 0);
+  const scWhere = scAll.reduce((s, x) => s + x.where.length, 0);
+  const SC_VAGUE = /在合适的环境|在适当的条件|在某种情况下|有兴趣的话|去观察一下|实验室里用|用示波器/;
+  const scBad = scAll.filter(x => SC_VAGUE.test(x.where));
+  const scDup = [];
+  for (const it of data.items) {
+    const seen = new Set();
+    for (const s of it.scenes) {
+      if (seen.has(s.where)) scDup.push(it.slug + ':' + s.title);
+      seen.add(s.where);
+    }
+  }
+  // 去处段必须是一条可执行的行动指令：含明确动作词，且不含空话套话
+  const SC_ACT = /找|拿|把|试|去|走|站|坐|躺|进|放|开|关|拔|插|摇|吹|照|拆|煮|烧|烤|炸|冲|洗|晾|按|踩|比|等|听|摸|碰|抬|拉|倒|装|晒|记|量|称|戴|穿|摘|凑|看|盯|点|调|举|伸|捏|握|转|挪|移|清|夹|挂|捻|翻|蹭|熏|浇|拨|掐|留意|注意|观察|蹲|守|装/;
+  const scWeak = scAll.filter(x => !SC_ACT.test(x.where) || SC_VAGUE.test(x.where));
+  ok('去哪儿看体量：' + scAll.length + ' 处 / 看到 ' + scSee + ' 字 + 原理 ' + scWhy +
+     ' 字（均 ' + Math.round((scSee + scWhy) / scAll.length) + ' 字）',
+     scAll.length >= 26 * 4 && scSee / scAll.length >= 55 && scWhy / scAll.length >= 70);
+  ok('去哪儿看 26 件器物全覆盖，每件四处且彼此不同',
+     data.items.every(i => i.scenes.length === 4) && scDup.length === 0,
+     '条数异常=' + data.items.filter(i => i.scenes.length !== 4).length +
+     '，重复去处=' + scDup.slice(0, 3).join(' | '));
+  ok('去哪儿看的去处与时机是可执行的行动指令，不是空话',
+     scAll.every(x => x.where.length >= 25 && x.where.length <= 90) && scBad.length === 0,
+     scBad.slice(0, 3).map(x => x.title).join(' | '));
+  ok('去哪儿看的观察段只写感官事实，原理段给出机制',
+     scAll.every(x => x.see.length >= 50 && x.see.length <= 170 &&
+                      x.why.length >= 60 && x.why.length <= 210));
+  ok('去哪儿看不含站外图片、加粗标记与公文套话',
+     scAll.every(x => !/https?:|!\[|<[a-z]|\*\*/.test(x.see + x.why)) &&
+     scAll.every(x => !/奠定了|标志着|关键一步|被誉为|堪称|旨在|致力于/.test(x.see + x.why)),
+     scAll.filter(x => /奠定了|标志着|关键一步|被誉为|堪称/.test(x.see)).slice(0, 2)
+          .map(x => x.title).join(' | '));
+  ok('去哪儿看的标题具体（不出现「现象」「原理」「观察」这类空标题）',
+     scAll.every(x => x.title.length >= 4 && x.title.length <= 20) &&
+     scAll.every(x => !/^(现象|原理|观察|实验)$/.test(x.title)));
+  ok('去哪儿看的去处是可执行的行动指令，且不含空话',
+     scAll.every(x => x.where.length >= 25 && x.where.length <= 90) && scWeak.length === 0,
+     scWeak.slice(0, 3).map(x => x.title).join(' | '));
+
+  const enAll = data.items.map(i => i.enBrief || '');  const enWords = enAll.reduce((s, t) => s + t.split(/\s+/).filter(Boolean).length, 0);
   ok('英文简述层体量：' + enAll.length + ' 段 / ' + enWords + ' 词（均 ' +
      Math.round(enWords / enAll.length) + ' 词），克制在内容量的极小比例',
      enAll.every(t => t.split(/\s+/).length >= 40 && t.split(/\s+/).length <= 130) &&
@@ -252,7 +324,7 @@ const rel = p => path.relative(ROOT, p).replace(/\\/g, '/');
 
   // ==================================================== [4] 链接完整性
   console.log('\n[4] 内部链接完整性');
-  const pages = ['index.html', 'themes.html', 'method.html']
+  const pages = ['index.html', 'method.html']
     .concat(data.items.map(i => 'items/' + i.slug + '.html'));
   const broken = new Set();
   let internal = 0, external = 0;

@@ -11,12 +11,12 @@
 <header class="topbar">
   <div class="wrap bar">
     <a class="brand" href="../index.html"><span class="brand-cn">身边的物理</span><span class="brand-en">EVERYDAY PHYSICS</span></a>
-    <nav class="nav"><a href="../index.html">索引</a><a href="../themes.html">按分支</a><a href="../method.html">方法与核对</a></nav>
+    <nav class="nav"><a href="../index.html">按分支</a><a href="../method.html">方法与核对</a></nav>
   </div>
 </header>
 <main class="wrap">
 
-<nav class="crumb"><a href="../index.html">索引</a><span>/</span><a href="../themes.html#t-rel">相对论、引力与天体物理</a><span>/</span><em>手机 GPS</em></nav>
+<nav class="crumb"><a href="../index.html">按分支</a><span>/</span><a href="../index.html#t-rel">相对论、引力与天体物理</a><span>/</span><em>手机 GPS</em></nav>
 
 <article class="detail">
   <header class="dhead" style="--c:#6a3d9a">
@@ -52,6 +52,15 @@
   </section>
 
   <section class="block">
+    <h2 class="bh">去哪儿看</h2>
+    <p class="bnote">4 处。需要走到某个地方、或等到某种条件出现，才能亲眼看到的同一条规律；先写你会看到什么，再写它为什么发生。</p>
+    <ul class="insts scenes"><li><b>在室内定不上位，走到窗边立刻好了<span class="swhere">在钢筋混凝土楼里打开地图，看那个蓝色的位置点，然后慢慢走到靠向外侧的窗边或者走到室外。</span></b><div class="sbody"><p><span class="lab s-see">看到</span>室内那个点要么定不出来，要么乱飘、一直显示在大范围搜索；走到窗边十几秒后位置一下抓住了，走到室外更快。开车的隧道里则是干脆不动。</p><p><span class="lab s-why">原理</span>导航卫星在约两万公里的高空发下来，信号到达地面时已经非常微弱，大约相当于隔着上万公里听到一盏小灯泡。混凝土和金属顶棚对这种一千五百兆赫附近的信号衰减极大，室内几乎收不到，室内那点定位多半是靠基站和 wifi 推算出来的。窗户是信号能进来的口子，所以窗边会好很多。</p></div></li>
+<li><b>在密集高楼之间轨迹会自己跳<span class="swhere">站在高层建筑密集的街道上，比如一排玻璃幕墙的写字楼之间，边走边看地图上的定位轨迹。</span></b><div class="sbody"><p><span class="lab s-see">看到</span>轨迹会莫名其妙地跳到隔壁的街上，甚至横跨到马路对面或者河对岸，过几秒再跳回来。走的是一条直路，画出来的却是一段歪歪扭扭的折线。</p><p><span class="lab s-why">原理</span>除了直接来自卫星的信号，天线还会收到被楼面反射过来的同一颗卫星的信号，走了更长的路、晚到一点。定位解算时把这两路信号当成不同的距离，算出的位置就偏了。楼越高、反射面越平整，多路径效应越严重，这也是城市峡谷里导航最容易出错的物理原因。</p></div></li>
+<li><b>过隧道时地图上的箭头还在走<span class="swhere">开车进一段比较长的隧道，注意导航里那个箭头，出隧道后再看一次。</span></b><div class="sbody"><p><span class="lab s-see">看到</span>进洞后信号消失，箭头却往往还沿着路继续往前挪，速度看着正常；出洞那一刻位置会突然跳一下、或者重新规划路线。短隧道里几乎看不出中断。</p><p><span class="lab s-why">原理</span>接收不到卫星信号时，手机改用惯性推算：靠加速度计和陀螺仪测出方向和走过的距离，从最后一次可信的位置往后累加。这种方式能维持一小段时间，误差会随时间越积越大，隧道的长度就决定了偏差有多大。出洞重新定上位之后，它会把累积的偏差一次抹掉，看起来就是位置跳了一下。</p></div></li>
+<li><b>用专门的软件看头顶有几颗卫星<span class="swhere">在手机上装一个能显示卫星状态的工具，比如常见的卫星状态查看软件，站到室外空地上打开。</span></b><div class="sbody"><p><span class="lab s-see">看到</span>屏幕上出现一张天空图，标着十几颗卫星散在各个方位，每颗旁边有信号强度读数，通常落在二十到四十五之间，而且这些点会缓慢移动。靠近高楼或者树荫，可见数量会减少。</p><p><span class="lab s-why">原理</span>至少要同时锁定四颗卫星才能解出经度、纬度、高度和时间这四个未知量，可用的星越多、在天空中的分布越分散，解算越稳。卫星本身在快速绕地球运行，所以构型一直在变，精度也跟着起伏。位置解算靠的是各颗卫星信号到达时间的微小差别，这就是为什么要把时间算准到纳秒。</p></div></li></ul>
+  </section>
+
+  <section class="block">
     <h2 class="bh">背后的原理</h2>
     <p class="bnote">机制层面：为什么会出现上一节那些现象。</p>
     <div class="prose"><h3>两个方向相反的时钟效应</h3>
@@ -64,27 +73,32 @@
 
   <section class="block">
     <h2 class="bh">现存实例</h2>
-    <p class="bnote">6 项。真实存在的对象、设施或已记录案例。</p>
-    <ul class="insts"><li><b>GPS III 首星 Vespucci（SV01）</b><p>2018 年 12 月 23 日首发的新一代 GPS，设计寿命 15 年，每星载 3 台增强铷钟，播 L1/L2/L5/L1C，定位精度较上代提高约 3 倍、抗干扰约 8 倍，由洛克希德·马丁建造。 <a class="isrc" href="https://www.eoportal.org/satellite-missions/gps" target="_blank" rel="noopener noreferrer">来源</a></p></li>
-<li><b>GPS Block IIF 首播 L5（SVN62）</b><p>2010 年 5 月 28 日首发，首次在民用 L5（1176.45 MHz）播信号，专用于航空安全与高精度，开启现代化第三民用频率。 <a class="isrc" href="https://www.eoportal.org/satellite-missions/gps" target="_blank" rel="noopener noreferrer">来源</a></p></li>
-<li><b>欧盟 Galileo 星座</b><p>30 颗 MEO 卫星、轨道高约 23222 km、倾角 56 度，2024 年宣布全面运行；E1/E5a/E5b/E6 多频，免费高精度服务可达约 20 cm，是精度最高的民用开放信号。 <a class="isrc" href="https://orbitalradar.com/navigation-constellations" target="_blank" rel="noopener noreferrer">来源</a></p></li>
-<li><b>中国北斗三号 BDS-3</b><p>2020 年 6 月 23 日最后一颗星于西昌发射、组网完成，35 颗星含 MEO/GEO/IGSO，B1C 取 1575.42 MHz 与 GPS L1、Galileo E1 互通，亚太精度优于全球。 <a class="isrc" href="https://orbitalradar.com/navigation-constellations" target="_blank" rel="noopener noreferrer">来源</a></p></li>
-<li><b>俄罗斯 GLONASS 星座</b><p>24 颗星、轨道高约 19130 km、倾角 64.8 度，用频分多址约 1602 MHz 起，载铯钟，高纬度可见性最佳；苏联 1982 年首发，2011 年恢复全球覆盖。 <a class="isrc" href="https://orbitalradar.com/navigation-constellations" target="_blank" rel="noopener noreferrer">来源</a></p></li>
-<li><b>NTS-2 相对论试验星（1977）</b><p>1977 年首颗携原子钟上天的 GPS 试验星，出厂把频率调偏以验证相对论修正，先按牛顿力学跑了约 20 天，结果每日快约 38 μs 与理论吻合，才打开修正开关。 <a class="isrc" href="https://www.astronomy.ohio-state.edu/~pogge/Ast162/Unit5/gps.html" target="_blank" rel="noopener noreferrer">来源</a></p></li></ul>
+    <p class="bnote">8 项。真实存在的对象、设施或已记录案例。</p>
+    <ul class="insts"><li><b>GPS III 首星 Vespucci（SV01）</b><p>2018 年底发射的 Vespucci 是新一代 GPS 首星，设计用十五年，抗干扰能力约为上代八倍。它让民用定位更准更稳，是 GPS 现代化主力。 <a class="isrc" href="https://www.eoportal.org/satellite-missions/gps" target="_blank" rel="noopener noreferrer">来源</a></p></li>
+<li><b>GPS Block IIF 首播 L5（SVN62）</b><p>2010 年发射的这颗星第一次在民用频道播 L5 信号，频率 1176.45 MHz，专给飞机和精密定位用。它开启了 GPS 第三个民用频率，让航空定位更可靠。 <a class="isrc" href="https://www.eoportal.org/satellite-missions/gps" target="_blank" rel="noopener noreferrer">来源</a></p></li>
+<li><b>欧盟 Galileo 星座</b><p>欧盟的 Galileo 有三十颗中轨卫星，免费开放信号精度能到约二十厘米，是民用里最准的一套。它的多频设计也让手机定位更稳，误差比单系统小。 <a class="isrc" href="https://orbitalradar.com/navigation-constellations" target="_blank" rel="noopener noreferrer">来源</a></p></li>
+<li><b>中国北斗三号 BDS-3</b><p>中国北斗三号 2020 年完成组网，三十五颗星含三种轨道，在亚太比全球更准。它和 GPS、Galileo 部分频率互通，手机能同时用几套，出门更放心。 <a class="isrc" href="https://orbitalradar.com/navigation-constellations" target="_blank" rel="noopener noreferrer">来源</a></p></li>
+<li><b>俄罗斯 GLONASS 星座</b><p>俄罗斯 GLONASS 有二十四颗星，用频分方式区分卫星，高纬度地区比别家看得更清。它从苏联 1982 年首发，2011 年恢复全球覆盖，至今仍在用。 <a class="isrc" href="https://orbitalradar.com/navigation-constellations" target="_blank" rel="noopener noreferrer">来源</a></p></li>
+<li><b>NTS-2 相对论试验星（1977）</b><p>1977 年上天的 NTS-2 带着原子钟，专门验证相对论：若不算修正，卫星钟每天会快约 38 微秒。先按旧理论跑二十天，结果和预言吻合才修正。 <a class="isrc" href="https://www.astronomy.ohio-state.edu/~pogge/Ast162/Unit5/gps.html" target="_blank" rel="noopener noreferrer">来源</a></p></li>
+<li><b>印度 NavIC 区域导航系统</b><p>印度自己的 NavIC 有七颗星，主要覆盖印度本土及向外一千五百公里，给本国民用和防灾定位用。它是继美俄欧中之后第五套卫星导航，意义重大。 <a class="isrc" href="https://www.isro.gov.in/SatelliteNavigationServices.html" target="_blank" rel="noopener noreferrer">来源</a></p></li>
+<li><b>日本 QZSS 准天顶系统</b><p>日本的 QZSS 叫准天顶星群，四颗星专门增强 GPS，在楼宇和高山间定位更稳。它 2018 年四星齐跑，主要服务日本和周边，对高楼里的驾车导航帮助尤其大。 <a class="isrc" href="https://qzss.go.jp/en/overview/services/sv01_what.html" target="_blank" rel="noopener noreferrer">来源</a></p></li></ul>
   </section>
 
   <section class="block">
     <h2 class="bh">进阶实例</h2>
-    <p class="bnote">9 项。把同一条规律放到更高量级上运行的真实工程对象：在役工业装置、大科学装置、尖端产品与国家级基准，每条标注所属装置或行业类别。</p>
-    <ul class="insts adv"><li><p class="ihead"><span class="icat">基础设施</span><b>WAAS 广域增强系统</b></p><p class="idesc">WAAS（广域增强系统）由美国联邦航空管理局运营，于 2003 年 7 月 10 日通过认证并投入服务。该系统依托分布在美国本土、墨西哥与太平洋地区的 38 个地面参考站，实时采集 GPS 卫星的轨道偏差与原子钟误差，生成改正数后经 3 颗地球静止卫星以 L1 频段向北美空域播发。其 LPV 进近服务水平定位精度约为水平 1.5 m、垂直 2 m，使装备相应接收机的飞机可在无地面信标的情况下完成一类精密进近，目前已覆盖美国本土、阿拉斯加与墨西哥的大部分地区。</p></li>
-<li><p class="ihead"><span class="icat">基础设施</span><b>千寻位置 FindCM 全国一张网</b></p><p class="idesc">千寻位置（中国，由中国兵器工业集团与阿里巴巴合资成立）运营名为「全国一张网」的地基增强系统，在 33 个省市布设超过 2800 个全球导航卫星系统参考站，向各类终端播发 RTK 与 NRTK 实时改正数。其 FindCM 服务标称水平精度 2 cm、高程精度 5 cm，支持北斗、GPS、GLONASS、Galileo 等 5 大系统共 16 个频点，面向自动驾驶、精准农业与无人机等行业提供实时厘米级定位，是中国已实现规模商用的高精度位置服务基础设施，日均处理海量定位请求。</p></li>
-<li><p class="ihead"><span class="icat">消费产品</span><b>Trimble R12 RTK 测量接收机</b></p><p class="idesc">Trimble R12 是天宝公司推出的 RTK 全球导航卫星系统测量接收机，具备 672 个信号通道，可同时跟踪 GPS、北斗、Galileo 等十余个导航系统的信号。其 RTK 平面精度为 8 mm、高程精度为 15 mm（1σ 统计，并包含 1 ppm 的距离比例项）。配套的 CenterPoint RTX 星基增强服务在全球范围提供平面 2 cm、高程 5 cm 的实时改正，无需本地基准站即可独立工作，被广泛用于工程放样、地籍测量与形变监测等专业测量场景。</p></li>
-<li><p class="ihead"><span class="icat">科研装置</span><b>QZSS CLAS 厘米级增强服务</b></p><p class="idesc">日本准天顶卫星系统的 CLAS（厘米级增强服务）自 2018 年 11 月随「引路」4 星组网而启动，通过 L6 频点信号（速率约 2000 bps）向日本本土播发实时精密单点定位改正数。在静止基线测试条件下，其水平定位约 6 cm、垂直约 12 cm；动态车载条件下水平约 12 cm、垂直约 24 cm，使单频接收机即可获得亚分米至厘米级定位，支撑自动农耕、车道级导航与高精度定位相关的科学研究。</p></li>
-<li><p class="ihead"><span class="icat">航天与卫星</span><b>印度 NavIC 区域导航系统</b></p><p class="idesc">印度 NavIC（原称 IRNSS）区域导航系统由 7 颗卫星组成，其中 3 颗位于地球静止轨道、4 颗位于大椭圆轨道，覆盖印度本土及周边 1500 km 范围。系统播发 L5（1176.45 MHz）与 S（2492.028 MHz）双频导航信号，设计定位精度优于 20 m（2σ 置信水平），由印度空间研究组织负责运营，为海上航运、灾害预警与移动通信提供区域自主的导航能力，使印度成为少数具备独立区域导航能力的国家之一。</p></li>
-<li><p class="ihead"><span class="icat">基础设施</span><b>EGNOS 欧洲地基增强系统</b></p><p class="idesc">EGNOS 是欧洲的地基增强系统，由欧洲航天局、欧盟空间计划机构与欧洲航空安全组织共同运营，以约 40 个地面测站与 3 颗地球静止卫星向欧洲空域播发 GPS 与 Galileo 的完好性信息与改正数。其开放服务水平的定位精度约为 1 m，航空 LPV 进近的垂直引导优于 4 m，自 2009 年投入运行以来已支撑欧洲数千个机场的精密进近，是广域增强系统体系中的成熟范例。</p></li>
-<li><p class="ihead"><span class="icat">工业</span><b>基于 RTK 的农机自动导航</b></p><p class="idesc">基于 RTK 全球导航卫星系统的农机自动导航已在大田作业中规模应用：约翰迪尔 AutoTrac 等系统以厘米级定位驱动液压转向机构，使拖拉机沿预先规划的垄线行驶，横向偏差约 2.5 cm，并配合变量播种与变量施药以减少重播漏播。该系统依赖地基增强或星基改正信号，单台农机每日作业面积可达 60 至 80 公顷，显著降低对驾驶员个人经验的依赖，并提升土地利用率与作业一致性。</p></li>
-<li><p class="ihead"><span class="icat">科研装置</span><b>IGS 精密星历与 PPP</b></p><p class="idesc">国际全球导航卫星系统服务（IGS）由分布在世界各地的约 200 个连续运行跟踪站组成，其事后解算的精密星历与卫星钟差产品轨道精度优于 2.5 cm，供科研与大地测量界使用。基于此类产品的 PPP（精密单点定位）技术无需本地基准站即可在全球范围获得分米至厘米级结果，被广泛应用于板块运动监测、海平面变化研究与地震同震位移分析等地球科学课题。</p></li>
-<li><p class="ihead"><span class="icat">航天与卫星</span><b>QZSS SLAS 亚米级增强服务</b></p><p class="idesc">QZSS 的 SLAS（亚米级增强服务）通过 L1 与 L5 频点向日本及邻近区域免费播发差分改正数，标称水平定位约 1 m、垂直约 2 m，用户无需订阅即可使用。作为「引路」系统的开放层级服务，SLAS 与 CLAS 形成互补，为车载导航、灾害防范与移动终端提供比单点 GPS 更稳健的伪距增强，是日本区域导航系统的重要组成，提升了城市峡谷环境下的定位可用性。</p></li></ul>
+    <p class="bnote">12 项。把同一条规律放到更高量级上运行的真实工程对象：在役工业装置、大科学装置、尖端产品与国家级基准，每条标注所属装置或行业类别。</p>
+    <ul class="insts adv"><li><p class="ihead"><span class="icat">基础设施</span><b>WAAS 广域增强系统</b></p><p class="idesc">WAAS 是美国给飞机用的导航增强系统。它在北美布了几十个地面站，实时算出卫星的轨道和钟差，再经静止卫星播发。有了它，飞机能靠 GPS 做精密进近，落地时横向误差可压到一两米。</p></li>
+<li><p class="ihead"><span class="icat">基础设施</span><b>千寻位置 FindCM 全国一张网</b></p><p class="idesc">千寻位置在中国建了一张地基增强网，三十来个省市里摆了上千个参考站。它给手机和农机播发实时改正，把 GPS 定位从几米拉到厘米级，自动驾驶和精准播种都靠它。</p></li>
+<li><p class="ihead"><span class="icat">消费产品</span><b>Trimble R12 RTK 测量接收机</b></p><p class="idesc">天宝 R12 是给测绘员用的高精度接收机。它同时收好几个导航系统的信号，再借网络拿到实时改正，平面能测到 8 毫米。修路、划地界、监测滑坡都用得上。</p></li>
+<li><p class="ihead"><span class="icat">科研装置</span><b>QZSS CLAS 厘米级增强服务</b></p><p class="idesc">日本准天顶卫星的 CLAS 服务通过电波把精密改正发给用户。单台接收机不靠本地基站，就能拿到厘米级定位，帮农机自动开、车子认车道。它专管日本及附近的精度。</p></li>
+<li><p class="ihead"><span class="icat">航天与卫星</span><b>印度 NavIC 区域导航系统</b></p><p class="idesc">印度的 NavIC 由七八颗卫星组成，覆盖本国及周边一片海域。它发两种频段的导航信号，定位能到二十米上下，给渔船、手机和救灾提供自主导航，不依赖外国系统。</p></li>
+<li><p class="ihead"><span class="icat">基础设施</span><b>EGNOS 欧洲地基增强系统</b></p><p class="idesc">EGNOS 是欧洲给飞机和导航用的增强系统。它用几十个地面站加上静止卫星，把 GPS 和伽利略的误差与完好性信息播出去。开放服务定位约一米，不少机场靠它做精密进近。</p></li>
+<li><p class="ihead"><span class="icat">工业</span><b>基于 RTK 的农机自动导航</b></p><p class="idesc">带 RTK 的农机自己沿规划好的垄线走，横向偏不了几厘米。方向盘交给液压，人只管盯屏幕。一台机器一天能耕几十公顷，重播漏播都少，老把式省心不少。</p></li>
+<li><p class="ihead"><span class="icat">科研装置</span><b>IGS 精密星历与 PPP</b></p><p class="idesc">IGS 把全球几百个跟踪站的数据汇起来，事后算出卫星的精确轨道和钟差。科研者借这套星历做 PPP，不用本地基准站也能在全球拿到厘米级结果，拿来盯板块漂移和海平面变化。</p></li>
+<li><p class="ihead"><span class="icat">航天与卫星</span><b>QZSS SLAS 亚米级增强服务</b></p><p class="idesc">准天顶卫星的 SLAS 免费发差分改正，水平和垂直大约各一米和两米。手机和车载导航不用订阅就能用，在日本城市高楼夹缝里也比单靠 GPS 更稳。</p></li>
+<li><p class="ihead"><span class="icat">航天与卫星</span><b>北斗三号全球卫星导航系统</b></p><p class="idesc">北斗三号由三十颗卫星组网，向全球发信号。它公开定位精度约一两米，亚太更准，还带独有的短报文，没手机信号也能发位置和求救。手机里的导航芯片大多已支持它。 <a class="isrc" href="https://en.wikipedia.org/wiki/BeiDou" target="_blank" rel="noopener noreferrer">来源</a></p></li>
+<li><p class="ihead"><span class="icat">航天与卫星</span><b>伽利略 Galileo 导航系统</b></p><p class="idesc">伽利略是欧洲自建的民用导航系统，三十颗卫星在约两万三千公里高空运行。它公开精度能到一米，手机和火车、渔船都在用。和 GPS 信号合在一起，定位更稳更准。 <a class="isrc" href="https://en.wikipedia.org/wiki/Galileo_(satellite_navigation)" target="_blank" rel="noopener noreferrer">来源</a></p></li>
+<li><p class="ihead"><span class="icat">消费产品</span><b>Garmin 手持导航仪</b></p><p class="idesc">你手里的 Garmin 靠同时收几颗卫星的信号来定位，空旷处能准到几米。它内部时钟出厂就按相对论调过，否则绕地球转一天会差出上千米，导航就乱了。 <a class="isrc" href="https://www.garmin.com/en-US/" target="_blank" rel="noopener noreferrer">来源</a></p></li></ul>
   </section>
 
   <section class="block">

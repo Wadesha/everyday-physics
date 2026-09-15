@@ -43,35 +43,6 @@ code{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace; font-size
 .hero h1{margin:0; font-size:clamp(20px,3vw,28px); line-height:1.24; letter-spacing:-.01em; font-weight:800}
 .hero-sub{margin:8px 0 0; max-width:110ch; font-size:13.5px; color:var(--ink2)}
 .hero-en{margin:6px 0 0; max-width:104ch; font-size:12.5px; color:var(--muted); line-height:1.5}
-.stats{display:flex; flex-wrap:wrap; align-items:baseline; gap:1px 5px; margin:8px 0 0; font-size:12px; color:var(--muted)}
-.stats b{font-size:14px; font-weight:800; color:var(--ink); font-variant-numeric:tabular-nums; margin-left:7px}
-.stats b:first-child{margin-left:0}
-
-/* ---------- 索引网格 ---------- */
-.grid{display:grid; grid-template-columns:repeat(auto-fill,minmax(248px,1fr)); gap:8px; padding:8px 0 18px}
-.card{background:var(--panel); border:1px solid var(--line); border-radius:var(--r)}
-.card:hover{border-color:var(--line2); background:#fffdf8}
-.card-link{display:block; padding:10px 12px 9px}
-.card-top{display:flex; align-items:center; justify-content:space-between; gap:8px}
-.card h3{margin:0; font-size:15.5px; font-weight:750; letter-spacing:-.01em; line-height:1.28; min-width:0}
-.chip{font-size:10px; padding:2px 7px; border-radius:999px; white-space:nowrap;
-  color:var(--c,#444); background:#f2eee5;
-  border:1px solid var(--line2);
-  border-color:color-mix(in srgb,var(--c) 32%,transparent);
-  background:color-mix(in srgb,var(--c) 8%,transparent)}
-.en{margin:1px 0 5px; font-size:9.5px; letter-spacing:.05em; color:var(--muted); text-transform:uppercase}
-.lead{margin:0 0 7px; font-size:12.5px; color:var(--ink2); line-height:1.45}
-.mini{list-style:none; margin:0 0 7px; padding:0; border-top:1px dashed var(--line2)}
-/* 行内允许收缩换行：任何视口下都不横向溢出，也不省略号丢字 */
-.mini li{display:grid; grid-template-columns:minmax(0,auto) minmax(0,auto);
-  justify-content:space-between; gap:0 9px; padding:3px 0;
-  border-bottom:1px dashed var(--line2); font-size:11.5px; line-height:1.42}
-.mini li span{color:var(--muted); text-align:left}
-.mini li b{font-weight:650; text-align:right; font-variant-numeric:tabular-nums}
-.card-foot{display:flex; justify-content:space-between; align-items:center; gap:8px;
-  font-size:10.5px; color:var(--muted)}
-.card-foot span:first-child{min-width:0}
-.go{color:var(--accent); font-weight:650; white-space:nowrap}
 
 /* ---------- 详情页 ---------- */
 .crumb{display:flex; gap:6px; align-items:center; font-size:12px; color:var(--muted); padding:12px 0 5px}
@@ -126,8 +97,16 @@ code{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace; font-size
 .insts.adv .idesc{font-size:12.5px; line-height:1.5}
 .insts.adv b{font-size:12.5px; line-height:1.4}
 
-/* 误传：无符号标记，用文字标签 */
-.myths{display:flex; flex-direction:column; gap:5px}
+/* 去哪儿看：左列标题加一行去处说明，右列「看到／原理」两行 */
+.insts.scenes li{grid-template-columns:minmax(0,176px) minmax(0,1fr); align-items:start; padding:6px 0}
+.insts.scenes .swhere{display:block; font-weight:400; font-size:11.5px; line-height:1.4;
+  color:var(--muted); margin-top:1px}
+.insts.scenes .sbody p{font-size:12.5px; line-height:1.5}
+.insts.scenes .sbody p+p{margin-top:3px}
+.insts.scenes .s-why{background:var(--panel); color:var(--ink2); border:1px solid var(--line)}
+.insts.scenes .s-see{background:#e7edf3; color:#1f5578}
+
+/* 误传：无符号标记，用文字标签 */.myths{display:flex; flex-direction:column; gap:5px}
 .myth{background:var(--panel); border:1px solid var(--line); border-left:3px solid var(--bad);
   border-radius:var(--r); padding:8px 10px}
 .claim{margin:0 0 3px; font-weight:600; color:var(--bad); font-size:13.5px}
@@ -219,12 +198,13 @@ code{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace; font-size
   .bar{height:40px}
   .brand-en{display:none}
   .nav a{padding:3px 8px; font-size:12px}
-  .grid{grid-template-columns:minmax(0,1fr); gap:6px}
   .nums li{grid-template-columns:minmax(0,1fr); gap:1px}
   .mrow{grid-template-columns:minmax(0,1fr); gap:2px}
   .insts li{grid-template-columns:minmax(0,1fr); gap:2px}
   .insts.adv li{grid-template-columns:minmax(0,1fr); gap:1px}
   .insts.adv .ihead{flex-direction:row; align-items:baseline; gap:5px; flex-wrap:wrap}
+  .insts.scenes li{grid-template-columns:minmax(0,1fr); gap:1px}
+  .insts.scenes .swhere{margin-top:0}
   .flist li,.slist li{grid-template-columns:minmax(0,1fr); gap:2px}
   .slist span{text-align:left}
   .evgrid{grid-template-columns:minmax(0,1fr)}

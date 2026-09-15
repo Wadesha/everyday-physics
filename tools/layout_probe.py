@@ -18,7 +18,7 @@ import sys
 import tempfile
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-SITE = os.path.join(tempfile.gettempdir(), "ep-layout-probe", "site")
+SITE = os.path.join(tempfile.mkdtemp(prefix="ep-layout-probe-"), "site")
 
 PROBE = r"""
 <script>
@@ -76,6 +76,50 @@ window.addEventListener('load', function () {
     var adv = document.querySelector('.insts.adv li');
     if (adv) out.advCols = getComputedStyle(adv).gridTemplateColumns;
 
+    // 首页（按分支）：分支节、首屏可见节、器物链接数、列表网格列、横向溢出
+    var ts = document.querySelectorAll('.tsec');
+    if (ts.length) {
+      out.tsec = ts.length;
+      out.tsecVisible = [].slice.call(ts).filter(function (s) {
+        return s.getBoundingClientRect().top < vh;
+      }).length;
+      out.tlinks = document.querySelectorAll('.tlist a').length;
+      var tl = document.querySelector('.tlist');
+      if (tl) out.tlistCols = getComputedStyle(tl).gridTemplateColumns;
+      var t0 = ts[0];
+      var tsecOver = 0;
+      ts.forEach(function (s) {
+        tsecOver = Math.max(tsecOver, s.scrollWidth - s.clientWidth);
+      });
+      out.tsecOverflow = +tsecOver.toFixed(1);
+      var a0 = document.querySelector('.tlist a span');
+      if (a0) {
+        var ar = a0.getBoundingClientRect();
+        out.tlistItemH = +ar.height.toFixed(1);
+        out.tlistClipped = a0.scrollHeight - a0.clientHeight > 2 ? 1 : 0;
+      }
+      void t0;
+    }
+
+    // 去哪儿看板块：度量网格列、标签是否换行、是否有横向溢出
+    var sc = document.querySelector('.insts.scenes li');
+    if (sc) {
+      out.sceneCols = getComputedStyle(sc).gridTemplateColumns;
+      out.sceneRows = document.querySelectorAll('.insts.scenes li').length;
+      out.sceneSee = document.querySelectorAll('.insts.scenes .s-see').length;
+      out.sceneWhy = document.querySelectorAll('.insts.scenes .s-why').length;
+      out.sceneWhere = document.querySelectorAll('.insts.scenes .swhere').length;
+      var box = sc.getBoundingClientRect();
+      out.sceneOverflow = +(sc.scrollWidth - sc.clientWidth).toFixed(1);
+      out.sceneH = +box.height.toFixed(1);
+      var lab = document.querySelector('.insts.scenes .lab');
+      if (lab) {
+        var lr = lab.getBoundingClientRect();
+        out.labelH = +lr.height.toFixed(1);
+        out.labelWrap = lr.width > 40 ? 1 : 0;
+      }
+    }
+
     var cards = document.querySelectorAll('.grid .card');
     if (cards.length) {
       var r0 = cards[0].getBoundingClientRect();
@@ -114,8 +158,8 @@ def find_chrome():
 
 
 def prepare():
-    if os.path.isdir(SITE):
-        shutil.rmtree(SITE, ignore_errors=True)
+    # 旧目录可能被上次残留的浏览器进程占住而无法删除（本机删除受护栏限制），
+    # 因此每次探测都换一个全新目录，不做删除。
     os.makedirs(SITE, exist_ok=True)
     for name in os.listdir(ROOT):
         if name in (".git", "tools", "node_modules", "__pycache__"):
@@ -174,6 +218,25 @@ def main():
                 flags.append("间距上限 pad=%.0f mar=%.0f" % (r["maxPad"], r["maxMar"]))
             if w >= 960 and r.get("cols") not in ("2", "-"):
                 flags.append("未分栏 cols=%s" % r.get("cols"))
+            # 首页（按分支）：分支节横向溢出、条目文字被裁
+            if "tsec" in r:
+                if r["tsecOverflow"] > 1:
+                    flags.append("分支节横向溢出 %.0fpx" % r["tsecOverflow"])
+                if r.get("tlistClipped"):
+                    flags.append("分支条目文字被裁")
+                if not r.get("tlinks"):
+                    flags.append("分支条目缺失")
+            # 去哪儿看板块：条目数、三段完整性、横向溢出、标签未换行
+            if "sceneRows" in r:
+                if r["sceneRows"] != r.get("sceneSee") or r["sceneRows"] != r.get("sceneWhy"):
+                    flags.append("场景段落不齐 rows=%s see=%s why=%s"
+                                 % (r["sceneRows"], r.get("sceneSee"), r.get("sceneWhy")))
+                if r["sceneRows"] != r.get("sceneWhere"):
+                    flags.append("场景缺去处行")
+                if r["sceneOverflow"] > 1:
+                    flags.append("场景行横向溢出 %.0fpx" % r["sceneOverflow"])
+                if r.get("labelWrap"):
+                    flags.append("场景标签换行")
             if flags:
                 bad += 1
             print("  %4dx%-4d 滚动 %.2f 屏 · 首屏区块 %d/%d · 字号 %.0f · 区块间距 %.0f%s"
@@ -184,6 +247,13 @@ def main():
                       % (r["cardCols"], r["cardW"], r["cardVisible"]))
             if "advCols" in r:
                 print("        进阶实例网格列 %s" % r["advCols"])
+            if "sceneCols" in r:
+                print("        去哪儿看 %d 处 · 网格列 %s · 行高 %.0f · 标签高 %.1f"
+                      % (r["sceneRows"], r["sceneCols"], r["sceneH"], r.get("labelH", 0)))
+            if "tsec" in r:
+                print("        按分支 %d 节 · 首屏可见 %d 节 · 器物链接 %d 条 · 列表列 %s · 条目标题高 %.0f"
+                      % (r["tsec"], r["tsecVisible"], r["tlinks"], r.get("tlistCols", "-"),
+                         r.get("tlistItemH", 0)))
     print("\n问题项：%d" % bad)
     return 0
 
